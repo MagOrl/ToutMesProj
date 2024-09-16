@@ -13,7 +13,7 @@ def test(a,b,c,d):
     if d < res :
         res = d 
     return res 
-print(test(28,23,3,15))
+print(test(0,0,3,15))
 
 
    
