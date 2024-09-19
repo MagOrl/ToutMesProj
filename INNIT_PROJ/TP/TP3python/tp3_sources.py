@@ -17,12 +17,16 @@ def nb_mots(phrase):
     # c2 vaut
     # resultat vaut
     for c2 in phrase:
-        if c1 == ' ' and c2 != ' ':
+        if c1 == ' ' and c2 != ' ': 
             resultat = resultat +1
+            c1 = c2
         else : 
             c1 = c2
-    return resultat+1
-print(nb_mots("bonjour, il fait beau"))
+    if phrase =="" or phrase[0] ==" ":
+        return resultat
+    else :
+        return resultat+1
+print(nb_mots(" houla!     je    mets beaucoup   d'  espaces    "))
 
 def test_nb_mots():
     assert nb_mots("bonjour, il fait beau") == 4
