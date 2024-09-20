@@ -1,10 +1,9 @@
 li {
   list-style-type: none;
 }
-nav  {
+header nav ul {
   border-bottom: 1px solid;
-  line-height: 1px ;
-} 
+}
 a {
   text-decoration: none ;
 }
