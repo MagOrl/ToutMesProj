@@ -1,0 +1,61 @@
+li {
+  list-style-type: none;
+}
+nav  {
+  border-bottom: 1px solid;
+  line-height: 1px ;
+} 
+a {
+  text-decoration: none ;
+}
+main h1{
+  font-size: 400%;
+  border-bottom : 3px solid ;
+  
+}
+span  {
+  color : grey ;
+  font-style: italic ;
+}
+
+footer{
+  border-top: 3px solid;
+}
+
+
+body{
+  margin: 5em;
+}
+
+ul{  
+  padding: 0;
+}
+
+li{
+  margin-right: 2em;
+  margin-top: 1em;
+}
+
+main{
+  padding-top: 2em;
+}
+
+article{
+  margin-right: 20%;
+}
+
+footer{
+  padding-top: 1em;
+}
+
+footer > p{
+  margin: 0;
+}
+
+
+h1>span{
+  display: block;
+}
+img {
+  width: 20px ;
+}
