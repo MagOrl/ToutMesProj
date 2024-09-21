@@ -21,7 +21,7 @@ def test_somme_pair():
    assert somme_pair([12,13,6,5,7]) == 18
    assert somme_pair([14,72,90,21,23]) == 176
    assert somme_pair([-4,-42,39,21,63]) == -46
-   assert somme_pair([9,15,16,52]) == 69 
+   assert somme_pair([9,15,16,52]) == 68 
 
 #----------------------------------------------------------------------------
 #Partie 2
@@ -56,24 +56,23 @@ def prop_nega(nombre):
     Return :
         (float) : le nombre de négatif sur la longueure de la liste
     """
+    if len(nombre) == 0:
+        return None 
+    
     nb_nega = 0
-    res = None
+    res = 0
     # à chaque tour de boucle
     # nb_nega vaut 0
-    #res vaut None
+    # res vaut 0 SAUF si la liste est nulle elle vaut None dans ce cas 
     # Nega est le premier nombre de ma liste de nombre
     for nega in nombre:
         if  nega < 0 :
             nb_nega += 1
-            res = nb_nega / len(nombre)
-        else : 
-            res = 0
-        
-    return res 
-
+            res = nb_nega / len(nombre)      
+    return res
+ 
 def test_prop_nega():
     assert prop_nega([-2,-3,-5,-6]) == 1
     assert prop_nega([-3, 5, -4, 6]) == 0.5
     assert prop_nega([1,2,3,4]) == 0
     assert prop_nega([]) == None 
-      
