@@ -32,6 +32,11 @@ def trv_mot(liste, lettre):
     listset = []
     for i in range(len(liste)):
         for carac in liste[i] :
-            if lettre  == carac[0] :
+            if lettre  != carac[0] :
+                break#J'ai trouver cette fonction sur internet et elle permet de sauver un peu de temps de calcul, par exemple je n'ai pas envie qu'elle continue après la première lettre donc je break
+            else :
                 listset.append(liste[i])
-    return listset 
+                break
+    return listset
+print(trv_mot(["caca", "pipi", "popo", "zizi", "fesse", "vomi", "crottedenez"],"c"))
+#exo 5
