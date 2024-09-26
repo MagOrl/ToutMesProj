@@ -16,7 +16,7 @@ print(plus_long_plateau(["Blois", "Bourges", "Chartres", "Châteauroux", "Dreux"
 def intwannbe(nombre):
     nb = 0
     chiffres="0123456789"
-    for i in range(len(nombre)) :
+    for i in range(nombre) :
         for carac in nombre :
             if carac in nombre and carac in chiffres  :
                 nb = nb *10 + i
