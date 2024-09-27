@@ -40,3 +40,16 @@ def trv_mot(liste, lettre):
     return listset
 print(trv_mot(["caca", "pipi", "popo", "zizi", "fesse", "vomi", "crottedenez"],"c"))
 #exo 5
+def ma_var(text):
+ setlist = []
+ mot = ""
+ for i in range(len(text)):
+
+ if text[i].isalpha(): 
+ mot += 
+ setlist.append(text)
+ 
+ 
+# i+1 ou -1 jsp 
+ return setlist
+print(ma_var("Cela fait déjà 28 jours! 28 jours à l’IUT'O! Cool!!"))
