@@ -75,4 +75,13 @@ def trv_mot(text,lettre):
 print(trv_mot("cela fait déjà 28 jours! 28 jours à l’IUT'O! cool!!", "c"))
 """
 #exo 7 
-def   
+def era(limit):
+    L = [True]
+    L[1]= False 
+    for i in range(2, limit):
+        if L[i]:
+            for j in range (i*i, i):
+                L[j] = False    
+
+    return L 
+print(era([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,18,19,20]))
