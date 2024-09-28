@@ -27,6 +27,7 @@ def intwannbe(nombre):
 
 print(intwannbe("2021"))
 """
+"""
 #exo4
 def trv_mot(liste, lettre):
     listset = []
@@ -38,10 +39,9 @@ def trv_mot(liste, lettre):
                 listset.append(liste[i])
                 break
     return listset
-print(trv_mot(["caca", "pipi", "popo", "zizi", "fesse", "vomi", "crottedenez"],"c"))
+"""
 
-
-
+"""
 #exo 5
 def ma_var(text):
     setlist = []
@@ -49,8 +49,30 @@ def ma_var(text):
     for char in text:
         if char.isalpha(): 
             mot += char 
-        elif mot:
+        elif mot :
             setlist.append(mot)  
             mot = ""  
     return setlist
 print(ma_var("Cela fait déjà 28 jours! 28 jours à l’IUT'O! Cool!!"))
+#exo 6
+"""
+"""
+#exo 6
+def trv_mot(text,lettre):
+    setlist = []
+    nouvlist = []
+    mot = ""
+    for i in range(len(text)):
+        if text[i].isalpha(): 
+            mot += text[i] 
+        elif mot :
+            setlist.append(mot)  
+            mot = ""
+    for u in range(len(setlist)):
+        if lettre == setlist[u][0]:
+            nouvlist.append(setlist[u])
+    return nouvlist 
+print(trv_mot("cela fait déjà 28 jours! 28 jours à l’IUT'O! cool!!", "c"))
+"""
+#exo 7 
+def   
