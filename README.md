@@ -1,3 +1,6 @@
 Permission ? 
-![Logo]([https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a0fbdbcd-f5f7-43f4-8774-700749f9edf6/d34rk5f-9de037ed-3282-4d95-bc4c-30abb2fed13e.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2EwZmJkYmNkLWY1ZjctNDNmNC04Nzc0LTcwMDc0OWY5ZWRmNlwvZDM0cms1Zi05ZGUwMzdlZC0zMjgyLTRkOTUtYmM0Yy0zMGFiYjJmZWQxM2UuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.If4xqrJ2auJgldKiG-tE8MuQH0Es7hurhL5M8ZIzhKQ](https://morty.ononoki.org/?mortyurl=https%3A%2F%2Flh3.googleusercontent.com%2F-MjsGuAYFTbc%2FUVjjtsjE9bI%2FAAAAAAAAW0M%2F7qTVKnYcMoI%2Fs640%2FVLC-00007.png))
+<div align="center">
+  <img height="200" src="https://morty.ononoki.org/?mortyurl=https%3A%2F%2Flh3.googleusercontent.com%2F-MjsGuAYFTbc%2FUVjjtsjE9bI%2FAAAAAAAAW0M%2F7qTVKnYcMoI%2Fs640%2FVLC-00007.png"  />
+</div>
 
+###
