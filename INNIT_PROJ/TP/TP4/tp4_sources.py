@@ -15,12 +15,6 @@ print(plus_long_plateau(["Blois", "Bourges", "Chartres", "Châteauroux", "Dreux"
 """""
 def intwannbe(nombre):
     nb = 0
-
-    chiffres="0123456789"
-    for i in range(nombre) :
-        for carac in nombre :
-            if carac in nombre and carac in chiffres  :
-                nb = nb *10 + i
     chiffres = "0123456789"
 
     for carac in nombre:
@@ -35,7 +29,6 @@ print(intwannbe("2021"))
 """
 """
 #exo4
-""""
 def trv_mot(liste, lettre):
     listset = []
     for i in range(len(liste)):
@@ -46,5 +39,49 @@ def trv_mot(liste, lettre):
                 listset.append(liste[i])
                 break
     return listset
-print(trv_mot(["caca", "pipi", "popo", "zizi", "fesse", "vomi", "crottedenez"],"c"))
+"""
+
+"""
 #exo 5
+def ma_var(text):
+    setlist = []
+    mot = ""
+    for char in text:
+        if char.isalpha(): 
+            mot += char 
+        elif mot :
+            setlist.append(mot)  
+            mot = ""  
+    return setlist
+print(ma_var("Cela fait déjà 28 jours! 28 jours à l’IUT'O! Cool!!"))
+#exo 6
+"""
+"""
+#exo 6
+def trv_mot(text,lettre):
+    setlist = []
+    nouvlist = []
+    mot = ""
+    for i in range(len(text)):
+        if text[i].isalpha(): 
+            mot += text[i] 
+        elif mot :
+            setlist.append(mot)  
+            mot = ""
+    for u in range(len(setlist)):
+        if lettre == setlist[u][0]:
+            nouvlist.append(setlist[u])
+    return nouvlist 
+print(trv_mot("cela fait déjà 28 jours! 28 jours à l’IUT'O! cool!!", "c"))
+"""
+#exo 7 
+def era(limit):
+    L = [True]
+    L[1]= False 
+    for i in range(2, limit):
+        if L[i]:
+            for j in range (i*i, i):
+                L[j] = False    
+
+    return L 
+print(era([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,18,19,20]))
