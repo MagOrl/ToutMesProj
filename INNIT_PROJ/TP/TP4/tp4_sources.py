@@ -54,7 +54,6 @@ def ma_var(text):
             mot = ""  
     return setlist
 print(ma_var("Cela fait déjà 28 jours! 28 jours à l’IUT'O! Cool!!"))
-#exo 6
 """
 """
 #exo 6
