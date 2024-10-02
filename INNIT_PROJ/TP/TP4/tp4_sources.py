@@ -87,20 +87,17 @@ print(vraisof2(6))
 #exo 7.2
 
 def indicebool(boolist, x):
-    for i in range (len(boolist)) :
+    for i in range (len(boolist)):
         if i%x == 0 and i != x:
-            boolist[i] = False 
+            boolist[i] = False
     return boolist
-print(indicebool(vraisof2(6), 2))
-""" 
-def era(limit):
-    L = [True]
-    L[1]= False 
-    for i in range(2, limit):
-        if L[i]:
-            for j in range (i*i, i):
-                L[j] = False    
+print(indicebool(vraisof2(6),2))
 
-    return L 
-print(era([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,18,19,20]))
-"""
+def era(n):
+    L = [False,True]
+    for i in range(2, n+1):
+        if [i] :
+            for j in range(i*i, n, i): 
+                L[j] = False 
+    return L
+print(era(6))
