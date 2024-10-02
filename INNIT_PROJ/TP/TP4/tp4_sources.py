@@ -41,8 +41,9 @@ def trv_mot(liste, lettre):
     return listset
 """
 
-"""
+
 #exo 5
+"""
 def ma_var(text):
     setlist = []
     mot = ""
@@ -53,7 +54,7 @@ def ma_var(text):
             setlist.append(mot)  
             mot = ""  
     return setlist
-print(ma_var("Cela fait déjà 28 jours! 28 jours à l’IUT'O! Cool!!"))
+print(ma_var("Cela fait déjà 28 jours! 28 jours à l’IUT'O! Cool"))
 """
 """
 #exo 6
@@ -73,7 +74,25 @@ def trv_mot(text,lettre):
     return nouvlist 
 print(trv_mot("cela fait déjà 28 jours! 28 jours à l’IUT'O! cool!!", "c"))
 """
-#exo 7 
+#exo 7.1 
+
+def vraisof2(n):
+    boolist = [False,False]
+    for i  in range(2, n+1):
+        boolist.append(True)
+    return boolist 
+
+print(vraisof2(6))
+
+#exo 7.2
+
+def indicebool(boolist, x):
+    for i in range (len(boolist)) :
+        if i%x == 0 and i != x:
+            boolist[i] = False 
+    return boolist
+print(indicebool(vraisof2(6), 2))
+""" 
 def era(limit):
     L = [True]
     L[1]= False 
@@ -84,3 +103,4 @@ def era(limit):
 
     return L 
 print(era([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,18,19,20]))
+"""
