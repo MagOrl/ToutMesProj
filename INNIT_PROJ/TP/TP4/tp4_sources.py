@@ -82,22 +82,29 @@ def vraisof2(n):
         boolist.append(True)
     return boolist 
 
-print(vraisof2(6))
+#print(vraisof2(6))
 
 #exo 7.2
-
+#REVOIE CE CODE 
 def indicebool(boolist, x):
     for i in range (len(boolist)):
         if i%x == 0 and i != x:
             boolist[i] = False
     return boolist
-print(indicebool(vraisof2(6),2))
+#print(indicebool(vraisof2(6),2))
 
 def era(n):
-    L = [False,True]
-    for i in range(2, n+1):
-        if [i] :
-            for j in range(i*i, n, i): 
-                L[j] = False 
-    return L
+    liste = [False, False]
+    listenb = []
+    for s in range(2,n+1) :
+        liste.append(True)
+        mop = 3*3
+        pop = 5*5
+        top = 7*7
+        for x in range(2, len(liste), 2 and mop and pop and top ):
+            liste[x] = False
+    for i in range(len(liste)):
+        if liste[i] == True :
+            listenb.append(i)
+    return listenb
 print(era(6))
