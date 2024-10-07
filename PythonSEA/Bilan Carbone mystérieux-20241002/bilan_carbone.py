@@ -844,7 +844,20 @@ def est_avant(activite1, activite2):
     Returns:
         bool: True si activite1 est avant activite2, False sinon
     """
-    ...
+    acti1 = activite1[4]
+    acti2 = activite2[]
+    if activite1>= activite2:
+        res == True
+        return res 
+    else:
+        res == False
+        return res 
+
+        
+         
+est_avant(('Lucas', '2024-09-01', 67.2, 'type4'), ('Lucas', '2024-09-01', 67.2, 'type3'))
+
+
 
 def annee(activite):
     """
@@ -1054,3 +1067,4 @@ def cumul_temps_activite(liste_activites, co2_minute):
         int: le temps total passé à réaliser des activités
     """
     ...
+
