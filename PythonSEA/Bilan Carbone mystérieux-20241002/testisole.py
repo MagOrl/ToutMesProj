@@ -9,14 +9,15 @@ def est_avant(activite1, activite2):
     Returns:
         bool: True si activite1 est avant activite2, False sinon
     """
-    res = None 
-    if activite1>= activite2:
-        res == True
-        return res 
-    else:
-        res == False
-        return res 
+
+    if activite1[3] < activite2[3]:
+        return True
+    elif activite1[0] < activite2[0]:
+        return True
+    elif activite1[2] < activite2[2]:
+        return True 
+    else :
+        return False
 
         
-         
-est_avant(('Lucas', '2024-09-01', 67.2, 'type4'), ('Lucas', '2024-09-01', 67.2, 'type3'))
+est_avant(('Lucas', '2024-09-01', 67.2, 'type3'), ('Lucas', '2024-09-01', 67.2, 'type4'))
