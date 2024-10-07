@@ -832,19 +832,6 @@ liste6 = [
 # -----------------------------------------------------------------------------------------------------
 # Listes des fonctions à implémenter
 # -----------------------------------------------------------------------------------------------------
-
-def est_avant(activite1, activite2):
-    """
-    Retourne True si activite1 est avant activite2, False sinon
-    les activités sont ordonnées selon leur type, puis en cas d'égalité selon le prénom et enfin selon leur date 
-    Args:
-        activite1 (tuple): une activité
-        activite2 (tuple): une activité
-    
-    Returns:
-        bool: True si activite1 est avant activite2, False sinon
-    """
-
 def est_avant(activite1, activite2):
     """
     Retourne True si activite1 est avant activite2, False sinon
@@ -875,7 +862,12 @@ def annee(activite):
     Returns:
         str: l'année de l'activité
     """
-    ...
+    print(activite[1][0]+activite[1][1]+activite[1][2]+activite[1][3])
+
+annee(('Lucas', '2002-12-27', 70.08, 'type3'))        
+
+     
+    
 
 def annee_mois(activite):
     """
