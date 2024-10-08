@@ -904,7 +904,12 @@ def filtre_par_prenom(liste_activites, prenom):
     Returns:
         list: la liste des activites effectuées par l'usager prenom 
     """
-    
+    #AR = accusé de récéption 
+    listo = []
+    for i in range(len(liste_activites)):
+        if liste_activites[i][0] == prenom:
+            listo.append(liste_activites[i])
+    return listo    
 
 def filtre(liste_activites, num_critere, val_critere):
     """
