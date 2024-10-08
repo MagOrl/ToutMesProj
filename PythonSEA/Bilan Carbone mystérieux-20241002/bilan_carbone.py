@@ -843,7 +843,6 @@ def est_avant(activite1, activite2):
     Returns:
         bool: True si activite1 est avant activite2, False sinon
     """
-
     if activite1[3] < activite2[3]:
         return True
     elif activite1[0] < activite2[0]:
@@ -862,13 +861,9 @@ def annee(activite):
     Returns:
         str: l'année de l'activité
     """
-    print(activite[1][0]+activite[1][1]+activite[1][2]+activite[1][3])
-
-annee(('Lucas', '2002-12-27', 70.08, 'type3'))        
-
-     
-    
-
+    JusteAnne = activite[1][0]+activite[1][1]+activite[1][2]+activite[1][3]
+    return JusteAnne
+ 
 def annee_mois(activite):
     """
     Retourne l'année et le mois d'une activité
@@ -878,7 +873,8 @@ def annee_mois(activite):
     Returns:
         str: l'année et le mois de l'activité
     """
-    ...
+    MoisAnne = activite[1][0]+activite[1][1]+activite[1][2]+activite[1][3]+activite[1][4]+activite[1][5]+activite[1][6]
+    return MoisAnne
 
 def max_emmission(liste_activites):
     """
@@ -889,8 +885,15 @@ def max_emmission(liste_activites):
     Returns:
         tuple: l'activité avec le plus grand bilan carbone
     """
-    ...
+    max = 0
+    fullmax = None 
+    for i in range(len(liste_activites)):
+        if liste_activites[i][2]> max:
+            max = liste_activites[i][2]
+            fullmax = liste_activites[i] 
+    return fullmax
 
+     
 def filtre_par_prenom(liste_activites, prenom):
     """
     Retourne la liste des activites effectuées par un usager donné
@@ -901,7 +904,7 @@ def filtre_par_prenom(liste_activites, prenom):
     Returns:
         list: la liste des activites effectuées par l'usager prenom 
     """
-    ...
+    
 
 def filtre(liste_activites, num_critere, val_critere):
     """

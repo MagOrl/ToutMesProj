@@ -16,7 +16,7 @@ def test_est_avant():
 def test_annee():
     assert bc.annee(('Lucas', '2024-09-01', 67.2, 'type3')) == '2024'
     assert bc.annee(('Lucas', '1999-12-27', 70.08, 'type3')) == '1999'
-"""
+
 def test_annee_mois():
     assert bc.annee_mois(('Lucas', '2024-10-01', 67.2, 'type3')) == '2024-10'
     assert bc.annee_mois(('Lucas', '2023-09-01', 67.2, 'type3')) == '2023-09'
@@ -24,7 +24,7 @@ def test_annee_mois():
 def test_max_emmission():
     assert bc.max_emmission([]) == None
     assert bc.max_emmission(bc.liste1) == ('David', '2024-09-29', 23, 'type4')
-    
+"""    
 def test_filtre_par_prenom():
     assert bc.filtre_par_prenom([], 'Lucas') == []
     assert bc.filtre_par_prenom([('Lucas', '2024-09-01', 67.2, 'type3'), ('David', '2024-09-02', 70.08, 'type3')], 'Lucas') == [('Lucas', '2024-09-01', 67.2, 'type3')]
