@@ -3,7 +3,7 @@ def sante(taille, poids):
 
     imc = poids/(taille*taille)
     if imc < 16.5:
-        res = "famine"
+        res = "caca"
     elif imc < 18.5:
         res = "maigreur"
     elif imc < 25:
