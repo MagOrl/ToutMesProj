@@ -855,7 +855,7 @@ def est_avant(activite1, activite2):
 def annee(activite):
     """
     Retourne l'année d'une activité
-    Args:
+    Arg(s):
         activite (tuple): une activité
 
     Returns:
