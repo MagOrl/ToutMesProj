@@ -922,7 +922,7 @@ def filtre(liste_activites, num_critere, val_critere):
     Returns:
         list: la liste des activites qui vérifient le critère
     """
-    ...
+    
 
 def cumul_emmissions(liste_activites):
     """
