@@ -33,7 +33,7 @@ def test_filtre_par_prenom():
 def test_filtre():
     assert bc.filtre([], 3, 'type1') == []
     assert bc.filtre(bc.liste3, 1, '2024-09-29') == [('David', '2024-09-29', 23, 'type4'), ('Guillaume', '2024-09-29', 22, 'type4')]
-"""    
+ 
 def test_cumul_emmissions():
     assert bc.cumul_emmissions([]) == 0
     assert bc.cumul_emmissions(bc.liste4) == 78
@@ -41,7 +41,7 @@ def test_cumul_emmissions():
 def test_plus_longue_periode_emmissions_decroissantes():
     assert bc.plus_longue_periode_emmissions_decroissantes([]) == 0
     assert bc.plus_longue_periode_emmissions_decroissantes(bc.liste6) == 3
-    
+"""    
 def test_est_bien_triee():
     assert bc.est_bien_triee([]) == True
     assert bc.est_bien_triee([('Lucas', '2024-09-01', 67.2, 'type3')]) == True

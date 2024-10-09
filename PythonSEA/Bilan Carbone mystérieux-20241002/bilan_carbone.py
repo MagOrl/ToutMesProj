@@ -922,8 +922,6 @@ def filtre(liste_activites, num_critere, val_critere):
     Returns:
         list: la liste des activites qui vérifient le critère
     """
-    
-
 def cumul_emmissions(liste_activites):
     """
     Retourne le bilan carbone des activites (cumul des emmissions)
@@ -933,7 +931,11 @@ def cumul_emmissions(liste_activites):
     Returns:
         int: le bilan carbone des activites
     """
-    ...
+    var = 0
+    for i in range(len(liste_activites)):
+        var += liste_activites[i][2]
+    return var
+
 
 def plus_longue_periode_emmissions_decroissantes(liste_activites):
     """
