@@ -41,7 +41,7 @@ def test_cumul_emmissions():
 def test_plus_longue_periode_emmissions_decroissantes():
     assert bc.plus_longue_periode_emmissions_decroissantes([]) == 0
     assert bc.plus_longue_periode_emmissions_decroissantes(bc.liste6) == 3
-"""    
+    
 def test_est_bien_triee():
     assert bc.est_bien_triee([]) == True
     assert bc.est_bien_triee([('Lucas', '2024-09-01', 67.2, 'type3')]) == True
@@ -62,7 +62,7 @@ def test_liste_des_personnes():
     assert bc.liste_des_personnes([('Lucas', '2024-09-01', 67.2, 'type3'), ('Lucas', '2024-09-02', 70.08, 'type3')]) == ['Lucas']
     assert bc.liste_des_personnes([('Lucas', '2024-09-01', 67.2, 'type3'), ('David', '2024-09-02', 70.08, 'type3')]) == ['Lucas', 'David']
 
-
+"""
 def test_fusionner_activites():
     assert bc.fusionner_activites([], []) == []
     assert bc.fusionner_activites([('Lucas', '2024-09-01', 67.2, 'type3')], [('Lucas', '2024-09-02', 70.08, 'type3')]) == [('Lucas', '2024-09-01', 67.2, 'type3'), ('Lucas', '2024-09-02', 70.08, 'type3')]
