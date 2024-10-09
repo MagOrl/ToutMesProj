@@ -83,6 +83,6 @@ def mailu(mail):
         if  mail[0] == "@" or mail[0] == "." or mail[-1] == "." or mail[-1] == "@"  :
             return False
     return True 
-print(mailu("celestin.maubert@gmail.com"))
+print(mailu("celestinmaubert@gmailcom"))
         
      
