@@ -855,7 +855,7 @@ def est_avant(activite1, activite2):
 def annee(activite):
     """
     Retourne l'année d'une activité
-    Args:
+    Arg(s):
         activite (tuple): une activité
 
     Returns:
@@ -922,7 +922,7 @@ def filtre(liste_activites, num_critere, val_critere):
     Returns:
         list: la liste des activites qui vérifient le critère
     """
-    ...
+    
 
 def cumul_emmissions(liste_activites):
     """
