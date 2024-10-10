@@ -69,6 +69,8 @@ print(seuilfonc([1, 4, 1, 2, 3, 4],6))
 #Exo 3.3
 def mailu(mail):
     cptarobaz = 0
+    arobazpoint = []
+    var = ""
     if "." not in mail:
         return False   
     if "@" not in mail:
@@ -81,8 +83,32 @@ def mailu(mail):
             if cptarobaz == 2:
                 return False
         if  mail[0] == "@" or mail[0] == "." or mail[-1] == "." or mail[-1] == "@"  :
-            return False
+            return False 
+        if mail[i] == "@" :
+            arobazpoint = mail.split("@")
+            for n in arobazpoint:
+                if  not "." in arobazpoint[1]:
+                    return False 
+
+
     return True 
-print(mailu("celestinmaubert@gmailcom"))
-        
+print(mailu("celestin.maubert@gmail.com"))
+
+#Exo 4.1
+def jeu (score,listjoueur,prenom):
+    meilleurscore = 0 
+    for i in range(len(score)):
+        if listjoueur[i] == prenom:
+            if score[i] > meilleurscore:
+                meilleurscore = score[i]
+    if meilleurscore == 0 :
+        return None
+    return meilleurscore 
+     
+print(jeu([352100, 325410, 412785, 220199, 127853], ["Batman", "Robin", "Batman", 'Joker', 'Batman'], "Batman"))
+
+#Exo 4.2
+def joulejeu(scores):
+    var = None
+    for i in range(len()):
      
