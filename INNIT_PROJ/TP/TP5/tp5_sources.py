@@ -116,3 +116,12 @@ def joulejeu(scores):
             return True 
     return None 
 print(joulejeu([1,2,3,4]))
+#Exo 4.3
+def apparaitcpt(liste, prenom):
+    cpt = 0
+    for i in range (len(liste)):
+        if prenom == liste[i]:
+            cpt += 1 
+    return cpt
+print(apparaitcpt(["Batman", "Robin", "Batman", "Joker", "Batman"],"Batman"))
+#Exo 4.4
