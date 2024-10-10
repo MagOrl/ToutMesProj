@@ -109,6 +109,10 @@ print(jeu([352100, 325410, 412785, 220199, 127853], ["Batman", "Robin", "Batman"
 
 #Exo 4.2
 def joulejeu(scores):
-    var = None
-    for i in range(len()):
-     
+    for i in range(len(scores)-1):
+        if scores[i] < scores[i+1] :
+            return False 
+        else:
+            return True 
+    return None 
+print(joulejeu([1,2,3,4]))
