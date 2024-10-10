@@ -33,7 +33,7 @@ def test_filtre_par_prenom():
 def test_filtre():
     assert bc.filtre([], 3, 'type1') == []
     assert bc.filtre(bc.liste3, 1, '2024-09-29') == [('David', '2024-09-29', 23, 'type4'), ('Guillaume', '2024-09-29', 22, 'type4')]
-"""    
+ 
 def test_cumul_emmissions():
     assert bc.cumul_emmissions([]) == 0
     assert bc.cumul_emmissions(bc.liste4) == 78
@@ -62,7 +62,7 @@ def test_liste_des_personnes():
     assert bc.liste_des_personnes([('Lucas', '2024-09-01', 67.2, 'type3'), ('Lucas', '2024-09-02', 70.08, 'type3')]) == ['Lucas']
     assert bc.liste_des_personnes([('Lucas', '2024-09-01', 67.2, 'type3'), ('David', '2024-09-02', 70.08, 'type3')]) == ['Lucas', 'David']
 
-
+"""
 def test_fusionner_activites():
     assert bc.fusionner_activites([], []) == []
     assert bc.fusionner_activites([('Lucas', '2024-09-01', 67.2, 'type3')], [('Lucas', '2024-09-02', 70.08, 'type3')]) == [('Lucas', '2024-09-01', 67.2, 'type3'), ('Lucas', '2024-09-02', 70.08, 'type3')]

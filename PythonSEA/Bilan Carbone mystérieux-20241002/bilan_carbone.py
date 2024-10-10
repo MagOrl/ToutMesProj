@@ -829,6 +829,7 @@ liste6 = [
     ('Erika', '2024-09-29', 39.15, 'type1'),
     ('Erika', '2024-09-30', 55.68, 'type1')]
 
+    
 # -----------------------------------------------------------------------------------------------------
 # Listes des fonctions à implémenter
 # -----------------------------------------------------------------------------------------------------
@@ -855,7 +856,7 @@ def est_avant(activite1, activite2):
 def annee(activite):
     """
     Retourne l'année d'une activité
-    Arg(s):
+    Args:
         activite (tuple): une activité
 
     Returns:
@@ -922,7 +923,11 @@ def filtre(liste_activites, num_critere, val_critere):
     Returns:
         list: la liste des activites qui vérifient le critère
     """
-    
+    listefiltre = []
+    for i in range(len(liste_activites)):
+        if liste_activites[i][num_critere] == val_critere:
+            listefiltre.append(liste_activites[i])
+    return listefiltre
 
 def cumul_emmissions(liste_activites):
     """
@@ -933,7 +938,12 @@ def cumul_emmissions(liste_activites):
     Returns:
         int: le bilan carbone des activites
     """
-    ...
+    var = 0
+    for i in range(len(liste_activites)):
+        var += liste_activites[i][2]
+    return var
+
+
 
 def plus_longue_periode_emmissions_decroissantes(liste_activites):
     """
@@ -944,7 +954,16 @@ def plus_longue_periode_emmissions_decroissantes(liste_activites):
     Returns:
         int: la longueur de la plus longue suite d'emmissions décroissantes
     """
-    ...
+    cpt= 0
+    max= 0
+    for i in range(len(liste_activites)-1):
+        if liste_activites[i][2] > liste_activites[i+1][2]:
+            cpt += 1
+        else :
+            cpt = 0
+        if cpt > max :
+            max= cpt
+    return max  
     
 def est_bien_triee(liste_activites):
     """
@@ -955,8 +974,17 @@ def est_bien_triee(liste_activites):
     Returns:
         bool: True si la liste est triée chronologiquement, False sinon
     """
-    ...
-
+    
+    for i in range(len(liste_activites)-1):
+        oldvar = liste_activites[i][1].split("-")
+        newvar = liste_activites[i+1][1].split("-")
+        if int(oldvar[0]) > int(newvar[0]) :
+            return False 
+        if int(oldvar[1]) > int(newvar[1]):
+            return False 
+        if int(oldvar[2]) > int(newvar[2]):
+            return False 
+    return True  
 def liste_des_types(liste_activites):
     """
     Retourne une liste des types d'activité présents dans une liste d'activités
@@ -967,8 +995,10 @@ def liste_des_types(liste_activites):
     Returns:
         list: une liste des types d'activité présents dans une liste d'activités
     """
-    ...
-
+    listo = []
+    for i in range(len(liste_activites)):
+        listo.append(liste_activites[i][3])
+    return list(set(listo))
 def liste_des_personnes(liste_activites):
     """
     Retourne une liste des personnes présentes dans une liste d'activités
