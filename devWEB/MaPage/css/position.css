@@ -1,0 +1,25 @@
+header{
+    text-align: center;
+}
+ul{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+li {
+    flex-grow: 1;
+    padding-left: 45px;
+    padding-right: 45px;
+}
+header img {
+   
+    object-fit:fill;
+}
+article{
+    display: flex;
+    flex-wrap: wrap;
+}
+article img{
+    
+
+}
