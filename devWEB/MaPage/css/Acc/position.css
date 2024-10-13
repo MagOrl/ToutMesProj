@@ -31,3 +31,8 @@ article {
     width: 70%;
     height: 60%;
 }
+#episode{
+    text-align: center;
+    display: block;
+    flex-basis: 100%;
+}
