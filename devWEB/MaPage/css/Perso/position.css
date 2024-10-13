@@ -29,14 +29,25 @@ article img {
 .article1 img{
     float: left;
 }
-aside {
+aside{
+    flex-basis: 25%;
+    margin-left: 10px;
+    margin-right: 10px;
+    float: right;
+    height: 100%;
+    width: 200px;
+}
+aside h1{
+    margin: 2.5%;
+}
+/**aside {
     height: 100%;
     width: 200px;
     float: right;
 }
 aside > p,h1{
     margin: 2.5%;
-}
+}**/
 table, tr {
     width: 75%;
     margin: 2.5%;
