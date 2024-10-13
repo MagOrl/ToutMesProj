@@ -1070,8 +1070,10 @@ def recherche_activite_dichotomique(prenom, jour, type, liste_activites):
     Returns:
         tuple: l'activité recherchée
     """
-    ...
-
+    for i in range(len(liste_activites)):
+        if prenom == liste_activites[i][0] and jour == liste_activites[i][1] and type == liste_activites[i][3]:
+            return liste_activites[i]
+    return None 
 def charger_activites(nom_fichier):
     """
     Charge une liste d'activités à partir d'un fichier au format CSV

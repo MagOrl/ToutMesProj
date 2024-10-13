@@ -77,11 +77,11 @@ def test_premiere_apparition_type():
     assert bc.premiere_apparition_type([('Lucas', '2024-09-01', 67.2, 'type3')], 'type1') == None
     assert bc.premiere_apparition_type([('Lucas', '2024-09-01', 67.2, 'type3'), ('Lucas', '2024-09-02', 70.08, 'type3')], 'type3') == '2024-09-01'
 
-"""
+
 def test_recherche_activite_dichotomique():
     assert bc.recherche_activite_dichotomique('Lucas', '2024-09-01', 'type3', []) == None
     assert bc.recherche_activite_dichotomique('Lucas', '2024-09-01', 'type3', [('Lucas', '2024-09-01', 67.2, 'type3'), ('Lucas', '2024-09-02', 70.08, 'type3')]) == ('Lucas', '2024-09-01', 67.2, 'type3')
-
+"""
 def test_charger_sauver():
     ...
 
