@@ -1,0 +1,25 @@
+html{
+    background-image: url(../../img/pinkback.webp);
+}
+header img{
+    border-radius: 15%;
+}
+article img{
+    border-radius: 5%;
+} 
+ul{
+    list-style: none;
+    border : 1px solid ;
+    border : 1px ;
+}
+li{
+    box-shadow: 1px 1px ;
+    border: 1px solid ;
+}
+footer{
+    box-shadow: 2px 2px ;  
+    border: 1px solid;
+}
+article{
+    border: 1px solid;
+}
