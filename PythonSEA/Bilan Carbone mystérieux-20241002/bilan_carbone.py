@@ -1009,7 +1009,10 @@ def liste_des_personnes(liste_activites):
     Returns:
         list: une liste des personnes présentes dans une liste d'activités
     """
-    ...
+    listo = []
+    for i in range(len(liste_activites)):
+        listo.append(liste_activites[i][0])
+    return list(set(listo))
     
 def fusionner_activites(liste_activites1, liste_activites2):
     """
@@ -1022,8 +1025,23 @@ def fusionner_activites(liste_activites1, liste_activites2):
     Returns:
         list: la liste d'activités fusionnée
     """
-    ...
-
+    listo = liste_activites1 + liste_activites2
+    for i in range(len(listo)-1):
+        oldvar = listo[i][1].split("-")
+        newvar = listo[i+1][1].split("-")
+        if int(oldvar[0]) > int(newvar[0]) :
+            listo.append(listo[i])
+            listo.remove(listo[i])
+            
+        if int(oldvar[1]) > int(newvar[1]):
+            listo.append(listo[i])
+            listo.remove(listo[i])
+            
+        if int(oldvar[2]) > int(newvar[2]):
+            listo.append(listo[i])
+            listo.remove(listo[i])
+    return listo 
+    
 def premiere_apparition_type(liste_activites, type_act):
     """
     Retourne la date de la première apparition d'un type d'activité dans une liste d'activités
@@ -1035,8 +1053,10 @@ def premiere_apparition_type(liste_activites, type_act):
     Returns:
         str: la date de la première apparition du type d'activité
     """
-    ...
-
+    for i in range(len(liste_activites)):
+        if type_act == liste_activites[i][3]:
+            return liste_activites[i][1]
+    return None 
 def recherche_activite_dichotomique(prenom, jour, type, liste_activites):
     """
     Recherche une activité dans une liste d'activités triée
