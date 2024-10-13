@@ -24,6 +24,6 @@ table, tr {
     border-collapse: collapse;
     border:  solid 1.5px;
 }
-aside section{
+aside {
     border: 2px solid;
 }
