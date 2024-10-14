@@ -4,7 +4,6 @@
 # ---------------------------------------------------------------------------------------------
 # Exemples de données pour vous aider à faire des tests
 # ---------------------------------------------------------------------------------------------
-
 liste1 = [
     ('Christophe', '2024-09-26', 15, 'type1'),
     ('Christophe', '2024-09-27', 19, 'type2'),
@@ -893,7 +892,6 @@ def max_emmission(liste_activites):
             max = liste_activites[i][2]
             fullmax = liste_activites[i] 
     return fullmax
-
      
 def filtre_par_prenom(liste_activites, prenom):
     """
@@ -1085,7 +1083,15 @@ def charger_activites(nom_fichier):
         list: la liste d'activités du fichier
     """
     ...
-
+    listo = []
+    fic = open(nom_fichier, 'r')
+    fic.readline()
+    
+    for i in range(len(fic)) :
+        champs = fic[i].split(",")
+        listo.append((champs[i][2]))
+    fic.close()
+    return fic 
 def sauver_activites(nom_fichier, liste_activites):
     """
     Sauvegarde une liste d'activités dans un fichier au format CSV
