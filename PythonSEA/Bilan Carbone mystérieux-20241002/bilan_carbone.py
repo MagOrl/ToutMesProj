@@ -1086,12 +1086,12 @@ def charger_activites(nom_fichier):
     listo = []
     fic = open(nom_fichier, 'r')
     fic.readline()
-    
     for i in range(len(fic)) :
         champs = fic[i].split(",")
-        listo.append((champs[i][2]))
+        listo.append((champs[0],champs[1]))
     fic.close()
     return fic 
+print(charger_activites("emissions_co2_septembre_2024.csv"))
 def sauver_activites(nom_fichier, liste_activites):
     """
     Sauvegarde une liste d'activités dans un fichier au format CSV
