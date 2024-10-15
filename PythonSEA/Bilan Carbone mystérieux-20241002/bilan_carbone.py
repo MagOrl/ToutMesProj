@@ -1065,7 +1065,6 @@ def fusionner_activites(liste_activites1, liste_activites2):
         for i in range(var1, len(liste_activites1)):
             listo.append(liste_activites1[i])
     return listo 
-print(fusionner_activites(liste3, liste4))
 def premiere_apparition_type(liste_activites, type_act):
     """
     Retourne la date de la première apparition d'un type d'activité dans une liste d'activités
