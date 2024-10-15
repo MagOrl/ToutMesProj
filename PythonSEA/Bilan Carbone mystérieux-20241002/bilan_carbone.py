@@ -17,6 +17,7 @@ liste1 = [
     ('Guillaume', '2024-09-27', 20, 'type2'),
     ('Guillaume', '2024-09-28', 16, 'type3'),
     ('Guillaume', '2024-09-29', 22, 'type4'),]
+#date,type, prenom 
 liste2 = [
     ('Christophe', '2024-09-26', 15, 'type1'),
     ('David', '2024-09-26', 18, 'type1'),
@@ -1023,7 +1024,9 @@ def fusionner_activites(liste_activites1, liste_activites2):
     Returns:
         list: la liste d'activités fusionnée
     """
-    listo = liste_activites1 + liste_activites2
+    #une version avec parcours par éléments
+    #uniquement triée chronologiquement
+    """listo = liste_activites1 + liste_activites2
     for i in range(len(listo)-1):
         oldvar = listo[i][1].split("-")
         newvar = listo[i+1][1].split("-")
@@ -1038,8 +1041,31 @@ def fusionner_activites(liste_activites1, liste_activites2):
         if int(oldvar[2]) > int(newvar[2]):
             listo.append(listo[i])
             listo.remove(listo[i])
+    return listo""" 
+    listo = []
+    var1 = 0
+    var2 = 0 
+    while var1 < len(liste_activites1) and var2 < len(liste_activites2) :
+        if liste_activites1[var1][1] < liste_activites2[var2][1]:
+            listo.append(liste_activites1[var1])
+            var1 += 1
+        elif liste_activites1[var1][3] < liste_activites2[var2][3]:
+            listo.append(liste_activites1[var1])
+            var1 += 1
+        elif liste_activites1[var1][0] < liste_activites2[var2][0]:
+            listo.append(liste_activites1[var1])
+            var1 += 1
+        else :
+            listo.append(liste_activites2[var2])
+            var2 +=1
+    if var2 - len(liste_activites2) != 0 :
+        for i in range(var2, len(liste_activites2)):
+            listo.append(liste_activites2[i])
+    if var1 - len(liste_activites1) != 0 :
+        for i in range(var1, len(liste_activites1)):
+            listo.append(liste_activites1[i])
     return listo 
-    
+print(fusionner_activites(liste3, liste4))
 def premiere_apparition_type(liste_activites, type_act):
     """
     Retourne la date de la première apparition d'un type d'activité dans une liste d'activités
@@ -1082,6 +1108,7 @@ def charger_activites(nom_fichier):
     Returns:
         list: la liste d'activités du fichier
     """
+    """
     ...
     listo = []
     fic = open(nom_fichier, 'r')
@@ -1092,6 +1119,7 @@ def charger_activites(nom_fichier):
     fic.close()
     return fic 
 print(charger_activites("emissions_co2_septembre_2024.csv"))
+"""
 def sauver_activites(nom_fichier, liste_activites):
     """
     Sauvegarde une liste d'activités dans un fichier au format CSV

@@ -68,9 +68,7 @@ def test_fusionner_activites():
     assert bc.fusionner_activites([('Lucas', '2024-09-01', 67.2, 'type3')], [('Lucas', '2024-09-02', 70.08, 'type3')]) == [('Lucas', '2024-09-01', 67.2, 'type3'), ('Lucas', '2024-09-02', 70.08, 'type3')]
     assert bc.fusionner_activites([('Lucas', '2024-09-02', 70.08, 'type3')], [('Lucas', '2024-09-01', 67.2, 'type3')]) == [('Lucas', '2024-09-01', 67.2, 'type3'), ('Lucas', '2024-09-02', 70.08, 'type3')]
     assert bc.fusionner_activites([('Lucas', '2024-09-01', 67.2, 'type3'), ('Lucas', '2024-09-02', 70.08, 'type3')], [('Lucas', '2024-09-03', 67.2, 'type3')]) == [('Lucas', '2024-09-01', 67.2, 'type3'), ('Lucas', '2024-09-02', 70.08, 'type3'), ('Lucas', '2024-09-03', 67.2, 'type3')]
-   #je met le teste ci dessous en commentaire car ma liste est belle est bien ordonnée mais elle ne peut pas avoir 
-   #la même structuration des autres éléments, c-a-d que les élément de la liste sera belle est bien chronologique selon la date mais elle ne peut pas respecter le sens des prénoms ou des types etc
-   #assert bc.fusionner_activites(bc.liste3, bc.liste4) == bc.liste2
+    assert bc.fusionner_activites(bc.liste3, bc.liste4) == bc.liste2
 
 def test_premiere_apparition_type():
     assert bc.premiere_apparition_type([], 'type1') == None
