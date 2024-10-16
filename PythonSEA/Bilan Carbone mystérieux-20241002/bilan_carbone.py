@@ -1093,10 +1093,26 @@ def recherche_activite_dichotomique(prenom, jour, type, liste_activites):
     Returns:
         tuple: l'activité recherchée
     """
+    """ PARCOURS PAR INDICE
     for i in range(len(liste_activites)):
         if prenom == liste_activites[i][0] and jour == liste_activites[i][1] and type == liste_activites[i][3]:
-            return liste_activites[i]
-    return None 
+            return liste_activites[i]        
+    return None
+    """
+    if len(liste_activites) < 2:
+        return None 
+    deb = 0
+    end = len(liste_activites)-1
+    while deb <= end:
+        mid = (deb + end)//2
+        if liste_activites[mid][0] < prenom and liste_activites[mid][1] < jour and liste_activites[mid][3] < type :
+            deb = mid+1 
+        elif liste_activites[mid][0] > prenom and liste_activites[mid][1] > jour and liste_activites[mid][3] > type  :
+            end = mid-1 
+        else:  
+            return liste_activites[mid]
+    return None
+print(recherche_activite_dichotomique('Lucas', '2024-09-01', 'type3', [('Lucas', '2024-09-01', 67.2, 'type3'), ('Lucas', '2024-09-02', 70.08, 'type3')]))
 def charger_activites(nom_fichier):
     """
     Charge une liste d'activités à partir d'un fichier au format CSV
