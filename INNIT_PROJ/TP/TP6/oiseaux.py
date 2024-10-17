@@ -109,7 +109,10 @@ def moypiaf(listpiaf):
     return cpt/len(listpiaf)    
 #print(moypiaf(observations1))
 #EXO 3.4
-def 
+def sommefamillepiaf(listpiaf, famillepiaf):
+    cpt = 0
+    for i in range(len(listpiaf)):
+        if famillepiaf == listpiaf[1]
 #--------------------------------------
 # PROGRAMME PRINCIPAL
 #--------------------------------------

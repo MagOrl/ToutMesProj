@@ -4,6 +4,7 @@
 # ---------------------------------------------------------------------------------------------
 # Exemples de données pour vous aider à faire des tests
 # ---------------------------------------------------------------------------------------------
+import csv 
 liste1 = [
     ('Christophe', '2024-09-26', 15, 'type1'),
     ('Christophe', '2024-09-27', 19, 'type2'),
@@ -1133,7 +1134,7 @@ def charger_activites(nom_fichier):
         listo.append((champs[0],champs[1]))
     fic.close()
     return fic 
-charger_activites('emission.csv')
+charger_activites('./PythonSEA/Bilan Carbone mystérieux-20241002/emission.csv')
 
 def sauver_activites(nom_fichier, liste_activites):
     """
