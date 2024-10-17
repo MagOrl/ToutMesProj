@@ -1125,25 +1125,30 @@ def charger_activites(nom_fichier):
     """
     
     listo = []
-    fic = open(nom_fichier, 'r')
+    fic = open(nom_fichier, "r")
     fic.readline()
-    for i in range(len(fic)) :
-        champs = fic[i].split(",")
-        listo.append((champs[0],champs[1]))
-    fic.close()
-    return fic 
-charger_activites('./PythonSEA/Bilan Carbone mystérieux-20241002/emission.csv')
+    for ligne in fic :
+        champs = ligne.split(",")
+        listo.append((champs[0], champs[1], float(champs[2]), champs[3]))
+    fic.close() 
+    return listo
+#('./PythonSEA/Bilan Carbone mystérieux-20241002/emission.csv')
 
 
 def sauver_activites(nom_fichier, liste_activites):
     """
-    Sauvegarde une liste d'activités dans un fichier au format CSV
+    Sauvegarde une liste d'activités dans un fichier au format CSVprint(charger_activites('./PythonSEA/Bilan Carbone mystérieux-20241002/emission.csv'))
     
     Args:
         nom_fichier (str): le nom du fichier CSV où sauvegarder les activités
         liste_activites (list): la liste d'activités à sauvegarder
     """
-    ...
+    fic = open(nom_fichier, "w")
+    for i in range(len(liste_activites)):
+        ligne = liste_activites[i][0] + ","+ liste_activites[i][1] + "," + str(liste_activites[i][2]) + "," + liste_activites[i][3] +"\n"
+        fic.write(ligne)
+    fic.close()
+sauver_activites('./PythonSEA/Bilan Carbone mystérieux-20241002/emissionTESTS.csv', liste5)
 
 # ---------------------------------------------------------------------------------------------
 # Dictionnaire python (structure de données non-encore étudiée en cours)
