@@ -79,14 +79,14 @@ def test_premiere_apparition_type():
 def test_recherche_activite_dichotomique():
     assert bc.recherche_activite_dichotomique('Lucas', '2024-09-01', 'type3', []) == None
     assert bc.recherche_activite_dichotomique('Lucas', '2024-09-01', 'type3', [('Lucas', '2024-09-01', 67.2, 'type3'), ('Lucas', '2024-09-02', 70.08, 'type3')]) == ('Lucas', '2024-09-01', 67.2, 'type3')
-"""
-def test_charger_sauver():
-    ...
+
+#def test_charger_sauver():
+ #   assert bc.charger_sauver()
 
 def test_temps_activite():
     assert bc.temps_activite(('Lucas', '2024-09-01', 67.2, 'type3'), bc.co2_minute) == 67.2/0.96
     assert bc.temps_activite(('Lucas', '2024-09-02', 70.08, 'type5'), bc.co2_minute) is None
-
+"""
 def test_cumul_temps_activite():
     assert bc.cumul_temps_activite([], bc.co2_minute) == 0
     assert bc.cumul_temps_activite([('Lucas', '2024-09-01', 67.2, 'type3')], bc.co2_minute) == 67.2/0.96
