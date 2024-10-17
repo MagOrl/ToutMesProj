@@ -1113,8 +1113,6 @@ def recherche_activite_dichotomique(prenom, jour, type, liste_activites):
         else:  
             return liste_activites[mid]
     return None
-print(recherche_activite_dichotomique('Lucas', '2024-09-01', 'type3', liste5))
-
 def charger_activites(nom_fichier):
     """
     Charge une liste d'activités à partir d'un fichier au format CSV
