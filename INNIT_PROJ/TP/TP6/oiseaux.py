@@ -14,7 +14,7 @@ comptage3 = [0, 0, 4, 3, 2, 1, 2, 4]
 
 # exemples de listes d'observations. Notez que chaque liste correspond à la liste de comptage de
 # même numéro
-observations1 = [("ZMerle", 1), ("Moineau", 1), ("Pic vert", 1), ("Pie", 2),
+observations1 = [("Merle", 1), ("Moineau", 1), ("Pic vert", 1), ("Pie", 2),
                  ("Rouge-gorge", 3), ("Tourterelle", 5)]
 
 observations2 = [("Merle", 2), ("Mésange", 1), ("Moineau", 3),
@@ -109,11 +109,19 @@ def moypiaf(listpiaf):
     return cpt/len(listpiaf)    
 #print(moypiaf(observations1))
 #EXO 3.4
-def sommefamillepiaf(listpiaf, famillepiaf):
+def sommefamillepiaf(listpiaf, famillepiaf, famille):
     cpt = 0
+    var = ""
     for i in range(len(listpiaf)):
-        if famillepiaf == listpiaf[i][1]:
+        if famille == famillepiaf[i][1]:
+                cpt += 1
+                if famillepiaf[i][0] == listpiaf[i][0]:
+                    cpt += 1
+    return cpt
+print(sommefamillepiaf(observations1, oiseaux,"Passereau"))
+
             
+
 #--------------------------------------
 # PROGRAMME PRINCIPAL
 #--------------------------------------
