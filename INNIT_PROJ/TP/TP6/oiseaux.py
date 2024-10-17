@@ -112,7 +112,8 @@ def moypiaf(listpiaf):
 def sommefamillepiaf(listpiaf, famillepiaf):
     cpt = 0
     for i in range(len(listpiaf)):
-        if famillepiaf == listpiaf[1]
+        if famillepiaf == listpiaf[i][1]:
+            
 #--------------------------------------
 # PROGRAMME PRINCIPAL
 #--------------------------------------

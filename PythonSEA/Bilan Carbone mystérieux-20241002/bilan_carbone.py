@@ -1106,14 +1106,14 @@ def recherche_activite_dichotomique(prenom, jour, type, liste_activites):
     end = len(liste_activites)-1
     while deb <= end:
         mid = (deb + end)//2
-        if liste_activites[mid][0] < prenom and liste_activites[mid][1] < jour and liste_activites[mid][3] < type :
+        if liste_activites[mid][0] < prenom or liste_activites[mid][1] < jour or liste_activites[mid][3] < type :
             deb = mid+1 
-        elif liste_activites[mid][0] > prenom and liste_activites[mid][1] > jour and liste_activites[mid][3] > type  :
+        elif liste_activites[mid][0] > prenom or liste_activites[mid][1] > jour or liste_activites[mid][3] > type  :
             end = mid-1 
         else:  
             return liste_activites[mid]
     return None
-print(recherche_activite_dichotomique('Lucas', '2024-09-01', 'type3', [('Lucas', '2024-09-01', 67.2, 'type3'), ('Lucas', '2024-09-02', 70.08, 'type3')]))
+print(recherche_activite_dichotomique('Lucas', '2024-09-01', 'type3', liste5))
 
 def charger_activites(nom_fichier):
     """
@@ -1125,16 +1125,17 @@ def charger_activites(nom_fichier):
     Returns:
         list: la liste d'activités du fichier
     """
-    
+    """
     listo = []
     fic = open(nom_fichier, 'r')
     fic.readline()
     for i in range(len(fic)) :
         champs = fic[i].split(",")
-        listo.append((champs[0],champs[1]))
+       listo.append((champs[0],champs[1]))
     fic.close()
     return fic 
 charger_activites('./PythonSEA/Bilan Carbone mystérieux-20241002/emission.csv')
+"""
 
 def sauver_activites(nom_fichier, liste_activites):
     """
