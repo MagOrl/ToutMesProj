@@ -1123,17 +1123,17 @@ def charger_activites(nom_fichier):
     Returns:
         list: la liste d'activités du fichier
     """
-    """
+    
     listo = []
     fic = open(nom_fichier, 'r')
     fic.readline()
     for i in range(len(fic)) :
         champs = fic[i].split(",")
-       listo.append((champs[0],champs[1]))
+        listo.append((champs[0],champs[1]))
     fic.close()
     return fic 
 charger_activites('./PythonSEA/Bilan Carbone mystérieux-20241002/emission.csv')
-"""
+
 
 def sauver_activites(nom_fichier, liste_activites):
     """
