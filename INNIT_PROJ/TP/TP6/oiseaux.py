@@ -89,11 +89,27 @@ def verifpiaf(liste):
     return True 
 #print(verifpiaf(observations1))
 #EXO 3.2
-def grandpiaf(liste):
-    max = 0 
-    maxmax = 0
+def maxpiaf(liste):
+    oiseaux_max = 0
     for i in range(len(liste)):
-        if 
+        if liste[i][1] > oiseaux_max:
+            oiseaux_max = liste[i][1]
+            
+    return oiseaux_max 
+#print(maxpiaf(observations1))
+#EXO 3.3
+def moypiaf(listpiaf): 
+    cpt = 0 
+    moy = 0
+    if len(listpiaf) == 0 :
+        return None 
+    for i in range(len(listpiaf)):
+        if listpiaf[i][1]:
+            cpt += listpiaf[i][1]
+    return cpt/len(listpiaf)    
+#print(moypiaf(observations1))
+#EXO 3.4
+def 
 #--------------------------------------
 # PROGRAMME PRINCIPAL
 #--------------------------------------

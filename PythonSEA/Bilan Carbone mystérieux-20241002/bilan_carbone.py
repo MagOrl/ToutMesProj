@@ -1113,6 +1113,7 @@ def recherche_activite_dichotomique(prenom, jour, type, liste_activites):
             return liste_activites[mid]
     return None
 print(recherche_activite_dichotomique('Lucas', '2024-09-01', 'type3', [('Lucas', '2024-09-01', 67.2, 'type3'), ('Lucas', '2024-09-02', 70.08, 'type3')]))
+
 def charger_activites(nom_fichier):
     """
     Charge une liste d'activités à partir d'un fichier au format CSV
@@ -1123,8 +1124,7 @@ def charger_activites(nom_fichier):
     Returns:
         list: la liste d'activités du fichier
     """
-    """
-    ...
+    
     listo = []
     fic = open(nom_fichier, 'r')
     fic.readline()
@@ -1133,8 +1133,8 @@ def charger_activites(nom_fichier):
         listo.append((champs[0],champs[1]))
     fic.close()
     return fic 
-print(charger_activites("emissions_co2_septembre_2024.csv"))
-"""
+charger_activites('emission.csv')
+
 def sauver_activites(nom_fichier, liste_activites):
     """
     Sauvegarde une liste d'activités dans un fichier au format CSV
