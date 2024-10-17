@@ -1144,6 +1144,7 @@ def sauver_activites(nom_fichier, liste_activites):
         liste_activites (list): la liste d'activités à sauvegarder
     """
     fic = open(nom_fichier, "w")
+    fic.write("Nom, Date, Consomation(g), Type"+"\n")
     for i in range(len(liste_activites)):
         ligne = liste_activites[i][0] + ","+ liste_activites[i][1] + "," + str(liste_activites[i][2]) + "," + liste_activites[i][3] +"\n"
         fic.write(ligne)
