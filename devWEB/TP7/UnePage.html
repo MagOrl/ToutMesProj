@@ -6,12 +6,95 @@
     <title>Formulaire Bowling</title>
 </head>
 <body>
+    <header>
+        <h1> Soirée Bowling</h1>
+        <p> inscription</p>
+    </header>
     <form>
+
         <fieldset>
             <legend><h1>Je m'Identifie</h1></legend>
+            <div>
             <label for="prenom">Mon prénom</label>
             <input id="prenom" type="text"> 
+            </div>
+            <div>
+            <label for="groupe">Mon groupe</label>
+            <select id="groupe">
+                <option value="11"> 11</option>
+                <option value="12"> 12</option>
+                <option value="13"> 13</option>
+                <option value="14"> 14</option>
+            </select>
+            </div>
+            <div>
+            <label for="mail">Mon adresse mail</label>
+            <input id="mail" type="email">
+            </div>
+            <div>
+            <label for="mdp">Mon mot de passe</label>
+            <input id="mdp" type="password">
+            </div>
         </fieldset>
+            <fieldset>
+                <legend><h1>J'informe</h1></legend>
+                <p> Cochez les alimeents que vous allez aimez manger:</p>
+                <div>
+                    <ul>
+                        <li>       
+                            <input id="frite" type="checkbox">
+                            <label for="frite">Frites</label>
+                        </li>
+                        <li>
+                            <input id="steak" type="checkbox">
+                            <label for="steak">Steak haché</label>
+                        </li>
+                        <li>
+                            <input id="epin" type="checkbox">
+                            <label for="epin">Epinards</label>
+                        </li>
+                        <li>
+                            <input id="huitre" type="checkbox">
+                            <label for="huitre">Huitres</label>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <p>Veuillez indiquer votre pointure:</p>
+                    <ul>
+                        <li>       
+                            <input id="38" type="radio">
+                            <label for="38">Moins de 38</label>
+                        </li>
+                        <li>
+                            <input id="3940" type="radio">
+                            <label for="3940">Entre 39 et 40</label>
+                        </li>
+                        <li>
+                            <input id="4142" type="radio">
+                            <label for="4142">Entre 41 et 42</label>
+                        </li>
+                        <li>
+                            <input id="43" type="radio">
+                            <label for="43">Plus de 43</label>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <label for="msg">
+                        Je laisse un message (facultatif)
+                        <span>
+                            Ce champs est facultatif
+                        </span>
+                    </label>
+                    <textarea id="msg">
+                    </textarea>
+                </div>
+                <div>
+                <input type="submit" value="Je m'inscris">
+                <input type="reset" value="Je réinitialise le formulaire">
+                </div>
+            </fieldset>
     </form>
 </body>
 </html>
