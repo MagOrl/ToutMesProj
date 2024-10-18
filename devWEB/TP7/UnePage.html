@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulaire Bowling</title>
+    <link href="./Style.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -16,7 +17,7 @@
             <legend><h1>Je m'Identifie</h1></legend>
             <div>
             <label for="prenom">Mon prénom</label>
-            <input id="prenom" type="text"> 
+            <input id="prenom" type="text" placeholder="Ex: Konata"> 
             </div>
             <div>
             <label for="groupe">Mon groupe</label>
@@ -29,7 +30,7 @@
             </div>
             <div>
             <label for="mail">Mon adresse mail</label>
-            <input id="mail" type="email">
+            <input id="mail" type="email" placeholder="konata.izumi@gmail.com">
             </div>
             <div>
             <label for="mdp">Mon mot de passe</label>
@@ -87,10 +88,12 @@
                             Ce champs est facultatif
                         </span>
                     </label>
+                    <div>
                     <textarea id="msg">
                     </textarea>
+                    </div>
                 </div>
-                <div>
+                <div id="lesturc">
                 <input type="submit" value="Je m'inscris">
                 <input type="reset" value="Je réinitialise le formulaire">
                 </div>

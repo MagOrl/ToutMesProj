@@ -1,0 +1,26 @@
+header{
+    border: 1px solid;
+    background-color: skyblue;
+    border-radius: 15px;
+    text-align: center;   
+}
+ul{
+    list-style: none;
+}
+div{
+    margin: 1%;
+}
+body{
+    background-color: #edfbfd;
+}
+.lesturc{
+    margin: 1%;
+}
+span{
+    display: flex;
+    color: gray;
+    font-size: 15px;
+}
+fieldset h1{
+    font-size: 99%;
+}
