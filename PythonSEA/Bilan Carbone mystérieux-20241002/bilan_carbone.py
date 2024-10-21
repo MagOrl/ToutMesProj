@@ -1168,8 +1168,14 @@ def temps_activite(activite, co2_minute):
     Returns:
         float: la durée de l'activité en minutes
     """
-    ...
+    listo = []
     
+    for elem in co2_minute.items():
+        listo.append(elem) 
+    for i in range(len(listo)):
+        if activite[3] == listo[i][0]:
+            return activite[2]/listo[i][1]
+    return None           
 def cumul_temps_activite(liste_activites, co2_minute):
     """
     Retourne le temps total passé à réaliser des activités
