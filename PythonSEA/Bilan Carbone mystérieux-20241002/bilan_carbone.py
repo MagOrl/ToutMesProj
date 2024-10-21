@@ -1186,5 +1186,15 @@ def cumul_temps_activite(liste_activites, co2_minute):
     Returns:
         int: le temps total passé à réaliser des activités
     """
-    ...
 
+    cpt = 0.0 
+    listo = []
+    for elem in co2_minute.items():
+        listo.append(elem) 
+    for i in range(len(liste_activites)):
+        if liste_activites[i][3] == listo[i][0]:
+            cpt += listo[i][1]
+            if cpt:
+                return cpt
+
+print(cumul_temps_activite([('Lucas', '2024-09-01', 67.2, 'type3')], co2_minute))
