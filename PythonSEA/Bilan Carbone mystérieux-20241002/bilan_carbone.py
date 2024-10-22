@@ -1149,7 +1149,7 @@ def sauver_activites(nom_fichier, liste_activites):
         ligne = liste_activites[i][0] + ","+ liste_activites[i][1] + "," + str(liste_activites[i][2]) + "," + liste_activites[i][3] +"\n"
         fic.write(ligne)
     fic.close()
-sauver_activites('./PythonSEA/Bilan Carbone mystérieux-20241002/emissionTESTS.csv', liste5)
+#sauver_activites('./PythonSEA/Bilan Carbone mystérieux-20241002/emissionTESTS.csv', liste5)
 
 # ---------------------------------------------------------------------------------------------
 # Dictionnaire python (structure de données non-encore étudiée en cours)
