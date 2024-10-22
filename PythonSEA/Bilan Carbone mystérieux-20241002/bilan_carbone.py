@@ -1184,7 +1184,7 @@ def cumul_temps_activite(liste_activites, co2_minute):
         liste_activites (list): une liste d'activités
             
     Returns:
-        int: le temps total passé à réaliser des activités
+        float: le temps total passé à réaliser des activités
     """
 
     cptime = 0
@@ -1196,4 +1196,4 @@ def cumul_temps_activite(liste_activites, co2_minute):
                 cptconso += liste_activites[i][2]
     if cptime == 0:
         return 0
-    return int(cptconso/cptime) 
+    return cptconso/cptime
