@@ -130,12 +130,10 @@ print(listobserv(comptage1, observations1))
 #EXO 4.2
 def utilizater(observ):
     listo = []
-    popo = ()
     for i in range(len(observ)):
-        popo = (observ[i][0], input("Met un chiffre nonobstant"))
-        listo.append(popo)
+        listo.append(tuple([observ[i][0],input("Met un chiffre enculer")]))
     return listo
-#print(utilizater(observations1))
+print(utilizater(observations1))
 #EXO 5.1
 
 #--------------------------------------
