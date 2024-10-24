@@ -2,13 +2,27 @@
     ATTENTION VOUS DEVEZ METTRE DES DOCSTRING A TOUTES VOS FONCTIONS
 """
 def afficher_menu(titre, liste_options):
-    ...
+    print("+-------------------------+")
+    print(titre,"|")
+    print("+-------------------------+")
+    imin = 4
+    imax = 0
+    for i in range(len(liste_options)):
+        print(i+1,"-->",liste_options[i])
 
 def demander_nombre(message, borne_max):
-    ...
+    meme = message + "[1-" +  str(borne_max) + "]" +"\n"
+    rep = int(input(meme))
+    if str(rep).isdecimal() and 0 > rep > 5:
+        return rep
+    else :
+        return None
 
 def menu(titre, liste_options):
-    ...
+    afficher_menu(titre ,liste_options)
+    ceci = demander_nombre("Entrez votre choix", len(liste_options))
+    return ceci 
+
 
 def programme_principal():
     liste_options = ["Charger un fichier",
@@ -16,7 +30,8 @@ def programme_principal():
                      "Afficher la population d'un département", 
                      "Quitter"]
     liste_communes = []
-    while True:
+    quitter =False
+    while  not quitter:
         rep = menu("MENU DE MON APPLICATION", liste_options)
         if rep is None:
             print("Cette option n'existe pas")
@@ -26,8 +41,9 @@ def programme_principal():
             print("Vous avez choisi", liste_options[rep - 1])
         elif rep == 3:
             print("Vous avez choisi", liste_options[rep - 1])
-        else:
-            break
+        elif rep == 4:
+            print("Vous avez choisi", liste_options[rep - 1])
+            quitter = True
         input("Appuyer sur Entrée pour continuer")
     print("Merci au revoir!")
 
