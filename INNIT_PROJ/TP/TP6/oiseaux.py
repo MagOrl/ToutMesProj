@@ -135,7 +135,6 @@ def utilizater(observ):
     return listo
 print(utilizater(observations1))
 #EXO 5.1
-
 #--------------------------------------
 # PROGRAMME PRINCIPAL
 #--------------------------------------
