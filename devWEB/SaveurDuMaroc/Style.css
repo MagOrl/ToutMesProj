@@ -1,0 +1,42 @@
+header img{
+    height  : 150px;
+    width: 1000px;
+    object-fit:fill;
+    flex-basis: 100%;
+}
+
+ul{
+    display: flex;
+    list-style: none;
+    background-color: rgb(46, 4, 4);
+    
+}
+li {
+    flex-grow: 1;
+    color: white
+}
+body ul{
+    flex-wrap: nowrap; 
+}
+body{
+    background-color: bisque;
+}
+th{
+    background-color: rgba(155, 91, 49, 0.664);
+}
+aside{
+    display: flex;
+    background-color: gray;
+    order: 1;
+    flex: 0 0 250px;
+}
+aside h2{
+    color: bisque; 
+}
+aside li{
+    list-style: none;
+    color: rgba(0, 0, 0, 0.685);
+}
+footer ul{
+    background-color: gray;
+}
