@@ -5,15 +5,13 @@ def afficher_menu(titre, liste_options):
     print("+-------------------------+")
     print(titre,"|")
     print("+-------------------------+")
-    imin = 4
-    imax = 0
     for i in range(len(liste_options)):
         print(i+1,"-->",liste_options[i])
 
 def demander_nombre(message, borne_max):
     meme = message + "[1-" +  str(borne_max) + "]" +"\n"
     rep = int(input(meme))
-    if str(rep).isdecimal() and 0 > rep > 5:
+    if rep.isdecimal() and 0 > rep > 5:
         return rep
     else :
         return None
@@ -25,14 +23,14 @@ def menu(titre, liste_options):
 
 
 def programme_principal():
-    liste_options = ["Charger un fichier",
-                     "Rechercher la population d'une commune",
-                     "Afficher la population d'un département", 
+    liste_options = ["Teste si liste ordonnée",
+                     "Charge fichier",
+                     "Fusion de liste", 
                      "Quitter"]
     liste_communes = []
     quitter =False
     while  not quitter:
-        rep = menu("MENU DE MON APPLICATION", liste_options)
+        rep = input(menu("MENU DE MON APPLICATION", liste_options))
         if rep is None:
             print("Cette option n'existe pas")
         elif rep == 1:
