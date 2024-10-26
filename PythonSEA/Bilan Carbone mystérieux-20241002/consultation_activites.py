@@ -22,24 +22,7 @@ def nombreentrer(message, nombremax):
 def menu(liste_options):
     affichage_menu(liste_options)
     return nombreentrer("Entrez votre choix ", len(liste_options))
-def charger_activites(nom_fichier):
-    """
-    Charge une liste d'activités à partir d'un fichier au format CSV
-    
-    Args:
-        nom_fichier (str): le nom du fichier CSV contenant les activités
-            
-    Returns:
-        list: la liste d'activités du fichier
-    """
-    listo = []
-    fic = open(nom_fichier, "r")
-    fic.readline()
-    for ligne in fic :
-        champs = ligne.split(",")
-        listo.append((champs[0], champs[1], float(champs[2]),"type"+ champs[3][4]))
-    fic.close() 
-    return listo    
+  
                     
                     #########################################################################################################""
 # Ici votre programme principal
@@ -55,9 +38,10 @@ def programme_principal():
         if rep == 1:
                 para = input("Mettre un prenom de la liste" + "\n")
                 print(f"Voici toutes les activité liée à {para}" +"\n")
-                print(bc.filtre_par_prenom(charger_activites(('./PythonSEA/Bilan Carbone mystérieux-20241002/emission.csv')),para))
-                if bc.filtre_par_prenom(charger_activites(('./PythonSEA/Bilan Carbone mystérieux-20241002/emission.csv')),para) == []:
+                print(bc.filtre_par_prenom(bc.charger_activites(('./PythonSEA/Bilan Carbone mystérieux-20241002/emission.csv')),para))
+                if bc.filtre_par_prenom(bc.charger_activites(('./PythonSEA/Bilan Carbone mystérieux-20241002/emission.csv')),para) == []:
                     print("la recherche n'a pas abouti"+"\n"+ "Le prénom n'est pas dans la liste "+ "\n"+"Ou vous avez surement mal tapper le prénom, un prénom commence par une majuscule et ne contient aucun espace")
+                
         if rep == len(liste_options):
             quitter = True
         

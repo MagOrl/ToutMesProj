@@ -1129,7 +1129,7 @@ def charger_activites(nom_fichier):
     fic.readline()
     for ligne in fic :
         champs = ligne.split(",")
-        listo.append((champs[0], champs[1], float(champs[2]), champs[3]))
+        listo.append((champs[0], champs[1], float(champs[2]),"type"+champs[3][4]))
     fic.close() 
     return listo
 #('./PythonSEA/Bilan Carbone mystérieux-20241002/emission.csv')
