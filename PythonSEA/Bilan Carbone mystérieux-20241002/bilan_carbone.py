@@ -845,15 +845,17 @@ def est_avant(activite1, activite2):
     Returns:
         bool: True si activite1 est avant activite2, False sinon
     """
-    if activite1[3] < activite2[3]:
-        return True
-    elif activite1[0] < activite2[0]:
-        return True
-    elif activite1[2] < activite2[2]:
-        return True 
-    else :
-        return False
-
+    try:
+        if activite1[3] < activite2[3]:
+            return True
+        elif activite1[0] < activite2[0]:
+            return True
+        elif activite1[2] < activite2[2]:
+            return True 
+        else :
+            return False
+    except :
+        return None 
 def annee(activite):
     """
     Retourne l'année d'une activité
@@ -863,9 +865,11 @@ def annee(activite):
     Returns:
         str: l'année de l'activité
     """
-    JusteAnne = activite[1][0]+activite[1][1]+activite[1][2]+activite[1][3]
-    return JusteAnne
- 
+    try :
+        JusteAnne = activite[1][0]+activite[1][1]+activite[1][2]+activite[1][3]
+        return JusteAnne
+    except:
+        return None 
 def annee_mois(activite):
     """
     Retourne l'année et le mois d'une activité
@@ -875,9 +879,11 @@ def annee_mois(activite):
     Returns:
         str: l'année et le mois de l'activité
     """
-    MoisAnne = activite[1][0]+activite[1][1]+activite[1][2]+activite[1][3]+activite[1][4]+activite[1][5]+activite[1][6]
-    return MoisAnne
-
+    try :
+        MoisAnne = activite[1][0]+activite[1][1]+activite[1][2]+activite[1][3]+activite[1][4]+activite[1][5]+activite[1][6]
+        return MoisAnne
+    except:
+        return None
 def max_emmission(liste_activites):
     """
     Retourne l'activité avec le plus grand bilan carbone
@@ -893,8 +899,7 @@ def max_emmission(liste_activites):
         if liste_activites[i][2]> max:
             max = liste_activites[i][2]
             fullmax = liste_activites[i] 
-    return fullmax
-     
+    return fullmax     
 def filtre_par_prenom(liste_activites, prenom):
     """
     Retourne la liste des activites effectuées par un usager donné
@@ -904,14 +909,12 @@ def filtre_par_prenom(liste_activites, prenom):
 
     Returns:
         list: la liste des activites effectuées par l'usager prenom 
-    """
-    #AR = accusé de récéption 
+    """ 
     listo = []
     for i in range(len(liste_activites)):
         if liste_activites[i][0] == prenom:
             listo.append(liste_activites[i])
-    return listo    
-
+    return listo
 def filtre(liste_activites, num_critere, val_critere):
     """
     Retourne la liste des activites qui vérifient un critère donné
@@ -923,11 +926,15 @@ def filtre(liste_activites, num_critere, val_critere):
     Returns:
         list: la liste des activites qui vérifient le critère
     """
-    listefiltre = []
-    for i in range(len(liste_activites)):
-        if liste_activites[i][num_critere] == val_critere:
-            listefiltre.append(liste_activites[i])
-    return listefiltre
+    try:
+        listefiltre = []
+        for i in range(len(liste_activites)):
+            if liste_activites[i][num_critere] == val_critere:
+                listefiltre.append(liste_activites[i])
+        return listefiltre
+    except:
+        return []
+
 
 def cumul_emmissions(liste_activites):
     """
@@ -938,11 +945,13 @@ def cumul_emmissions(liste_activites):
     Returns:
         int: le bilan carbone des activites
     """
-    var = 0
-    for i in range(len(liste_activites)):
-        var += liste_activites[i][2]
-    return var
-
+    try :
+        var = 0
+        for i in range(len(liste_activites)):
+            var += liste_activites[i][2]
+        return var
+    except:
+        return None 
 
 
 def plus_longue_periode_emmissions_decroissantes(liste_activites):
@@ -954,16 +963,19 @@ def plus_longue_periode_emmissions_decroissantes(liste_activites):
     Returns:
         int: la longueur de la plus longue suite d'emmissions décroissantes
     """
-    cpt= 0
-    max= 0
-    for i in range(len(liste_activites)-1):
-        if liste_activites[i][2] > liste_activites[i+1][2]:
-            cpt += 1
-        else :
-            cpt = 0
-        if cpt > max :
-            max= cpt
-    return max  
+    try :
+        cpt= 0
+        max= 0
+        for i in range(len(liste_activites)-1):
+            if liste_activites[i][2] > liste_activites[i+1][2]:
+                cpt += 1
+            else :
+                cpt = 0
+            if cpt > max :
+                max= cpt
+        return max
+    except :
+        return None
     
 def est_bien_triee(liste_activites):
     """
@@ -998,7 +1010,8 @@ def liste_des_types(liste_activites):
     listo = []
     for i in range(len(liste_activites)):
         listo.append(liste_activites[i][3])
-    return list(set(listo))
+    listo = list(dict.fromkeys(listo))
+    return listo
 def liste_des_personnes(liste_activites):
     """
     Retourne une liste des personnes présentes dans une liste d'activités
@@ -1009,12 +1022,13 @@ def liste_des_personnes(liste_activites):
     Returns:
         list: une liste des personnes présentes dans une liste d'activités
     """
+
     listo = []
     for i in range(len(liste_activites)):
         listo.append(liste_activites[i][0])
-    return list(set(listo))
+    listo = list(dict.fromkeys(listo))
+    return listo 
 
-    
 def fusionner_activites(liste_activites1, liste_activites2):
     """
     Fusionne deux listes d'activités triées chronologiquement en une liste triée chronologiquement
@@ -1026,24 +1040,6 @@ def fusionner_activites(liste_activites1, liste_activites2):
     Returns:
         list: la liste d'activités fusionnée
     """
-    #une version avec parcours par éléments
-    #uniquement triée chronologiquement
-    """listo = liste_activites1 + liste_activites2
-    for i in range(len(listo)-1):
-        oldvar = listo[i][1].split("-")
-        newvar = listo[i+1][1].split("-")
-        if int(oldvar[0]) > int(newvar[0]) :
-            listo.append(listo[i])
-            listo.remove(listo[i])
-            
-        if int(oldvar[1]) > int(newvar[1]):
-            listo.append(listo[i])
-            listo.remove(listo[i])
-            
-        if int(oldvar[2]) > int(newvar[2]):
-            listo.append(listo[i])
-            listo.remove(listo[i])
-    return listo""" 
     listo = []
     var1 = 0
     var2 = 0 
@@ -1094,12 +1090,6 @@ def recherche_activite_dichotomique(prenom, jour, type, liste_activites):
             
     Returns:
         tuple: l'activité recherchée
-    """
-    """ PARCOURS PAR INDICE
-    for i in range(len(liste_activites)):
-        if prenom == liste_activites[i][0] and jour == liste_activites[i][1] and type == liste_activites[i][3]:
-            return liste_activites[i]        
-    return None
     """
     if len(liste_activites) < 2:
         return None 
@@ -1170,13 +1160,15 @@ def temps_activite(activite, co2_minute):
         float: la durée de l'activité en minutes
     """
     listo = []
-    
-    for elem in co2_minute.items():
-        listo.append(elem) 
-    for i in range(len(listo)):
-        if activite[3] == listo[i][0] and listo[i][1] != 0:
-            return activite[2]/listo[i][1]
-    return None           
+    try :
+        for elem in co2_minute.items():
+            listo.append(elem) 
+        for i in range(len(listo)):
+            if activite[3] == listo[i][0] and listo[i][1] != 0:
+                return activite[2]/listo[i][1]
+        return None
+    except:
+        return None           
 def cumul_temps_activite(liste_activites, co2_minute):
     """
     Retourne le temps total passé à réaliser des activités
@@ -1187,14 +1179,16 @@ def cumul_temps_activite(liste_activites, co2_minute):
     Returns:
         float: le temps total passé à réaliser des activités
     """
-
-    cptime = 0
-    cptconso = 0 
-    for i in range (len(liste_activites)):
-        for cle, valeur in co2_minute.items():
-            if cle == liste_activites[i][3]:
-                cptime += valeur
-                cptconso += liste_activites[i][2]
-    if cptime == 0:
-        return 0
-    return cptconso/cptime
+    try :
+        cptime = 0
+        cptconso = 0 
+        for i in range (len(liste_activites)):
+            for cle, valeur in co2_minute.items():
+                if cle == liste_activites[i][3]:
+                    cptime += valeur
+                    cptconso += liste_activites[i][2]
+        if cptime == 0:
+            return 0
+        return cptconso/cptime
+    except:
+        return None 

@@ -45,10 +45,10 @@ def programme_principal():
                      "Voir vos listes sauvgarder", 
                      "Quitter"]
     liste_info =["Recherche par nom(1*)",
-                 "Teste si 2 liste est bien avant l'autre(2)","Donne le maximum d'une emission(1)",
-                 "Fusion de listes(2*)","Recherche dichitomique(N/A)","Liste de personne(1)","Cumul du temps d'activité d'une liste(1)","date de première apparition d'un type(1)",
-                 "filtres selon plusieures critères(1*)","Plus longue suite d'émission décroissante(1)","Si la liste est bien trier(1)","Liste de types(1)","Temps d'activité pour 1 profile(N/A)",
-                 "Savoir l'année d'un profile(N/A)","Savoir l'année et le mois d'un profile(N/A)",
+                 "Teste si 2 liste est croissant(2)","Donne le maximum d'une emission(1)",
+                 "Fusion de listes(2*)","Recherche(N/A)","Liste de personne uniquement(1)","Cumul du temps d'activité d'une liste(1)","date de première apparition d'un type(1)",
+                 "filtres selon plusieures critères(1*)","Plus longue suite d'émission décroissante(1)","Verifie si liste est trier(1)","Liste de types uniquement(1)","Temps d'activité pour 1 seule profile(N/A)",
+                 "Savoir l'année d'un profile(N/A)","Savoir l'année et le mois d'un profile(N/A)","Emission totale d'une liste(1)",
                  "Quitter \n le chiffre entre paranthèse signifie le nombre de liste qu'il faut avoir sauvgarder au préalable \n pour les options ou on à besoin de qu'une seule liste il est aussi possible de le faire avec la grande liste(c'est comme ca qu'on enregistres des listes) \n les '*' signifie que l'option propose d'enregistrer la liste obtenu pour la manipuler par la suite"]
     saved = {}
     quitter = False 
@@ -404,8 +404,19 @@ def programme_principal():
                         #je suis au courant que l'utilisateur tappe déjà l'année et le mois pour chercher ça mais pour l'instant j'ai pas meilleur solution
                     except:
                         print("veuillez tappez correctement les information \n quoi ?! vous pouvez pas mettre l'année ni le mois parceque c'est justement ce que vous cherchez ?")
-
-
+                if repinfo == 16:
+                    if len(saved) != 0:
+                        question = input("voulez vous utiliser l'une de vos liste[Y/N]"+"\n" "si vous repondez [N]on nous allons utiliser la grande liste"+"\n")
+                        if question == "Y":
+                            cle = input("quelle liste voulez vous mettre \n")
+                            for keys, valeur in saved.items():
+                                if cle == keys:
+                                    valoc = valeur
+                            print(f"voici la consomation total de co2 de la liste : {cle} : {bc.cumul_emmissions(valoc)} g")
+                        if question == "N":
+                            print(f"voici la consomation total de co2 de la liste {bc.cumul_emmissions(bc.charger_activites('./PythonSEA/Bilan Carbone mystérieux-20241002/emission.csv'))} g")
+                    else:
+                        print(f"voici la consomation total de co2 de la liste  {bc.cumul_emmissions(bc.charger_activites('./PythonSEA/Bilan Carbone mystérieux-20241002/emission.csv'))} g")
                 if repinfo == len(liste_info):
                     quitterinfo = True
                 input("Appuyer sur Entrée pour continuer")
