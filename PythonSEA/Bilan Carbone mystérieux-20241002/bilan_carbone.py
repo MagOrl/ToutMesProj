@@ -1013,6 +1013,7 @@ def liste_des_personnes(liste_activites):
     for i in range(len(liste_activites)):
         listo.append(liste_activites[i][0])
     return list(set(listo))
+
     
 def fusionner_activites(liste_activites1, liste_activites2):
     """
