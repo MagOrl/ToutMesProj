@@ -255,7 +255,7 @@ def programme_principal():
                             for keys, valeur in saved.items():
                                 if cle == keys:
                                     valoc = valeur
-                            print(f"le cumul temps total est de {cle}: {bc.cumul_temps_activite(valoc,bc.co2_minute)} minutes")
+                            print(f"le cumul temps total de la liste {cle} est : {bc.cumul_temps_activite(valoc,bc.co2_minute)} minutes")
                         if question == "N":
                             print(f"Voici le cumul de temps total : {bc.cumul_temps_activite(bc.charger_activites('./PythonSEA/Bilan Carbone mystérieux-20241002/emission.csv'), bc.co2_minute)} m")
                     else:
