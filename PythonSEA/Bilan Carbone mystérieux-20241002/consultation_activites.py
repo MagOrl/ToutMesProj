@@ -183,20 +183,23 @@ def programme_principal():
                         print(f"la consomation maximale est{bc.max_emmission(bc.charger_activites(('./PythonSEA/Bilan Carbone mystérieux-20241002/emission.csv')))}")
                 if repinfo == 4:
                     if len(saved) >= 2:
-                        clay1 = input("Quelle est la premiere liste que voulez vous mettre ?"+"\n")
-                        clay2 = input("Quelle est la deuxième liste que voulez vous mettre ?"+"\n")
-                        for keys,valeur in saved.items():
-                            if clay1 == keys:
-                                varlocal1 = valeur
-                            else:
-                                print("aucune liste de ce nom")
-                        for key, valor in saved.items():
-                            if clay2 == key:
-                                varlocal2 = valor
-                            else:
-                                print("aucune liste de ce nom")
-                        print(bc.fusionner_activites(varlocal1,varlocal2))
-                        print(f"voici la fusion entre {clay1} et {clay2}")
+                        try:
+                            clay1 = input("Quelle est la premiere liste que voulez vous mettre ?"+"\n")
+                            clay2 = input("Quelle est la deuxième liste que voulez vous mettre ?"+"\n")
+                            for keys,valeur in saved.items():
+                                if clay1 == keys:
+                                    varlocal1 = valeur
+                                else:
+                                    print("aucune liste de ce nom")
+                            for key, valor in saved.items():
+                                if clay2 == key:
+                                    varlocal2 = valor
+                                else:
+                                    print("aucune liste de ce nom")
+                            print(bc.fusionner_activites(varlocal1,varlocal2))
+                            print(f"voici la fusion entre {clay1} et {clay2}")
+                        except:
+                            print("Vous avez mal tapper le nom d'une de vos listes regarder dans la l'option 3 du menu pour voir vos le nom de vos listes")
                         listYN = input("Voulez vous sauvgarder les information ? [Y/N]"+"\n")
                         if listYN == "N":
                             pass 
