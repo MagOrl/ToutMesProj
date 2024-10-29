@@ -1,6 +1,8 @@
 import bilan_carbone as bc
 # Ici vos fonctions dédiées aux interactions
 def affichage_menu(liste_options):
+    """L'affichage du menu principale 
+    args(liste): liste d'option proposer """
     print("+--------------------------------------+")
     print(" Choisi les options que tu désire      |")
     print("+--------------------------------------+")
@@ -8,6 +10,12 @@ def affichage_menu(liste_options):
         print(i + 1, "-->", liste_options[i])
 
 def nombreentrer(message, nombremax):
+    """regarde le nombre entrer par la personne et  détermine si elle est juste ou non
+        arg(str): message du menu
+        arg(int): la longeur de la liste d'option
+        
+        return:
+        (int): le nombre choisi par l'utilisateur """
     messagestr = message + "[1-" + str(nombremax) + "]" + "\n"
     while True:
         try:
@@ -19,12 +27,22 @@ def nombreentrer(message, nombremax):
         except ValueError:
             print("Veuillez entrer un nombre valide.")
 def menu(liste_options):
+    """Le menu en entièreté
+        arg(liste): pour pouvoir afficher toutes les options disponible"""
     affichage_menu(liste_options)
     return nombreentrer("Entrez votre choix ", len(liste_options))
 def indepth(liste_info):
+    """affichage du menu de la liste d'option des choix de fonctions à faire tourner
+    arg(list): la liste d'option de fonction à faire tourner"""
     for i in range(len(liste_info)):
         print(i + 1, "-->", liste_info[i])
 def nombreindepth(message, nombremax):
+    """regarde le nombre entrer par la personne et  détermine si elle est juste ou non
+        arg(str): message du menu
+        arg(int): la longeur de la liste d'option de fonction
+        
+        return:
+        (int): le nombre choisi par l'utilisateur """
     messagestr = message + "[1-" + str(nombremax) + "]" + "\n"
     while True:
         try:
@@ -36,10 +54,14 @@ def nombreindepth(message, nombremax):
         except ValueError:
             print("Veuillez entrer un nombre valide.")
 def menuindepth(liste_info):
+    """affichage complet du menu de fonctions
+    arg(list): la liste de fonctions disponible"""
     affichage_menu(liste_info)
     return nombreentrer("Entrez votre choix ", len(liste_info))
 # Ici votre programme principal
 def programme_principal():
+    """Le programme principale, reprennant toutes les autres fonctions, pour pouvoir avoir un affichage adéquoit pour que l'utilisateur
+    puisse interagire avec le fichier emission.csv, plus de documentation dans le code et dans l'option 4:'Comment utiliser le programme' """
     liste_options = ["Recherche d'info",
                      "Sauvgarder les info dans un fichiers CSV",
                      "Voir vos listes sauvgarder","Comment utiliser le programme",
