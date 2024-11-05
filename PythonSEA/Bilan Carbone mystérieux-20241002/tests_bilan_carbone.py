@@ -21,6 +21,7 @@ def test_est_avant():
 def test_annee():
     assert bc.annee(('Lucas', '2024-09-01', 67.2, 'type3')) == '2024'
     assert bc.annee(('Lucas', '1999-12-27', 70.08, 'type3')) == '1999'
+    assert bc.annee(('Lucas', '999-12-27', 70.08, 'type3')) == '999' 
     assert bc.annee(()) == None
 
 
