@@ -68,8 +68,8 @@ def test_reunion_troupeaux():
     assert troupeaux.reunion_troupeaux(troupeau_de_perrette, troupeau_de_jean) == {'vache':12+7, 'cochon':17, 'veau':3+14, 'poule':42}
     assert troupeau_de_jean == {'vache':12, 'cochon':17, 'veau':3}
     assert troupeau_de_perrette == {'veau':14, 'vache':7, 'poule':42}
-    #assert troupeaux.reunion_troupeaux(troupeau_de_perrette, mon_troupeau) == ...
-   # assert troupeaux.reunion_troupeaux(mon_troupeau, troupeau_de_jean) == ...
+    assert troupeaux.reunion_troupeaux(troupeau_de_perrette, mon_troupeau) == {'cochon': 25, 'poule': 55, 'mouton': 14, 'canard': 30, 'vache': 19, 'veau': 14}
+    assert troupeaux.reunion_troupeaux(mon_troupeau, troupeau_de_jean) == {'cochon': 42, 'poule': 13, 'mouton': 14, 'canard': 30, 'vache': 24, 'veau': 3}
     assert troupeau_de_jean == {'vache':12, 'cochon':17, 'veau':3}
     assert troupeau_de_perrette == {'veau':14, 'vache':7, 'poule':42}
 

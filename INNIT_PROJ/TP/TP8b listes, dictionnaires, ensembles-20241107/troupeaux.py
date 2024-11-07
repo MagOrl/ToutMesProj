@@ -1,6 +1,6 @@
 # TP8 B - Manipuler des listes, ensembles et dictionnaires
 troupeaux = {"cochon":25,"poule":13,"mouton":14,"canard":30,"vache":12}
-troupeau_de_jean = {'vache':12, 'cochon':17, 'veau':3}
+troupeau_de_jean = {'veau':14, 'vache':7, 'poule':42}
 troupeaux_vide = {}
 def total_animaux(troupeau):
     """ Calcule le nombre total d'animaux dans un troupeau
@@ -91,14 +91,17 @@ def reunion_troupeaux(troupeau1, troupeau2):
     Returns:
         dict: le dictionnaire modélisant la réunion des deux troupeaux    
     """
+    dicosauv = {}
     dico = {}
     cpt = 0
     for cle,value in troupeau1.items():
         if cle in troupeau2.keys() :
-            cpt += value + troupeau2[cle]
-            dico[cle] = 
-            cpt = 0
-        else:
-            
+            cpt = value + troupeau2[cle]
+            dico[cle] = cpt
+            dicosauv[cle] = troupeau2[cle]
+            troupeau2.pop(cle) 
+        else :
+            dico[cle]= value
+    dico.update(troupeau2) #j'ai du chercher sur internet celle la 
+    troupeau2.update(dicosauv)
     return dico
-print(reunion_troupeaux(troupeaux,troupeau_de_jean))
