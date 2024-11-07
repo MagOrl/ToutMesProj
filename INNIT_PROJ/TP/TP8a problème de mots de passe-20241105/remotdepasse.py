@@ -43,14 +43,23 @@ def chiffre_plusptit(chienne_caractère):
     Args:
         chienne_caract (str): 
     """
-    min = 10
+    min = 999999999999999999999999
     cpt = 0
     for i in range(len(chienne_caractère)):
-        if chienne_caractère[i].isdigit() and min > chienne_caractère[i]:
-            min = chienne_caractère
-            cpt +
-    for j in  range(len(chienne_caractère)):
-        if cpt< 2 :
+        if chienne_caractère[i].isdigit() and min > int(chienne_caractère[i]):
+            min = int(chienne_caractère[i])
+            cpt +=1
+            if cpt >= 2 :
+                return False
+            else:
+                cpt = 0
+    cpt = 0
+    for j in range(len(chienne_caractère)):
+        if chienne_caractère[j] == str(min):
+            cpt +=1
+            if cpt >= 2:
+                return False
+    return True 
 def motdepasse():
     """Menu qui va demander à l'utilisateur de rentrer un nom et un mot de passe
     """
@@ -64,10 +73,15 @@ def motdepasse():
             print("Votre mot de passe doit comporter au moins trois chiffre")
         elif chiffre_consequitf(mot_de_passe) == False:
             print("2 chiffres sont l'un à côté de l'autre")
+        elif not chiffre_plusptit(mot_de_passe):
+            print("Vos 2 chiffre les plus minimum sont coller, nos règle très très cohérente éxige que ils ne le soient pas")
         elif pas_esapce(mot_de_passe) == False:
             print("Votre mot de passe ne doit pas comporter d'espace")	   
         else:
             mot_de_passe_correct = True 
     print(f"Votre mot de passe est correct \n Bienvenue {connexion}")
+    with open ('INNIT_PROJ/TP/TP8a problème de mots de passe-20241105/mdpUltrasecret.txt','w'):
+        print(mot_de_passe)
+    enregistrement.close()
     return mot_de_passe
 motdepasse()
