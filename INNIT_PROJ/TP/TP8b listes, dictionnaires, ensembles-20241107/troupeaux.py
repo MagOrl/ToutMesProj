@@ -91,15 +91,14 @@ def reunion_troupeaux(troupeau1, troupeau2):
     Returns:
         dict: le dictionnaire modélisant la réunion des deux troupeaux    
     """
-    i = 0
-    i2= 0
+    dico = {}
     cpt = 0
-    listo1 = list(troupeau1.items()) 
-    listo2 = list(troupeau2.items())
-    listofinal = []
-    while i < (len(listo1)) and i2 < len(listo2):
-        if listo1[i][0] == listo2[i2][0]:
-            cpt = listo1[i][1] + listo2[i2][1]  
-            listofinal.append(listo1[i][0],)  
-    return 
+    for cle,value in troupeau1.items():
+        if cle in troupeau2.keys() :
+            cpt += value + troupeau2[cle]
+            dico[cle] = 
+            cpt = 0
+        else:
+            
+    return dico
 print(reunion_troupeaux(troupeaux,troupeau_de_jean))
