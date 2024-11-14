@@ -107,4 +107,19 @@ def maxart54(dico):
     for val in dico.values():
         if max < val:
             max = val 
-    return max 
+    return max
+
+def menu(option):
+    print("~~~~~~~~~~La liste d'Adams~~~~~~~~~~")
+    for i in range(len(option)):
+        print('choisi option',option,i+1)
+def programme():
+    listoption=["Supprime un art","total des prix", "ajoute un art",'modif un art']
+    print(menu(listoption))
+    quitter = False
+    while not quitter:
+        rep = input("Entre une réponse")
+        if rep == 1:
+            
+programme()
+    
