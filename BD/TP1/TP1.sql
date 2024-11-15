@@ -68,6 +68,12 @@ drop table ARTICLE;
 drop table CLIENT;
 drop table PointDeDistribution;
 -- Insertion 
-insert into 
+insert into PointDeDistribution('AE2312421','Avenue Charle de Gaulle');
+insert into PointDeDistribution('AE2319832','Avenue Napoleon Bonaparte');
+insert into PointDeDistribution('AE2332345',"Avenue Jeanne d'Arc");
 
-insert into client values(12,'Celestin','Maubert','Rue des cramptés','vivi@yahoo.com',3);
+insert into client values(666,'Celestin','Maubert','Rue des cramptés','vivi@yahoo.com','AE2312421');
+insert into client(777,'Gecko','Erwan','Rue de la sainte fleur','gekoewan@gmail.com','AE2319832');
+insert into client(1092,'Kero','Suwako','Boulvard du Crapeau','AE2332345');
+
+
