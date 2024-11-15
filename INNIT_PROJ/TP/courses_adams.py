@@ -119,7 +119,5 @@ def programme():
     quitter = False
     while not quitter:
         rep = input("Entre une réponse")
-        if rep == 1:
-            
+        if rep == 1:           
 programme()
-    
