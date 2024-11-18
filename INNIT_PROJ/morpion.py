@@ -3,17 +3,28 @@ def reglejeu(Lx,Cx,Lo,Co):
     Cx = Cx -1
     Lo = Lo -1 
     Co = Co -1
-    grille = [[None,None,None],[None,None,None],[None,None,None]]
-    if grille[Lx][Cx] is  None:
-        grille[Lx][Cx] = True
-    else:
-        print("Case déjà prise") 
-    if grille[Lo][Co] is None :
-        grille[Lo][Co] = False
-    else:
-        print("Case déjà prise")
+    grille = [[True,True,True],[None,None,None],[None,None,None]]
     perdu = False
-    if grille[]
+    while not perdu :
+        if grille[Lx][Cx] is  None:
+            grille[Lx][Cx] = True
+        else:
+            print("Case déjà prise") 
+        if grille[Lo][Co] is None :
+            grille[Lo][Co] = False
+        else:
+            print("Case déjà prise")
+        for i in range(len(grille)):
+            if  grille[i][:3] is True:
+                print("Victoire du joueur X")
+                perdu = True
+            elif grille[i][:3] is False:
+                print("Victoire du joueur O")
+                perdu = True 
+            
+
+        
+        
 
     
 
