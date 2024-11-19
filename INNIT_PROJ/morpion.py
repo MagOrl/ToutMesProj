@@ -3,54 +3,52 @@ def reglejeu(Lx,Cx,Lo,Co):
     Cx = Cx -1
     Lo = Lo -1 
     Co = Co -1
-    grille = [[True,True,True],[None,None,None],[None,None,None]]
+    grille = [["","",""],["","",""],["","",""]]
     perdu = False
     cpt = 0 
-    var 
+    varX = 0
+    varcoX = 0
     while not perdu :
-        if grille[Lx][Cx] is  None:
-            grille[Lx][Cx] = True
+        if grille[Lx][Cx] == "":
+            grille[Lx][Cx] = "X"
         else:
             print("Case déjà prise") 
-        if grille[Lo][Co] is None :
-            grille[Lo][Co] = False
+        if grille[Lo][Co] == "" :
+            grille[Lo][Co] = "O"
         else:
             print("Case déjà prise")
-        if grille[0][0] == True and grille[1][1] == True and grille[-1][-1] or grille[0][-1] == True and grille[1][1] == True and grille[-1][0] == True:
-            print("pipi")
+        if grille[0][0] == "X" and grille[1][1] == "X" and grille[-1][-1] == "X" or grille[0][-1] == "X" and grille[1][1] == "X" and grille[-1][0] == "X":
+            perdu = True 
+        if grille[0][0] == "O" and grille[1][1] == "O" and grille[-1][-1] == "O" or grille[0][-1] == "O" and grille[1][1] == "O" and grille[-1][0] == "O":
+            perdu = True
         for j in range(len(grille)):
             for i in range(len(grille)):
-                if grille[i][j] != True  :
-                    var = 0   
+                if grille[i][j] != "X"  :
+                    varX = 0   
                 else:
-                    var+= 1
-                if var == 3:
-                    print("cayeeeee")
-                if grille[j][i] != True:
-                    varco = 0
+                    varX+= 1
+                if varX == 3:
+                    perdu = True
+                if grille[j][i] != "X":
+                    varcoX = 0
                 else:
-                    varco +=1
-                if varco == 3:
-                    print("CACAAAAAAAAA")
+                    varcoX +=1
+                if varcoX == 3:
+                    perdu = True
             cpt+=1
             if cpt == 3:
-                var = 0
-                varco = 0 
+                varX = 0
+                varcoX = 0 
             
-
-        
-        
-
-    
-
-
 def menu():
     cpt = 0
     quitter = False
     while not quitter :
         rep = input("Voulez vous (J)ouez au morpion ? \n (Q) pour quitter \n ")
         if rep == "J":
-            pass
+            XplayL = input("X CO DE LIGNE \n")
+            XplayC = input("X CO DE COLONNE\n")
+            
             cpt = 0
         elif rep == "Q":
             quitter = True
