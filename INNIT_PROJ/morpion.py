@@ -5,6 +5,8 @@ def reglejeu(Lx,Cx,Lo,Co):
     Co = Co -1
     grille = [[True,True,True],[None,None,None],[None,None,None]]
     perdu = False
+    cpt = 0 
+    var 
     while not perdu :
         if grille[Lx][Cx] is  None:
             grille[Lx][Cx] = True
@@ -14,13 +16,26 @@ def reglejeu(Lx,Cx,Lo,Co):
             grille[Lo][Co] = False
         else:
             print("Case déjà prise")
-        for i in range(len(grille)):
-            if  grille[i][:3] is True:
-                print("Victoire du joueur X")
-                perdu = True
-            elif grille[i][:3] is False:
-                print("Victoire du joueur O")
-                perdu = True 
+        if grille[0][0] == True and grille[1][1] == True and grille[-1][-1] or grille[0][-1] == True and grille[1][1] == True and grille[-1][0] == True:
+            print("pipi")
+        for j in range(len(grille)):
+            for i in range(len(grille)):
+                if grille[i][j] != True  :
+                    var = 0   
+                else:
+                    var+= 1
+                if var == 3:
+                    print("cayeeeee")
+                if grille[j][i] != True:
+                    varco = 0
+                else:
+                    varco +=1
+                if varco == 3:
+                    print("CACAAAAAAAAA")
+            cpt+=1
+            if cpt == 3:
+                var = 0
+                varco = 0 
             
 
         
