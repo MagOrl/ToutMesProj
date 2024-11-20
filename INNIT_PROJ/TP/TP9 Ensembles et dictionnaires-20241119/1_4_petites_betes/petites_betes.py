@@ -1,6 +1,6 @@
 """Init Dev : TP9"""
 
-
+pokedex = [('Bulbizarre', 'Plante'), ('Aeromite', 'Poison'), ('Abo', 'Poison')]
 # ==========================
 # Petites bêtes
 # ==========================
@@ -80,7 +80,6 @@ def dico_par_famille(pokedex):
             elif pokedex[i][1] != pokedex[j][1]: 
                 dico[pokedex[i][1]] = set([pokedex[i][0]])
     return dico 
-print(dico_par_famille([('Bulbizarre', 'Plante'), ('Aeromite', 'Poison'), ('Abo', 'Poison')])) 
 
 def famille_la_plus_representee(pokedex):
     """détermine le nom de la famille la plus représentée dans le pokedex
@@ -92,13 +91,13 @@ def famille_la_plus_representee(pokedex):
     Returns:
         str: le nom de la famille la plus représentée dans le pokedex
     """
-    cpt = 0
-    nomfam = None 
-    """if cpt < frequences_famille(pokedex).values():
-        cpt = frequences_famille(pokedex).values()
-        nomfam = frequences_famille(pokedex).keys()"""
-    return  
-print(famille_la_plus_representee([('Bulbizarre', 'Plante'), ('Aeromite', 'Poison'), ('Abo', 'Poison')]))
+print(frequences_famille(pokedex))
+#    plusrepresent = 0
+#    for represent in pokedex:
+#       if plusrepresent > frequences_famille(represent).values():
+#           plusrepresent = frequences_famille(represent).keys()
+#    return plusrepresent 
+#print(famille_la_plus_representee([('Bulbizarre', 'Plante'), ('Aeromite', 'Poison'), ('Abo', 'Poison')]))
 
 # ==========================
 # Petites bêtes (la suite)

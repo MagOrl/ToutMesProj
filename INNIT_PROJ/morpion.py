@@ -9,14 +9,8 @@ def reglejeu(Lx,Cx,Lo,Co):
     varX = 0
     varcoX = 0
     while not perdu :
-        if grille[Lx][Cx] == "":
-            grille[Lx][Cx] = "X"
-        else:
-            print("Case déjà prise") 
-        if grille[Lo][Co] == "" :
-            grille[Lo][Co] = "O"
-        else:
-            print("Case déjà prise")
+        grille[Lx][Cx] = "X"
+        grille[Lo][Co] = "O"
         if grille[0][0] == "X" and grille[1][1] == "X" and grille[-1][-1] == "X" or grille[0][-1] == "X" and grille[1][1] == "X" and grille[-1][0] == "X":
             perdu = True 
         if grille[0][0] == "O" and grille[1][1] == "O" and grille[-1][-1] == "O" or grille[0][-1] == "O" and grille[1][1] == "O" and grille[-1][0] == "O":
@@ -39,6 +33,7 @@ def reglejeu(Lx,Cx,Lo,Co):
             if cpt == 3:
                 varX = 0
                 varcoX = 0 
+print(reglejeu(3,3,2,2))
             
 def menu():
     cpt = 0
@@ -46,9 +41,13 @@ def menu():
     while not quitter :
         rep = input("Voulez vous (J)ouez au morpion ? \n (Q) pour quitter \n ")
         if rep == "J":
-            XplayL = input("X CO DE LIGNE \n")
-            XplayC = input("X CO DE COLONNE\n")
-            
+            fini = False
+            while not fini:
+                JeuLx = int(input("Lx"))
+                JeuCx = int(input("Cx"))
+                JeuLo = int(input("Lo"))
+                JeuCo = int(input("Co"))
+                reglejeu(JeuLx,JeuCx,JeuLo,JeuCo)
             cpt = 0
         elif rep == "Q":
             quitter = True
@@ -58,4 +57,4 @@ def menu():
             else :
                 print("[J] pour [J]ouer et [Q] pour Quitter ")
             cpt +=1 
-menu()
+
