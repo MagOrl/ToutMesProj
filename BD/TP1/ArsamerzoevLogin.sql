@@ -78,7 +78,7 @@ insert into PointDeDistribution values ('AE2355566', 'Place du Marché');
 
 -- Insertion  CLIENT
 insert into CLIENT values (888, 'Lemoine', 'Sophie', 'Rue de la paix', 'sophie.lemoine@gmail.com', 'AE2342347');
-insert into CLIENT values (999, 'Dupont', 'Jean', 'Avenue des Champs-Élysées', 'jean.dupont@hotmail.com', 'AE2347789');
+insert into CLIENT values (999, 'Dupont', 'Jean', 'Avenue des Cramptées', 'jean.dupont@hotmail.com', 'AE2347789');
 insert into CLIENT values (1001, 'Dufresne', 'Alice', 'Quartier Latin', 'alice.dufresne@yahoo.com', 'AE2355566');
 
 -- Insertion  ARTICLE
