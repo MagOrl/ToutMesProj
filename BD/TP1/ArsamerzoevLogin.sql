@@ -94,7 +94,7 @@ insert into COMMANDE values (128, ('25-12-2023'), 1001);
 -- Insertion  COLIS
 insert into COLIS values (126, 1, 'Livraison standard');
 insert into COLIS values (127, 2, 'Livraison express');
-insert into COLIS values (128, 3, 'Livraison à domicile');
+insert into COLIS values (128, 3, 'Livraison a domicile');
 
 -- Insertion  Expedier
 insert into Expedier values (126, 1, 1475, 3, 3);
