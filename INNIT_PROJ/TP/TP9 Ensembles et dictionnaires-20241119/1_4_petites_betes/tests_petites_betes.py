@@ -33,7 +33,7 @@ def test_dico_par_famille():
 def test_famille_la_plus_representee():
     mon_pokedex = [('Bulbizarre', 'Plante'), ('Aeromite', 'Poison'), ('Abo', 'Poison')]
     assert petites_betes.famille_la_plus_representee(mon_pokedex) == 'Poison'
-""""
+
 # ==================================
 # TESTS pour l'exercice 4
 # ==================================
@@ -42,7 +42,7 @@ def test_toutes_les_familles_v2():
     mon_pokedex = {"Bulbizarre":{"Plante", "Poison"},
                    "Aeromite":{"Poison", "Insecte"}, "Abo":{"Poison"}}
     assert petites_betes.toutes_les_familles_v2(mon_pokedex) == {'Plante', 'Insecte', 'Poison'}
-
+""""
 def test_nombre_pokemons_v2():
     mon_pokedex = {"Bulbizarre":{"Plante", "Poison"},
                    "Aeromite":{"Poison", "Insecte"}, "Abo":{"Poison"}}

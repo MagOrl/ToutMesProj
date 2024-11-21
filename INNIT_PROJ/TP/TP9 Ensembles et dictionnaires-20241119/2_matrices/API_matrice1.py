@@ -12,10 +12,10 @@ def matrice(nb_lignes, nb_colonnes, valeur_par_defaut):
     Returns:
         une nouvelle matrice qui contient la valeur par défaut dans chacune de ses cases
     """
-    ...
-
-
-
+    matrice = (nb_lignes,nb_colonnes,[])
+    for i in range(nb_lignes*nb_colonnes):
+        matrice[2].append(valeur_par_defaut)
+    return matrice
 def set_val(la_matrice, ligne, colonne, nouvelle_valeur):
     """permet de modifier la valeur de l'élément qui se trouve à la ligne et à la colonne
     spécifiées. Cet élément prend alors la valeur nouvelle_valeur
@@ -41,7 +41,7 @@ def get_nb_lignes(la_matrice):
     Returns:
         int : le nombre de lignes de la matrice
     """
-    ...
+    return matrice(la_matrice[0])
 
 
 def get_nb_colonnes(la_matrice):
@@ -53,7 +53,7 @@ def get_nb_colonnes(la_matrice):
     Returns:
         int : le nombre de colonnes de la matrice
     """
-    ...
+    return matrice(la_matrice[0])
 
 
 def get_val(la_matrice, ligne, colonne):
@@ -68,7 +68,7 @@ def get_val(la_matrice, ligne, colonne):
     Returns:
         la valeur qui est dans la case située à la ligne et la colonne spécifiées
     """
-    ...
+    return matrice(la_matrice[2][ligne * get_nb_colonnes(la_matrice) + colonne])
 
 # Fonctions pour l'affichage
 
@@ -119,9 +119,14 @@ def charge_matrice_str(nom_fichier):
     Returns:
         une matrice de str
     """
-    ...
-
-
+    listo = []
+    fic = open(nom_fichier,'r')
+    for ligne in fic:
+        champs = ligne.split(",") 
+        champs.pop()
+        listo.append(champs)
+    fic.close()
+    return listo
 def sauve_matrice(la_matrice, nom_fichier):
     """permet sauvegarder une matrice dans un fichier CSV.
     Attention, avec cette fonction, on perd l'information sur le type des éléments
@@ -133,4 +138,7 @@ def sauve_matrice(la_matrice, nom_fichier):
     Returns:
         None
     """
-    ...
+    fic = open(nom_fichier, 'w')
+    fic.write(la_matrice)
+    fic.close()
+print(sauve_matrice([[2,2,2,2],[1,1,1,1]],'INNIT_PROJ/TP/TP9 Ensembles et dictionnaires-20241119/2_matrices/petittest.csv'))

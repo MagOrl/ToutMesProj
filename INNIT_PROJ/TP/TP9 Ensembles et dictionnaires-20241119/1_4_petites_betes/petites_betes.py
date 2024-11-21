@@ -1,6 +1,4 @@
 """Init Dev : TP9"""
-
-pokedex = [('Bulbizarre', 'Plante'), ('Aeromite', 'Poison'), ('Abo', 'Poison')]
 # ==========================
 # Petites bêtes
 # ==========================
@@ -91,14 +89,7 @@ def famille_la_plus_representee(pokedex):
     Returns:
         str: le nom de la famille la plus représentée dans le pokedex
     """
-    cpt = 0
-    nomfam = None 
-    """if cpt < frequences_famille(pokedex).values():
-        cpt = frequences_famille(pokedex).values()
-        nomfam = frequences_famille(pokedex).keys()"""
-    return
-print(famille_la_plus_representee([('Bulbizarre', 'Plante'), ('Aeromite', 'Poison'), ('Abo', 'Poison')]))
-
+    return max(frequences_famille(pokedex))
 # ==========================
 # Petites bêtes (la suite)
 # ==========================
@@ -114,7 +105,11 @@ def toutes_les_familles_v2(pokedex):
     Returns:
         set: l'ensemble des familles représentées dans le pokedex
     """
-    ...
+    ens = set()
+    for valeur in pokedex.values():
+        ens.add(pokedex[valeur])
+    return ens  
+print(toutes_les_familles_v2({"Bulbizarre":{"Plante", "Poison"},"Aeromite":{"Poison", "Insecte"}, "Abo":{"Poison"}}))
 
 def nombre_pokemons_v2(pokedex, famille):
     """calcule le nombre de pokemons d'une certaine famille dans un pokedex
