@@ -107,7 +107,7 @@ def toutes_les_familles_v2(pokedex):
     """
     ens = set()
     for valeur in pokedex.values():
-        ens.add(pokedex[valeur])
+        ens.add(str(pokedex[valeur]))
     return ens  
 print(toutes_les_familles_v2({"Bulbizarre":{"Plante", "Poison"},"Aeromite":{"Poison", "Insecte"}, "Abo":{"Poison"}}))
 

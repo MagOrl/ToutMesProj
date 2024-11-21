@@ -1,9 +1,3 @@
-dico = {'A':1 , 'B':2 , 'C':3,'B':4}
-courses_morticia = ["bave de crapeau","oeufs de dragon","lézards" ,"ketchup" ,"sel"]
-facture_morticia = [17 , 157 , 17 , 2 , 1]
-course_morticialist = [ "bave de crapeau" , 17 , "oeufs de dragon" , 157 ,"lézards" , 17 , "ketchup" , 2 , "sel" , 1]
-courses_morticiadico = { " bave de crapeau " :17 , "oeufs de dragon " :157 ,"lézards" :17 , " ketchup " :2 , " sel " :1}
-courses_morticialistup = [( " bave de crapeau " , 17) , ( " oeufs de dragon " , 157) ,( "lézards" , 17) , ( " ketchup " , 2) , ( " sel " , 1) ]
 def ajout_art52(liste1,liste2,nomart,prixart):
     liste1.append(nomart)
     liste2.append(prixart)
@@ -109,15 +103,17 @@ def maxart54(dico):
             max = val 
     return max
 
+
 def menu(option):
     print("~~~~~~~~~~La liste d'Adams~~~~~~~~~~")
     for i in range(len(option)):
-        print('choisi option',option,i+1)
+        print(f"choisi l'option : {option[i]}[{i+1}]")
 def programme():
     listoption=["Supprime un art","total des prix", "ajoute un art",'modif un art']
     print(menu(listoption))
     quitter = False
     while not quitter:
         rep = input("Entre une réponse")
-        if rep == 1:           
+        if rep == 3:  
+            pass     
 programme()
