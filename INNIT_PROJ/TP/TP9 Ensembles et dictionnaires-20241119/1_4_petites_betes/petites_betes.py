@@ -97,7 +97,7 @@ def famille_la_plus_representee(pokedex):
     """if cpt < frequences_famille(pokedex).values():
         cpt = frequences_famille(pokedex).values()
         nomfam = frequences_famille(pokedex).keys()"""
-    return  
+    return
 print(famille_la_plus_representee([('Bulbizarre', 'Plante'), ('Aeromite', 'Poison'), ('Abo', 'Poison')]))
 
 # ==========================
