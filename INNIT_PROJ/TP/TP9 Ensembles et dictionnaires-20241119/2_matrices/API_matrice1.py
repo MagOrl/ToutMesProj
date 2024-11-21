@@ -138,7 +138,9 @@ def sauve_matrice(la_matrice, nom_fichier):
     Returns:
         None
     """
+
     fic = open(nom_fichier, 'w')
-    fic.write(la_matrice)
+    for i in range(len(la_matrice)):
+        fic.write(str(la_matrice[i]) + "\n")
     fic.close()
 print(sauve_matrice([[2,2,2,2],[1,1,1,1]],'INNIT_PROJ/TP/TP9 Ensembles et dictionnaires-20241119/2_matrices/petittest.csv'))
