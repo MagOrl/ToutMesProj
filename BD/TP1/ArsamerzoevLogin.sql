@@ -1,7 +1,16 @@
 -- TRAVAILLE FAIT PAR ARSAMERZOEV MAGOMED de la 11A (2024) 
 
+-- select * from tab; 
 
 purge recyclebin;
+/** Supprimer mes tables**/
+drop table CONTENIR;
+drop table Expedier;
+drop table COLIS;
+drop table COMMANDE;
+drop table ARTICLE;
+drop table CLIENT;
+drop table PointDeDistribution;
 
 set linesize 500;
 -- Creation de TABLE
@@ -62,14 +71,7 @@ constraint CONTENIRCOMEXIST foreign key(numcom) references COMMANDE(numcom),
 constraint ARTICLEEXIST foreign key(numart) references ARTICLE(numart)
 );
 
-/** Supprimer mes tables**/
-drop table CONTENIR;
-drop table Expedier;
-drop table COLIS;
-drop table COMMANDE;
-drop table ARTICLE;
-drop table CLIENT;
-drop table PointDeDistribution;
+
 
 -- Insertion Disitrubtion
 insert into PointDeDistribution values ('AE2342347', 'Boulevard de la République');
@@ -106,6 +108,8 @@ insert into CONTENIR values (126, 1475, 2);
 insert into CONTENIR values (127, 9021, 1);
 insert into CONTENIR values (128, 3542, 1);
 
+
+
 -- Queleque requètes
 SELECT numcom, datecom
 FROM COMMANDE
@@ -115,4 +119,14 @@ SELECT numart, designation
 FROM ARTICLE
 WHERE TO_NUMBER(qteStock) = 0;
 
+SELECT nomCl, prenomCl
+FROM CLIENT;
+
+select designation
+from ARTICLE
+where prix > 50;
+
+select adressCl, refPointDist
+from PointDeDistribution natural join CLIENT
+where nomCl='Lemoine' and prenomCl='Sophie';
 
