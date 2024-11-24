@@ -1,3 +1,7 @@
-sdd = {'Taric': 'Gragas', 'Viktor': 'Teemo', 'Vayne': 'Karthus'}
-for variable in sdd.items():
-    print(variable, end=", ")
+def lemax(x):
+    o = x[0]
+    for i in range(len(x)):
+        if o < x[i]:
+            o = x 
+    return o 
+
