@@ -36,7 +36,16 @@ def quel_guichet_v2(mqrf, guichet):
         tuple: le nom du guichet qui finit par donner le formulaire A-38 et le nombre de
         guichets visités pour y parvenir
     """
-    ...
+    cpt = 1
+    aux = guichet
+    if mqrf[guichet] is None:
+        return (guichet, cpt)
+    else:
+        while mqrf[aux] is not None:
+            aux = mqrf[aux]
+            cpt +=1
+    return (aux,cpt)
+print(quel_guichet_v2(mqrf2,"Abribus")) 
 
 
 def quel_guichet_v3(mqrf, guichet):
