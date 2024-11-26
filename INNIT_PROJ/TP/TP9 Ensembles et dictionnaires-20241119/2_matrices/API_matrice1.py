@@ -29,8 +29,7 @@ def set_val(la_matrice, ligne, colonne, nouvelle_valeur):
     Returns:
         None
     """
-    ...
-
+    la_matrice[colonne][get_val(la_matrice,ligne,colonne)] = nouvelle_valeur
 
 def get_nb_lignes(la_matrice):
     """permet de connaître le nombre de lignes d'une matrice
@@ -41,7 +40,7 @@ def get_nb_lignes(la_matrice):
     Returns:
         int : le nombre de lignes de la matrice
     """
-    return matrice(la_matrice[0])
+    return la_matrice[0]
 
 
 def get_nb_colonnes(la_matrice):
@@ -53,7 +52,7 @@ def get_nb_colonnes(la_matrice):
     Returns:
         int : le nombre de colonnes de la matrice
     """
-    return matrice(la_matrice[0])
+    return la_matrice[1]
 
 
 def get_val(la_matrice, ligne, colonne):
@@ -68,7 +67,7 @@ def get_val(la_matrice, ligne, colonne):
     Returns:
         la valeur qui est dans la case située à la ligne et la colonne spécifiées
     """
-    return matrice(la_matrice[2][ligne * get_nb_colonnes(la_matrice) + colonne])
+    return la_matrice[2][ligne * get_nb_colonnes(la_matrice) + colonne]
 
 # Fonctions pour l'affichage
 
@@ -105,7 +104,7 @@ def affiche(la_matrice, taille_cellule=4):
             print(str(get_val(la_matrice, i, j)).rjust(taille_cellule) + '|', end='')
         affiche_ligne_separatrice(la_matrice, taille_cellule)
     print()
-
+affiche(matrice(3,3,1))
 
 # Ajouter ici les fonctions supplémentaires, sans oublier de compléter le fichier
 # tests_API_matrice.py avec des fonctions de tests
@@ -143,4 +142,3 @@ def sauve_matrice(la_matrice, nom_fichier):
     for i in range(len(la_matrice)):
         fic.write(str(la_matrice[i]) + "\n")
     fic.close()
-print(sauve_matrice([[2,2,2,2],[1,1,1,1]],'INNIT_PROJ/TP/TP9 Ensembles et dictionnaires-20241119/2_matrices/petittest.csv'))

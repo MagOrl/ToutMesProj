@@ -6,7 +6,7 @@ import mqrf
 
 def test_quel_guichet():
     mqrf1 = {"Abribus":"Astus", "Jeancloddus":"Abribus", "Plexus":"Gugus",
-             "Astus":None, "Gugus":"Plexus", "Saudepus":None}
+             "Astus":None, "Gugus":"Plexus", "Saudepus":None}   
     mqrf2 = {"Abribus":"Astus", "Jeancloddus":None, "Plexus":"Saudepus",
              "Astus":"Gugus", "Gugus":"Plexus", "Saudepus":None}
     assert mqrf.quel_guichet(mqrf1, "Saudepus") == "Saudepus"
