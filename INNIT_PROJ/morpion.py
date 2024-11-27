@@ -1,15 +1,16 @@
-def reglejeu(Lx,Cx,Lo,Co):
-    Lx = Lx -1 
-    Cx = Cx -1
-    Lo = Lo -1 
-    Co = Co -1
+def reglejeu():
     grille = [["","",""],["","",""],["","",""]]
-    perdu = False
     cpt = 0 
     varX = 0
     varcoX = 0
-    while not perdu :
+    perdu = False
+    while not perdu:
+        Lx = int(input("ecrit batar")) -1
+        Cx = int(input("ecrit batar"))-1
         grille[Lx][Cx] = "X"
+        print(grille)
+        Lo = int(input("ecrit batar"))-1
+        Co = int(input("ecrit batar")) -1
         grille[Lo][Co] = "O"
         if grille[0][0] == "X" and grille[1][1] == "X" and grille[-1][-1] == "X" or grille[0][-1] == "X" and grille[1][1] == "X" and grille[-1][0] == "X":
             perdu = True 
@@ -30,31 +31,10 @@ def reglejeu(Lx,Cx,Lo,Co):
                 if varcoX == 3:
                     perdu = True
             cpt+=1
-            if cpt == 3:
+            if cpt >= 3:
                 varX = 0
                 varcoX = 0 
-print(reglejeu(3,3,2,2))
-            
-def menu():
-    cpt = 0
-    quitter = False
-    while not quitter :
-        rep = input("Voulez vous (J)ouez au morpion ? \n (Q) pour quitter \n ")
-        if rep == "J":
-            fini = False
-            while not fini:
-                JeuLx = int(input("Lx"))
-                JeuCx = int(input("Cx"))
-                JeuLo = int(input("Lo"))
-                JeuCo = int(input("Co"))
-                reglejeu(JeuLx,JeuCx,JeuLo,JeuCo)
-            cpt = 0
-        elif rep == "Q":
-            quitter = True
-        else:
-            if cpt >= 3 :
-                print('Visiblement votre IQ doit être assez négatif \n je vous déconseille notre jeu car il sera peut être un effort mental trop conséquent pour votre cerveau')
-            else :
-                print("[J] pour [J]ouer et [Q] pour Quitter ")
-            cpt +=1 
+        print(grille)
 
+    
+print(reglejeu())
