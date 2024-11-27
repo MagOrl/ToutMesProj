@@ -64,7 +64,7 @@ def quel_guichet_v3(mqrf, guichet):
         S'il n'est pas possible d'obtenir le formulaire en partant du guichet de depart,
         cette fonction renvoie None
     """
-    dico = {}
+    ens = set()
     cpt = 1
     aux = guichet
     if mqrf[guichet] is None:
@@ -73,11 +73,8 @@ def quel_guichet_v3(mqrf, guichet):
         while mqrf[aux] is not None:
             aux = mqrf[aux]
             cpt +=1
-            if aux in dico.keys():
+            if aux in ens:
                 return None 
             else:
-                dico[aux] = None
-         
+                ens.add(aux)
     return (aux,cpt)
-
-print(quel_guichet_v3(mqrf3,"Abribus")) 
