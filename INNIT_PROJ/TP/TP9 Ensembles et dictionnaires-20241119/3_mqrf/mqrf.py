@@ -6,6 +6,9 @@ mqrf1 = {"Abribus":"Astus", "Jeancloddus":"Abribus", "Plexus":"Gugus",
              "Astus":None, "Gugus":"Plexus", "Saudepus":None}   
 mqrf2 = {"Abribus":"Astus", "Jeancloddus":None, "Plexus":"Saudepus",
              "Astus":"Gugus", "Gugus":"Plexus", "Saudepus":None}
+mqrf3 = {"Abribus":"Astus", "Jeancloddus":"Astus",
+            "Plexus":"Jeancloddus", "Astus":"Gugus",
+            "Gugus":"Plexus", "Saudepus":"Bielorus"}
 def quel_guichet(mqrf, guichet):
     """Détermine le nom du guichet qui délivre le formulaire A-38
 
@@ -45,7 +48,6 @@ def quel_guichet_v2(mqrf, guichet):
             aux = mqrf[aux]
             cpt +=1
     return (aux,cpt)
-print(quel_guichet_v2(mqrf2,"Abribus")) 
 
 
 def quel_guichet_v3(mqrf, guichet):
@@ -62,5 +64,20 @@ def quel_guichet_v3(mqrf, guichet):
         S'il n'est pas possible d'obtenir le formulaire en partant du guichet de depart,
         cette fonction renvoie None
     """
-    ...
+    dico = {}
+    cpt = 1
+    aux = guichet
+    if mqrf[guichet] is None:
+        return (guichet, cpt)
+    else:
+        while mqrf[aux] is not None:
+            aux = mqrf[aux]
+            cpt +=1
+            if aux in dico.keys():
+                return None 
+            else:
+                dico[aux] = None
+         
+    return (aux,cpt)
 
+print(quel_guichet_v3(mqrf3,"Abribus")) 
