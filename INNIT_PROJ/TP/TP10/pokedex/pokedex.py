@@ -36,7 +36,13 @@ def nombre_de_v1(attaque, pokedex):
     resultat: renvoie le nombre de pokemons de ce type d'attaque
     dans le pokedex
     """
-    ...
+    dico = {}
+    for elem in pokedex:
+        if elem[0] in dico.keys():
+            dico[elem[0]] +=1 
+        else:
+            dico[elem[0]] = 1 
+    
 
 
 def attaque_preferee_v1(pokedex):
