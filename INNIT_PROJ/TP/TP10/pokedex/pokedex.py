@@ -10,8 +10,9 @@
 
 def appartient_v1(pokemon, pokedex): 
     """ renvoie True si pokemon (str) est présent dans le pokedex """
-    ...
-
+    if pokemon in pokedex.keys():
+        return True
+    
 
 def toutes_les_attaques_v1(pokemon, pokedex): 
     """
