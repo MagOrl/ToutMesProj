@@ -1,4 +1,9 @@
 """Init Dev : TP10"""
+pokedex_anakin = {
+        ('Carmache', 'Dragon'), ('Carmache', 'Sol'),
+        ('Colimucus', 'Dragon'), ('Palkia', 'Dragon'),
+        ('Palkia', 'Eau')}
+pokedex_romain = {('Maraiste','Eau'),('Maraiste','Sol'),('Racaillou','Sol'),('Racaillou','Roche')}     
 
 # =====================================================================
 # Exercice 1 : Choix de modélisation et complexité
@@ -10,16 +15,19 @@
 
 def appartient_v1(pokemon, pokedex): 
     """ renvoie True si pokemon (str) est présent dans le pokedex """
-    if pokemon in pokedex.keys():
-        return True
-    
+    for elem in pokedex:
+        if pokemon in elem[0]:
+            return True
+    return False
 
 def toutes_les_attaques_v1(pokemon, pokedex): 
     """
     param: un pokedex et le nom d'un pokemon (str) qui appartient au pokedex
     resultat: renvoie l'ensemble des types d'attaque du pokemon passé en paramètre
     """
-    ...
+    ens = set()
+    if pokemon
+
 
 
 def nombre_de_v1(attaque, pokedex): 

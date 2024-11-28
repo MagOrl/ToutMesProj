@@ -5,14 +5,14 @@ import pokedex
 # ==================================
 # TESTS pour l'exercice 1
 # ==================================
-"""
+
 def exemples_pokedex_v1():
     #renvoie un couple de deux exemples de pokedex en utilisant la modélisation 1
     pokedex_anakin = {
         ('Carmache', 'Dragon'), ('Carmache', 'Sol'),
         ('Colimucus', 'Dragon'), ('Palkia', 'Dragon'),
         ('Palkia', 'Eau')}
-    pokedex_romain = ...      
+    pokedex_romain = {('Maraiste','Eau'),('Maraiste','Sol'),('Racaillou','Sol'),('Racaillou','Roche')}     
     return (pokedex_anakin, pokedex_romain)
 
 def exemples_pokedex_v2():
@@ -32,7 +32,7 @@ def exemples_pokedex_v3():
         'Eau': {'Palkia'}}
     pokedex_romain = ...
     return (pokedex_anakin, pokedex_romain)
-"""
+
 
 # ==================================
 # Exercice 1 : Modélisation n°1
@@ -43,13 +43,13 @@ def test_appartient_v1():
     assert not pokedex.appartient_v1("Racaillou", pokedex_anakin)
     assert pokedex.appartient_v1("Racaillou", pokedex_romain)
 
-"""
+
 def test_toutes_les_attaques_v1():
     (pokedex_anakin, pokedex_romain) = exemples_pokedex_v1()
     assert pokedex.toutes_les_attaques_v1("Palkia", pokedex_anakin) == {'Eau', 'Dragon'}
     assert pokedex.toutes_les_attaques_v1("Colimucus", pokedex_anakin) == {'Dragon'}
 
-
+""" 
 def test_nombre_de_v1():
     (pokedex_anakin, pokedex_romain) = exemples_pokedex_v1()
     assert pokedex.nombre_de_v1("Dragon", pokedex_anakin) == 3
