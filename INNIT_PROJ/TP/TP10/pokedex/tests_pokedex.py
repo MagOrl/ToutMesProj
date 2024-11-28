@@ -49,12 +49,11 @@ def test_toutes_les_attaques_v1():
     assert pokedex.toutes_les_attaques_v1("Palkia", pokedex_anakin) == {'Eau', 'Dragon'}
     assert pokedex.toutes_les_attaques_v1("Colimucus", pokedex_anakin) == {'Dragon'}
 
-""" 
 def test_nombre_de_v1():
     (pokedex_anakin, pokedex_romain) = exemples_pokedex_v1()
     assert pokedex.nombre_de_v1("Dragon", pokedex_anakin) == 3
     assert pokedex.nombre_de_v1("Dragon", pokedex_romain) == 0
-
+"""
 def test_attaque_preferee_v1():
     (pokedex_anakin, pokedex_romain) = exemples_pokedex_v1()
     assert pokedex.attaque_preferee_v1(pokedex_anakin) == "Dragon"

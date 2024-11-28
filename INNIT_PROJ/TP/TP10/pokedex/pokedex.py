@@ -26,10 +26,10 @@ def toutes_les_attaques_v1(pokemon, pokedex):
     resultat: renvoie l'ensemble des types d'attaque du pokemon passé en paramètre
     """
     ens = set()
-    if pokemon
-
-
-
+    for elem in pokedex:
+        if  pokemon == elem[0] :
+            ens.add(elem[1])
+    return ens 
 def nombre_de_v1(attaque, pokedex): 
     """
     param: un pokedex et un type d'attaque (str)
