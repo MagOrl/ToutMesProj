@@ -2,7 +2,7 @@ def tkt(grillou):
     if grillou[0][0] == "O" and grillou[1][1] == "O" and grillou[-1][-1] == "O" or grillou[0][-1] == "O" and grillou[1][1] == "O" and grillou[-1][0] == "O":
         print('Victoire du O')
         return True
-    cpt = 0 
+    autresauv = 0 
     varX = 0
     varcoX = 0
     ptitsauv = 0
@@ -16,19 +16,15 @@ def tkt(grillou):
             if varX >= 3:
                 print('Victoire du O')
                 return True
-            
 
-            if grillou[j][i] != "O":
+            if grillou[j][i] != "O" or autresauv != j :
                 varcoX = 0
             else:
                 varcoX +=1
+            autresauv = j 
             if varcoX >= 3:
                 print('Victoire du O')
                 return True 
-        cpt+=1
-        if cpt >= 3:
-            varX = 0
-            varcoX = 0
     return False 
 
 
@@ -36,7 +32,7 @@ def jsptkt(grillou):
     if grillou[0][0] == "X" and grillou[1][1] == "X" and grillou[-1][-1] == "X" or grillou[0][-1] == "X" and grillou[1][1] == "X" and grillou[-1][0] == "X":
         print("Victoire du X")
         return True
-    cpt = 0 
+    autresauv = 0 
     varX = 0
     varcoX = 0
     ptitsauv = 0
@@ -51,17 +47,14 @@ def jsptkt(grillou):
                 print("Victoire du X")
                 return True 
 
-            if grillou[j][i] != "X":
+            if grillou[j][i] != "X" or autresauv != j:
                 varcoX = 0
             else:
                 varcoX +=1
+            autresauv = j 
             if varcoX >= 3:
                 print("victoire du X")
-                return True 
-        cpt+=1
-        if cpt >= 3:
-            varX = 0
-            varcoX = 0    
+                return True   
     return False 
 
 def affichagedutruc(grilliard):
@@ -91,7 +84,11 @@ def reglejeu():
             except :
                 affichagedutruc(grille)
                 print("Mettre une case entre 1 et 3")
-        perdu = tkt(grille)    
+        perdu = tkt(grille)  
+        cpt +=1   
+        if cpt == 9 :
+            print("Draw ! ")
+            perdu = True 
         affichagedutruc(grille)
 
         if perdu is False :
@@ -108,7 +105,11 @@ def reglejeu():
                 except:
                     affichagedutruc(grille)
                     print("Mettre une valeur entre 1 et 3 stp")
-            perdu = jsptkt(grille)       
+            perdu = jsptkt(grille)   
+            cpt += 1   
+            if cpt == 9 :
+                print("Draw ! ")
+                perdu = True 
             affichagedutruc(grille)
 
 #appel fonc
