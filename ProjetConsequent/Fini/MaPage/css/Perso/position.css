@@ -1,0 +1,45 @@
+header{
+    text-align: center;
+}
+ul{
+    display: flex;
+    flex-wrap: nowrap;
+}
+main{
+    display: flex;
+}
+li {
+    flex-grow: 1;
+    padding-left: 45px;
+    padding-right: 45px;
+}
+header img {
+    height  : 150px;
+    width: 1000px;
+    object-fit:fill;
+}
+article{
+    display: flex;
+    flex-wrap: wrap;
+}
+article img {
+    margin: 2%;
+    height: 225px;
+}
+.article2 img{
+    float: right;
+}
+.article1 img{
+    float: left;
+}
+aside{  
+    order: 1;
+    flex: 0 0 250px;
+}
+aside h1{
+    margin: 2.5%;
+}
+table, tr {
+    width: 75%;
+    margin: 2.5%;
+}

@@ -1,0 +1,38 @@
+header{
+    text-align: center;
+}
+ul{
+    display: flex;
+    flex-wrap: nowrap;
+}
+li {
+    flex-grow: 1;
+    padding-left: 45px;
+    padding-right: 45px;
+}
+header img {
+    height  : 150px;
+    width: 1000px;
+    object-fit:fill;
+}
+section{
+    display: flex;
+    flex-wrap: nowrap;
+} 
+article {
+    text-align: center;
+    flex-basis: 50%;
+}
+.image2{
+    width: 70%;
+    height: 60%;
+}
+.image1{
+    width: 70%;
+    height: 60%;
+}
+#episode{
+    text-align: center;
+    display: block;
+    flex-basis: 100%;
+}
