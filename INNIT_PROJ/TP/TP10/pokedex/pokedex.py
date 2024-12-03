@@ -82,7 +82,9 @@ def nombre_de_v2(attaque, pokedex):
     resultat: renvoie le nombre de pokemons de ce type d'attaque
     dans le pokedex
     """
-    for elem in 
+    
+    for elem in pokedex:
+        if attaque in pokedex[elem]
 
 
 def attaque_preferee_v2(pokedex):
