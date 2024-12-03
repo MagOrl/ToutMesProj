@@ -164,7 +164,11 @@ def dico_par_famille_v2(pokedex):
     """
     dico = {}
     for elem in toutes_les_familles_v2(pokedex):
-        ...
+        dico[elem] = set()
+        for clef in pokedex:
+            if elem in pokedex[clef]:
+                dico[elem].add(clef)
+    return dico 
 
 def famille_la_plus_representee_v2(pokedex):
     """détermine le nom de la famille la plus représentée dans le pokedex
@@ -176,4 +180,4 @@ def famille_la_plus_representee_v2(pokedex):
     Returns:
         str: le nom de la famille la plus représentée dans le pokedex
     """
-    return max(frequences_famille_v2(pokedex).keys())    
+    return max(frequences_famille_v2(pokedex).keys())  
