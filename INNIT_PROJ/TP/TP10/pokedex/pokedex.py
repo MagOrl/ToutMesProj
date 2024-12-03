@@ -1,10 +1,9 @@
 """Init Dev : TP10"""
 pokedex_anakin = {
-        ('Carmache', 'Dragon'), ('Carmache', 'Sol'),
-        ('Colimucus', 'Dragon'), ('Palkia', 'Dragon'),
-        ('Palkia', 'Eau')}
-pokedex_romain = {('Maraiste','Eau'),('Maraiste','Sol'),('Racaillou','Sol'),('Racaillou','Roche')}     
-
+        'Carmache': {'Dragon','Sol'},
+        'Colimucus': {'Dragon'},
+        'Palkia': {'Dragon', 'Eau'}}
+pokedex_romain = { 'Maraiste':{'Eau','Sol'},'Racaillou':{'Sol','Roche'}}
 # =====================================================================
 # Exercice 1 : Choix de modélisation et complexité
 # =====================================================================
@@ -36,21 +35,28 @@ def nombre_de_v1(attaque, pokedex):
     resultat: renvoie le nombre de pokemons de ce type d'attaque
     dans le pokedex
     """
-    dico = {}
+    cpt = 0 
     for elem in pokedex:
-        if elem[0] in dico.keys():
-            dico[elem[0]] +=1 
-        else:
-            dico[elem[0]] = 1 
+        if elem[1] == attaque:
+            cpt += 1 
+    return cpt 
     
-
 
 def attaque_preferee_v1(pokedex):
     """
     Renvoie le nom du type d'attaque qui est la plus fréquente dans le pokedex
     """
-    ...
-
+    dico = {}
+    for elem in pokedex:
+        if elem[1] in dico.keys():
+            dico[elem[1]] +=1
+        else: 
+            dico[elem[1]] = 1 
+    maxa = max(dico.values())
+    for clef in dico.keys():
+        if maxa == dico[clef]:
+            return clef 
+    return None 
 
 # =====================================================================
 # Modélisation n°2
@@ -60,15 +66,14 @@ def attaque_preferee_v1(pokedex):
 
 def appartient_v2(pokemon, pokedex):
     """ renvoie True si pokemon (str) est présent dans le pokedex """
-    ...
-
+    return True if pokemon in pokedex.keys() else False
 
 def toutes_les_attaques_v2(pokemon, pokedex):
     """
     param: un pokedex et le nom d'un pokemon (str) qui appartient au pokedex
     resultat: renvoie l'ensemble des types d'attaque du pokemon passé en paramètre
     """
-    ...
+    return pokedex[pokemon] if appartient_v2(pokemon,pokedex) else 0 
 
 
 def nombre_de_v2(attaque, pokedex):
@@ -77,7 +82,7 @@ def nombre_de_v2(attaque, pokedex):
     resultat: renvoie le nombre de pokemons de ce type d'attaque
     dans le pokedex
     """
-    ...
+    for elem in 
 
 
 def attaque_preferee_v2(pokedex):
