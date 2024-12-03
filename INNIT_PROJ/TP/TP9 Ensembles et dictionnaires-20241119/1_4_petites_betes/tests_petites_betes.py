@@ -42,7 +42,7 @@ def test_toutes_les_familles_v2():
     mon_pokedex = {"Bulbizarre":{"Plante", "Poison"},
                    "Aeromite":{"Poison", "Insecte"}, "Abo":{"Poison"}}
     assert petites_betes.toutes_les_familles_v2(mon_pokedex) == {'Plante', 'Insecte', 'Poison'}
-""""
+
 def test_nombre_pokemons_v2():
     mon_pokedex = {"Bulbizarre":{"Plante", "Poison"},
                    "Aeromite":{"Poison", "Insecte"}, "Abo":{"Poison"}}
@@ -65,7 +65,7 @@ def test_dico_par_famille_v2():
         'Poison': {'Aeromite', 'Abo', 'Bulbizarre'},
         'Insecte':{'Aeromite'}}
 
-
+""""
 def test_famille_la_plus_representee_v2():
     mon_pokedex = {"Bulbizarre":{"Plante", "Poison"},
                    "Aeromite":{"Poison", "Insecte"}, "Abo":{"Poison"}}
