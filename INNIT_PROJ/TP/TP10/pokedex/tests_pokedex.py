@@ -80,13 +80,13 @@ def test_nombre_de_v2():
     (pokedex_anakin, pokedex_romain) = exemples_pokedex_v2()
     assert pokedex.nombre_de_v2("Dragon", pokedex_anakin) == 3
     assert pokedex.nombre_de_v2("Dragon", pokedex_romain) == 0
-"""
+
 def test_attaque_preferee_v2():
     (pokedex_anakin, pokedex_romain) = exemples_pokedex_v2()
     assert pokedex.attaque_preferee_v2(pokedex_anakin) == "Dragon"
     assert pokedex.attaque_preferee_v2(pokedex_romain) == "Sol"
 
-
+"""
 # ==================================
 # Exercice 1 : Modélisation n°3
 # ==================================

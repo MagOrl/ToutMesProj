@@ -73,7 +73,7 @@ def toutes_les_attaques_v2(pokemon, pokedex):
     param: un pokedex et le nom d'un pokemon (str) qui appartient au pokedex
     resultat: renvoie l'ensemble des types d'attaque du pokemon passé en paramètre
     """
-    return pokedex[pokemon] if appartient_v2(pokemon,pokedex) else 0 
+    return pokedex[pokemon] if appartient_v2(pokemon,pokedex) else set()
 
 
 def nombre_de_v2(attaque, pokedex):
@@ -82,16 +82,19 @@ def nombre_de_v2(attaque, pokedex):
     resultat: renvoie le nombre de pokemons de ce type d'attaque
     dans le pokedex
     """
-    
+    cpt = 0 
     for elem in pokedex:
-        if attaque in pokedex[elem]
-
+        if attaque in pokedex[elem]:
+            cpt+=1
+    return cpt 
 
 def attaque_preferee_v2(pokedex):
     """
     Renvoie le nom du type d'attaque qui est la plus fréquente dans le pokedex
     """
-    ...
+    dico = {}
+    for elem in pokedex:
+        if  
 
 # =====================================================================
 # Modélisation n°3
