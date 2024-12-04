@@ -107,10 +107,14 @@ from CLIENTS natural join RESERVATIONS natural join VOYAGES
 where Ville != VilleDepart and VilleDepart='Paris';
 
 -- 11.Trouver les clients qui n’ont aucune reservation.
-select * 
-from CLIENTS 
-where ID not in (select ID from Reservations);
-
+-- select * 
+-- from CLIENTS 
+-- where ID not in (select ID from Reservations);
+select id, nom,Prenom,ville
+from CLIENTS
+MINUS 
+select id, nom,Prenom,ville 
+from clients natural join reservations;
 -- 12 Voyages qui ne font pas objet d’une r´eservation.
 select * 
 from VOYAGES
@@ -122,6 +126,30 @@ from CLIENTS natural join RESERVATIONS natural join VOYAGES
 where VilleDepart='Paris' and VilleArrivee='Amsterdam';
 
 -- 14 Clients qui vont `a Amsterdam et `a Rio de Janeiro
-select * 
+select Nom
 from CLIENTS natural join Reservations natural join VOYAGES
-where VilleDepart='Rio de Janero'
+where VilleArrivee='Rio de Janeiro'
+intersect 
+select Nom
+from CLIENTS natural join Reservations natural join VOYAGES
+where VilleArrivee='Amsterdam';
+-- 15. Clients qui vont `a Amsterdam ou `a Rio de Janeiro
+select Nom
+from CLIENTS natural join Reservations natural join VOYAGES
+where VilleArrivee='Rio de Janeiro'
+union
+select Nom
+from CLIENTS natural join Reservations natural join VOYAGES
+where VilleArrivee='Amsterdam';
+-- 16. Couples de clients habitant la mˆeme ville. Indiquer la ville en question
+select c1.Nom,c2.Nom,c1.Ville
+from Clients c1, Clients c2 
+where c1.ville = c2.ville and c1.Nom < c2.Nom ;
+-- 17 Couples de (code) voyages ayant le mˆeme prix. Indiquer le prix en question
+select c1.Code, c2.Code , c1.prix 
+from Voyages c1, Voyages c2
+where c1.prix = c2.prix and c1.code < c2.code;
+-- 18 Clients ayant au moins deux reservations
+select c1.Nom
+from RESERVATIONS r1, RESERVATIONS r2, CLIENTS c1
+where r1.ID = c1.ID and r2.ID = c1.ID and r1.code != r2.code and r1.code < r2.code ; 
