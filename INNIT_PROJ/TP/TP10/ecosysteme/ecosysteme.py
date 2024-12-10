@@ -19,12 +19,16 @@ def en_voie_disparition(ecosysteme, animal):
     renvoie True si animal s'éteint est voué à disparaitre à long terme
     """
     var = animal 
-    while ecosysteme[var] is not None:
-        if var in ecosysteme:
-            var = ecosysteme[var]
-        else:
-            return False
-    return True
+    try:
+        while ecosysteme[var] is not None:
+            
+            if var in ecosysteme:
+                var = ecosysteme[var]
+            else:
+                return False
+        return False 
+    except:
+        return True 
 print(en_voie_disparition(ecosysteme_1,'Lapin'))
 
 
