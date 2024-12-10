@@ -86,6 +86,7 @@ def test_attaque_preferee_v2():
     assert pokedex.attaque_preferee_v2(pokedex_anakin) == "Dragon"
     assert pokedex.attaque_preferee_v2(pokedex_romain) == "Sol"
 
+
 """
 # ==================================
 # Exercice 1 : Modélisation n°3

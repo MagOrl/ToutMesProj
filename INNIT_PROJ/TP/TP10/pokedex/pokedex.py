@@ -92,9 +92,9 @@ def attaque_preferee_v2(pokedex):
     """
     Renvoie le nom du type d'attaque qui est la plus fréquente dans le pokedex
     """
-    dico = {}
-    for elem in pokedex:
-        if  
+    for elem in pokedex
+    return  
+print(attaque_preferee_v2(pokedex_anakin))   
 
 # =====================================================================
 # Modélisation n°3
