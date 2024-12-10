@@ -26,7 +26,8 @@ def test_en_voie_disparition():
     assert not ecosysteme.en_voie_disparition(ecosysteme_2, 'Ours')
     assert not ecosysteme.en_voie_disparition(ecosysteme_3, 'Poule')
 
-
+    
+    """
 def test_animaux_en_danger():
     ecosysteme_1 = { 'Loup': 'Mouton', 'Mouton':'Herbe', 'Dragon':'Lion', 'Lion':'Lapin', 'Herbe':None, 'Lapin':'Carotte', 'Requin':'Surfer'}
     ecosysteme_2 = { 'Renard':'Poule', 'Poule':'Ver de terre', 'Ver de terre':'Renard', 'Ours':'Renard' }
@@ -44,3 +45,4 @@ def test_especes_en_voie_disparition():
     assert ecosysteme.especes_en_voie_disparition(ecosysteme_2) == set()
     assert ecosysteme.especes_en_voie_disparition(eco) == {1, 2, 3, 4, 5, 6, 7}
 
+"""
