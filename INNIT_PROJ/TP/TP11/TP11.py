@@ -9,4 +9,11 @@ def amourreciprok(dico):
             else:
                 amoureu.append((elem, dico[elem]))
     return amoureu
-print(amourreciprok(ATM))
+
+def soupirant(personne, dico):
+    personneamoureu = []
+    for elem in dico:
+        if dico[elem] == personne:
+            personneamoureu.append(elem)
+    return personneamoureu
+
