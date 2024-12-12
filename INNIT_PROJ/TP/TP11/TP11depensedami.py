@@ -15,9 +15,5 @@ def affiche_bilan_financier(week_end):
     return dico
 
 
-
-
-
-
 print(affiche_bilan_financier(DepenseDuWE))
         
