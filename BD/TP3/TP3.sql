@@ -201,6 +201,10 @@ from PEINTRES
 minus 
 select  nomP 
 from TABLEAUX;
+
+select nomp 
+from PEINTRES
+where nomP not in (select nomp from TABLEAUX);
 -- 2. Lister les tableaux de Monet ou Renoir.
 select nomP 
 from TABLEAUX 
@@ -229,6 +233,7 @@ minus
 select ville
 from GALERIES natural join EXPOSITIONTABLEAUX 
 where nomP ='Monet';
+
 -- 6. Lister les villes ayant expos ́e seulement des tableaux de Toulouse-Lautrec (par rapport aux peintres dans la base).
 select ville 
 from GALERIES natural join EXPOSITIONTABLEAUX natural join TABLEAUX
@@ -253,8 +258,6 @@ where idsalle not in(select IDsalle from EXPOSITIONTABLEAUX );
 select v1.ville 
 from GALERIES v1, GALERIES v2 
 where v1.ville = v2.ville and v1.idsalle < v2.idsalle ;
--- 10. Lister les villes ayant seulement une galerie.
-select ville 
 from GALERIES
 minus 
 select v1.ville 
