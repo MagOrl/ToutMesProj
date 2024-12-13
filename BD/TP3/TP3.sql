@@ -258,6 +258,10 @@ where idsalle not in(select IDsalle from EXPOSITIONTABLEAUX );
 select v1.ville 
 from GALERIES v1, GALERIES v2 
 where v1.ville = v2.ville and v1.idsalle < v2.idsalle ;
+--10. Lister les villes ayant seulement une galerie.
+select v1.ville 
+from GALERIES v1, GALERIES v2 
+where v1.ville = v2.ville and v1.idsalle < v2.idsalle ;
 from GALERIES
 minus 
 select v1.ville 
