@@ -153,3 +153,110 @@ where c1.prix = c2.prix and c1.code < c2.code;
 select c1.Nom
 from RESERVATIONS r1, RESERVATIONS r2, CLIENTS c1
 where r1.ID = c1.ID and r2.ID = c1.ID and r1.code != r2.code and r1.code < r2.code ; 
+
+-- PEINTRES 
+insert into PEINTRES values ('Monet', to_date('14-11-1840','dd-mm-yyyy'), 'impressionisme');
+
+insert into PEINTRES values('Renoir', to_date('25-02-1841','dd-mm-yyyy'), 'impressionisme');
+
+insert into PEINTRES values('Fragonard', to_date('05-04-1732','dd-mm-yyyy'), 'rococo');
+
+insert into PEINTRES values('Picasso', to_date('25-10-1881','dd-mm-yyyy'), 'cubisme');
+
+insert into PEINTRES values ('Toulouse-Lautrec', to_date('24-11-1864','dd-mm-yyyy'), 'art nouveau');
+
+
+
+insert into TABLEAUX values ('Picasso','Guernica', 10000000 ,'huile');
+insert into TABLEAUX values ('Picasso','Le sculpteur',800000 ,'huile');
+insert into TABLEAUX values ('Renoir','Jeunes filles aux piano', 5000000 ,'huile');
+
+insert into TABLEAUX values ('Monet','Nympheas',10000000 ,'huile');
+insert into TABLEAUX values ('Toulouse-Lautrec' ,'Femme a sa toillette',10000000 ,'aquarelle');
+insert into TABLEAUX values ('Toulouse-Lautrec', 'Moulin Rouge La Goulue',10000000 ,'affiche');
+
+insert into GALERIES values (1, 'Orangerie', 6300, 'Paris');
+insert into GALERIES values (2, 'Jeu de pomme', 1200, 'Paris');
+insert into GALERIES values (3, 'Maison des Consuls', 200, 'Saint-Cere');
+insert into GALERIES values (4, 'Gil Batisde', 100, 'Orleans');
+insert into GALERIES values (5, 'Frac', 500, 'Orleans');
+
+
+insert into EXPOSITIONTABLEAUX values (5,  'Picasso','Le sculpteur', to_date('24-11-2013','dd-mm-yyyy'), to_date('24-01-2014','dd-mm-yyyy'));
+insert into EXPOSITIONTABLEAUX values (5,  'Toulouse-Lautrec' ,'Femme a sa toillette', to_date('24-11-2013','dd-mm-yyyy'), to_date('24-01-2014','dd-mm-yyyy'));
+
+insert into EXPOSITIONTABLEAUX values (1,  'Renoir','Jeunes filles aux piano', to_date('24-12-2013','dd-mm-yyyy'), to_date('24-02-2014','dd-mm-yyyy'));
+
+insert into EXPOSITIONTABLEAUX values (1,  'Monet','Nympheas', to_date('24-12-2000','dd-mm-yyyy'), to_date('24-02-2020','dd-mm-yyyy'));
+
+insert into EXPOSITIONTABLEAUX values (2,  'Picasso','Le sculpteur', to_date('24-11-2014','dd-mm-yyyy'), to_date('24-01-2015','dd-mm-yyyy'));
+
+insert into EXPOSITIONTABLEAUX values (3,  'Toulouse-Lautrec' ,'Femme a sa toillette', to_date('24-04-2013','dd-mm-yyyy'), to_date('24-07-2014','dd-mm-yyyy'));
+
+-- relation peintres 
+
+-- 1. Lister les peintres sans aucun tableaux enregistr ́e dans la base.
+select nomP 
+from PEINTRES  
+minus 
+select  nomP 
+from TABLEAUX;
+-- 2. Lister les tableaux de Monet ou Renoir.
+select nomP 
+from TABLEAUX 
+where nomP='Monet'
+union 
+select nomP
+from TABLEAUX
+where nomP='Renoir';
+-- 3. Lister les villes ayant expos ́e des tableaux de Picasso et de Monet.
+select ville
+from GALERIES natural join EXPOSITIONTABLEAUX 
+where nomP ='Picasso' 
+intersect
+select ville
+from GALERIES natural join EXPOSITIONTABLEAUX 
+where nomP ='Monet';
+-- 4. Lister les villes ayant expos ́e des tableaux de Picasso ou de Monet.
+select ville
+from GALERIES natural join EXPOSITIONTABLEAUX 
+where nomP ='Picasso' or nomP ='Monet';
+--5. Lister les villes ayant expos ́e des tableaux de Picasso mais pas de Monet.
+select ville
+from GALERIES natural join EXPOSITIONTABLEAUX 
+where nomP ='Picasso' 
+minus 
+select ville
+from GALERIES natural join EXPOSITIONTABLEAUX 
+where nomP ='Monet';
+-- 6. Lister les villes ayant expos ́e seulement des tableaux de Toulouse-Lautrec (par rapport aux peintres dans la base).
+select ville 
+from GALERIES natural join EXPOSITIONTABLEAUX natural join TABLEAUX
+where nomP='Toulouse-Lautrec'
+minus 
+select ville 
+from GALERIES natural join EXPOSITIONTABLEAUX natural join TABLEAUX
+where nomP!='Toulouse-Lautrec';
+-- 7. Lister les villes n’ayant jamais expos ́e des tableaux de Picasso.
+select ville 
+from GALERIES natural join EXPOSITIONTABLEAUX
+minus 
+select ville  
+from GALERIES natural join EXPOSITIONTABLEAUX
+where nomP ='Picasso';
+
+-- 8. Lister les galeries n’ayant pas eu d’exposition.
+select IDsalle, NomSalle
+from GALERIES
+where idsalle not in(select IDsalle from EXPOSITIONTABLEAUX );
+-- 9. Lister les villes ayant au moins deux galeries.
+select v1.ville 
+from GALERIES v1, GALERIES v2 
+where v1.ville = v2.ville and v1.idsalle < v2.idsalle ;
+-- 10. Lister les villes ayant seulement une galerie.
+select ville 
+from GALERIES
+minus 
+select v1.ville 
+from GALERIES v1, GALERIES v2 
+where v1.ville = v2.ville and v1.idsalle < v2.idsalle ;
