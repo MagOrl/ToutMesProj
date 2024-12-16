@@ -88,5 +88,5 @@ select code from reservations where reservations.id = Clients.id ;
 
 -- 9. Trouver les voyages qui ont  ́et ́e r ́eserv ́es par tous les clients parisiens. 
 select Nom, Ville,VilleDepart, VilleArrivee 
-from voyages  natural join reservations natural join clients 
-where ;
+from clients natural join reservations natural join VOYAGES
+where Ville ='Paris' ;
