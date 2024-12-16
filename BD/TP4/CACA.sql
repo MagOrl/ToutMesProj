@@ -57,5 +57,36 @@ select Code, VilleArrivee
 from VOYAGES
 where Code not in ( select code from RESERVATIONS);
 -- 3. Trouver les noms des clients ayant r ́eserv ́e seulement un voyage (une seule r ́eservation).
-select c1.Nom
-from CLIENTS c1, 
+select Nom 
+from CLIENTS natural join Reservations
+where id not in (select c1.Id from Reservations c1, Reservations c2 where c1.code != c2.code and c1.id = c2.id) ;
+
+-- 4. Codes des voyages les plus chers.
+select Code, Prix
+from Voyages 
+where prix >= ALL(select prix from VOYAGES);
+
+-- 5. Codes des voyages les moins chers.
+select Code, Prix
+from Voyages 
+where prix <= ALL(select prix from VOYAGES);
+
+-- 6. Code, trajet et prix des voyages pour lesquels il existe au moins un autre voyage pour le meme parcours, c’est-`a-dire, ayant les mˆemes villes d’arrivee et de d ́epart.
+select v1.code,v1.VilleDepart,v1.VilleArrivee,v1.prix 
+from Voyages v1 
+where exists (select * from voyages v2 where v1.code != v2.code and v1.VilleArrivee = v2.VilleArrivee and v1.VilleDepart = v2.VilleDepart );
+--7. Code, trajet et prix des voyages pour lesquels il existe une unique option. Autrement dit, les voyages pour lesquels il n’existe pas un autre voyage pour le mˆeme parcours, c’est-`a-dire, ayant les mˆemes villes d’arriv ́ee et de d ́epar
+select v1.code,v1.VilleDepart,v1.VilleArrivee,v1.prix 
+from Voyages v1 
+where not exists (select * from voyages v2 where v1.code != v2.code and v1.VilleArrivee = v2.VilleArrivee and v1.VilleDepart = v2.VilleDepart );
+--8. Trouver les clients qui ont r ́eserv ́e tous les voyages `a Amsterdam. Autrement dit : trouvez les clients (id) pour lesquels il n’existe pas un voyage `a Amsterdam qu’ils n’ont pas reserve.
+select nom
+from Clients
+where not exists (select code FROM voyages where VilleArrivee='Amsterdam')
+minus 
+select code from reservations where reservations.id = Clients.id ; 
+
+-- 9. Trouver les voyages qui ont  ́et ́e r ́eserv ́es par tous les clients parisiens. 
+select Nom, Ville,VilleDepart, VilleArrivee 
+from voyages  natural join reservations natural join clients 
+where ;
