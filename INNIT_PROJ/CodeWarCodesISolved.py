@@ -12,6 +12,6 @@ def cakes(recipe, available):
     return min(seto)
 #first
 
-def HelloName(name):
+(name):
     
 print(HelloName("mago"))
