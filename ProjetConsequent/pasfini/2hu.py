@@ -21,13 +21,16 @@ y= 200
 rad = 5
 vel = 7
 shiftvel = 3
+
+projvel = 8
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
             exit()
     clef = pygame.key.get_pressed()
-
+    if clef[pygame.K_w]:
+        ...
     if clef[pygame.K_LEFT] and x > rad:
         if clef[pygame.K_LSHIFT]:
             x-= shiftvel
