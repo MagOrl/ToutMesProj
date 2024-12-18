@@ -40,7 +40,7 @@ while True:
         
     if clef[pygame.K_LEFT] and carac.x > carac.hitbox:
         if clef[pygame.K_LSHIFT]:
-            carac.x-= carac.vel // 2
+            carac.x -= carac.vel // 2
         else:
             carac.x -= carac.vel 
     if clef[pygame.K_RIGHT] and carac.x < 1020 - carac.hitbox: 
@@ -60,7 +60,7 @@ while True:
             carac.y += carac.vel 
     screen.fill(background)
     pygame.draw.circle(screen, 'red', [carac.x,carac.y], carac.hitbox) 
-    pygame.draw.rect(screen,'blue',(carac.x,projectile()))
+    #pygame.draw.rect(screen,'blue',(carac.x,projectile()))
     #pygame.draw.rect(win, (255, 0, 0), (x, y, width, height))
     pygame.display.update()
     clock.tick(60)
