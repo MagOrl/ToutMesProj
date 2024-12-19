@@ -40,3 +40,5 @@ def colle_sous_matrice(matrice,sous_matrice,ligne_haut,colonne_gauche):
 sousmat = [[67, 42], [43, 17]]
 
 print(colle_sous_matrice(mati,sousmat,0,0))
+
+#exo 4
