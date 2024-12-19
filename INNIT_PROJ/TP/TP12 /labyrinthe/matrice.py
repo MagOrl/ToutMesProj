@@ -1,3 +1,4 @@
+import api_matrice as mat 
 """
 Une implémentation des matrices 2D en python
 Détailler ici la modélisation choisie en donnant au moins un exemple
@@ -17,7 +18,7 @@ def new_matrice(nb_lignes, nb_colonnes, valeur_par_defaut=0):
                  est nb_colonnes
         et dont toutes les valeurs sont à valeur_par_defaut
     """
-    ...
+    return mat.creer_matrice(nb_lignes,nb_colonnes,valeur_par_defaut)
 
 def get_nb_lignes(matrice):
     """renvoie le nombre de lignes de la matrice
@@ -29,7 +30,7 @@ def get_nb_lignes(matrice):
     Returns:
         int: le nombre de lignes de la matrice
     """
-    ...
+    return len(matrice)
 
 def get_nb_colonnes(matrice):
     """renvoie le nombre de colonnes de la matrice
@@ -41,8 +42,10 @@ def get_nb_colonnes(matrice):
     Returns:
         int: le nombre de colonnes de la matrice
     """
-    ...
-
+    try :
+        return len(matrice[0])
+    except:
+        return 0 
 def get_val(matrice, ligne, colonne):
     """renvoie une valeur de la matrice
 
@@ -55,7 +58,7 @@ def get_val(matrice, ligne, colonne):
         variable: le contenu de la case de la matrice qui se trouve à la ligne
         numéro ligne et à la colonne numéro colonne
     """
-    ...
+    return mat.get_valeur(matrice,ligne,colonne)
 
 def set_val(matrice, ligne, colonne, new_val):
     """modifie le contenu de la case de la matrice qui se trouve à la ligne
@@ -69,9 +72,20 @@ def set_val(matrice, ligne, colonne, new_val):
     Returns:
         None
     """
-    ...
+    mat.set_valeur(matrice,ligne,colonne,new_val)
+def affiche_ligne_separatrice(la_matrice, taille_cellule=4):
+    """fonction auxilliaire qui permet d'afficher (dans le terminal)
+    une ligne séparatrice
 
-def affiche(matrice):
+    Args:
+        la_matrice : une matrice
+        taille_cellule (int, optional): la taille d'une cellule. Defaults to 4.
+    """
+    print()
+    for _ in range(mat.get_nombre_de_colonnes(la_matrice) + 1):
+        print('-' * taille_cellule + '+', end = '')
+    print()
+def affiche(matrice,taille_cellule=4):
     """Affiche la matrice sur la sortie standard
 
     Args:
@@ -80,7 +94,19 @@ def affiche(matrice):
     Returns:
         None
     """
-    ...
+    nb_colonnes = mat.get_nombre_de_colonnes(matrice)
+    nb_lignes = mat.get_nombre_de_lignes(matrice)
+    print(' '*taille_cellule+'|', end='')
+    for indice in range(nb_colonnes):
+        print(str(indice).center(taille_cellule) + '|', end = '')
+    affiche_ligne_separatrice(matrice, taille_cellule)
+    for ind in range(nb_lignes):
+        print(str(ind).rjust(taille_cellule) + '|', end = '')
+        for ind_j in range(nb_colonnes):
+            print(str(get_val(matrice, ind, ind_j)).rjust(taille_cellule) + '|', end='')
+        affiche_ligne_separatrice(matrice, taille_cellule)
+    print()
+
 
 #-----------------------------------------
 # entrées sorties dans des fichiers

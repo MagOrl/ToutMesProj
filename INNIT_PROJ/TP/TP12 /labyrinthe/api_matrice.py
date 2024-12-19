@@ -4,12 +4,12 @@ import csv
 import random
 import csv
 
-def creer_matrice(nombre_lignes, nombre_colonnes):
+def creer_matrice(nombre_lignes, nombre_colonnes,defaultval):
     matrice = []
     for _ in range(nombre_lignes):
         ligne_matrice = []
         for _ in range(nombre_colonnes):
-            ligne_matrice.append(random.randint(0, 100))
+            ligne_matrice.append(defaultval)
         matrice.append(ligne_matrice)
     return matrice
 
