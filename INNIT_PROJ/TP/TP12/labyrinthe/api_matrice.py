@@ -29,7 +29,7 @@ def get_nombre_de_colonnes(matrice):
     return len(matrice[0]) if matrice else 0
 
 def get_nombre_de_lignes(matrice):
-    return len(matrice)
+    return len(matrice) 
 
 def enregistre_matrice(matrice, nom_fichier):
     with open(nom_fichier, 'w', newline='') as fichier_csv:

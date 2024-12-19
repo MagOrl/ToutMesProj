@@ -30,8 +30,8 @@ def init(nom_fichier="./labyrinthe1.txt"):
         le plateau de jeu avec les MUR, COULOIR, PERSONNAGE et FANTOME
     """
     fic = mat.charge_matrice(nom_fichier)
-    mat.set_val(fic,0,0,2)
-    mat.set_val(fic,mat.get_nb_lignes(fic)-1,mat.get_nb_colonnes(fic)-1,3)
+    mat.set_val(fic,0,0,PERSONNAGE)
+    mat.set_val(fic,mat.get_nb_lignes(fic)-1,mat.get_nb_colonnes(fic)-1,FANTOME)
 
 def est_sur_le_plateau(le_plateau, position):
     """Indique si la position est bien sur le plateau
@@ -44,9 +44,9 @@ def est_sur_le_plateau(le_plateau, position):
         [boolean]: True si la position est bien sur le plateau
     """
     
-    if len(le_plateau) < position[0] or position[0] < 0 or len(le_plateau[0]) < position[1] or position[1] < 0 :
-        return False 
-    return True 
+    if mat.get_nb_colonnes(le_plateau)-1 < position[1] or position[1] < 0 or mat.get_nb_lignes(le_plateau)-1 < position[0] or position[0] < 0 :
+        return False
+    return True
 
 
 

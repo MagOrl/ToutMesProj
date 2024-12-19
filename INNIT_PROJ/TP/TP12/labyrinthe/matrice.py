@@ -30,7 +30,7 @@ def get_nb_lignes(matrice):
     Returns:
         int: le nombre de lignes de la matrice
     """
-    return len(matrice)
+    return mat.get_nombre_de_lignes(matrice)
 
 def get_nb_colonnes(matrice):
     """renvoie le nombre de colonnes de la matrice
@@ -42,10 +42,9 @@ def get_nb_colonnes(matrice):
     Returns:
         int: le nombre de colonnes de la matrice
     """
-    try :
-        return len(matrice[0])
-    except:
-        return 0 
+    
+    return mat.get_nombre_de_colonnes(matrice) 
+    
 def get_val(matrice, ligne, colonne):
     """renvoie une valeur de la matrice
 
@@ -73,6 +72,7 @@ def set_val(matrice, ligne, colonne, new_val):
         None
     """
     mat.set_valeur(matrice,ligne,colonne,new_val)
+
 def affiche_ligne_separatrice(la_matrice, taille_cellule=4):
     """fonction auxilliaire qui permet d'afficher (dans le terminal)
     une ligne séparatrice
@@ -85,6 +85,7 @@ def affiche_ligne_separatrice(la_matrice, taille_cellule=4):
     for _ in range(mat.get_nombre_de_colonnes(la_matrice) + 1):
         print('-' * taille_cellule + '+', end = '')
     print()
+
 def affiche(matrice,taille_cellule=4):
     """Affiche la matrice sur la sortie standard
 
