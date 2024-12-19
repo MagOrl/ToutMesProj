@@ -4,7 +4,7 @@ Permet de modéliser un le_plateau de jeu avec :
     - chaque nombre entier correspond à un item :
       MUR, COULOIR, PERSONNAGE, FANTOME
 """
-import matrice
+import matrice as mat 
 
 MUR = 1
 COULOIR = 0
@@ -29,8 +29,9 @@ def init(nom_fichier="./labyrinthe1.txt"):
     Returns:
         le plateau de jeu avec les MUR, COULOIR, PERSONNAGE et FANTOME
     """
-    ...
-
+    fic = mat.charge_matrice(nom_fichier)
+    mat.set_val(fic,0,0,2)
+    mat.set_val(fic,fic[-1],fic[-1][-1],3)
 
 def est_sur_le_plateau(le_plateau, position):
     """Indique si la position est bien sur le plateau
@@ -42,7 +43,7 @@ def est_sur_le_plateau(le_plateau, position):
     Returns:
         [boolean]: True si la position est bien sur le plateau
     """
-    ...
+    
 
 
 def get(le_plateau, position):
