@@ -31,7 +31,7 @@ def init(nom_fichier="./labyrinthe1.txt"):
     """
     fic = mat.charge_matrice(nom_fichier)
     mat.set_val(fic,0,0,2)
-    mat.set_val(fic,fic[-1],fic[-1][-1],3)
+    mat.set_val(fic,mat.get_nb_lignes(fic)-1,mat.get_nb_colonnes(fic)-1,3)
 
 def est_sur_le_plateau(le_plateau, position):
     """Indique si la position est bien sur le plateau
@@ -44,6 +44,10 @@ def est_sur_le_plateau(le_plateau, position):
         [boolean]: True si la position est bien sur le plateau
     """
     
+    if len(le_plateau) < position[0] or position[0] < 0 or len(le_plateau[0]) < position[1] or position[1] < 0 :
+        return False 
+    return True 
+
 
 
 def get(le_plateau, position):
