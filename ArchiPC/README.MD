@@ -19,6 +19,6 @@ Il y à toujours 24 bits par pixels.<br>
 Aucune méthode de compression à été utiliser car dans les octets de l'offset 1E les octets sont à 0 <br> <br>
 Pour savoir la taille des données pixels il faut voir à l'offset 22, et ici on voit 30 donc 48 en décimale</p>
  
- <h3>A.4</h3>
- <p>txt</p>
- 
+<h3>A.4</h3>
+<p>txt</p>
+
