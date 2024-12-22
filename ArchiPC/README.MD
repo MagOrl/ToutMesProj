@@ -16,6 +16,9 @@ la raison est que le premier octet était a 99 au lieux que 9A, mais pour que di
 On peut déjà remarquer que la taille du fichier à naturellement changer, elle est passer à 66(en hexadecimal).<br> 
 Le codage des pixels reste le même, c'est à dire du codage RGB mit en little endian donc BGR.<br>
 Il y à toujours 24 bits par pixels.<br>
-</p>
+Aucune méthode de compression à été utiliser car dans les octets de l'offset 1E les octets sont à 0 <br> <br>
+Pour savoir la taille des données pixels il faut voir à l'offset 22, et ici on voit 30 donc 48 en décimale</p>
  
+ <h3>A.4</h3>
+ <p>txt</p>
  
