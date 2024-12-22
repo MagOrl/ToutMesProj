@@ -12,6 +12,10 @@ la raison est que le premier octet était a 99 au lieux que 9A, mais pour que di
 <p> Pour obtenir ce resultat : <img src="images/image copy.png"> <br> j'ai dû faire passer ce code : <img src="images/image copy 2.png"><br>Donc rien de plus à expliquer car tout à été dit dans la question précédente, j'ai du faire attention de bien tout inverser car je suis en little endian, le vert n'était jamais un problème car il est au milieu.</p>
 
 <h3>A.3</h3>
-<p>txt</p>
+<p>Après la conversion de mon damier avec imagemagick voici le résultat : <img src="images/image copy 3.png"> <br> 
+On peut déjà remarquer que la taille du fichier à naturellement changer, elle est passer à 66(en hexadecimal).<br> 
+Le codage des pixels reste le même, c'est à dire du codage RGB mit en little endian donc BGR.<br>
+Il y à toujours 24 bits par pixels.<br>
+</p>
  
  
