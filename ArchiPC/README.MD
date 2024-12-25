@@ -1,3 +1,6 @@
+<h1>‎ ‎ ‎ ‎ ‎‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎SAE IMAGE</h1>
+<h6>ARSAMERZOEV Magomed 11A</h6>
+
 
 <h3> A.0 </h3>
 <p>L'erreure afficher par display est que la longeur et la taille de l'image ne convienne pas.
@@ -23,8 +26,9 @@ Pour savoir la taille des données pixels il faut voir à l'offset 22, et ici on
 <p>après conversion on obtient : <img src="images/image copy 4.png"></p>
 <p><b>1. </b>À l'octet 1C on peut voir que le nombre de bits par pixel est de 1.
 <br><b>2. </b>La taille du fichier est de 16 en décimal on peut voir ça à l'offset 22.<br><b>3. </b>Aucune méthode de compression utiliser car les valeur de l'offset 1E sont à 0<br><b>4 et 5. </b>Les palettes sont codées de manière 2^n ou n est est le nombre de bits par pixels, dans notre cas 1, donc 2¹(ou 2) ce qui reste cohérent car on à que 2 couleur dans notre mosaique.
-<br><b>6. </b>Oui le codage des pixels on changer, car à l'offset 32 il y a le nombre de couleur importante utiliser, ici 2 pour rouge et blanc.<br>Le codage RGB des pixels reste le même, il y a un "00" à chaque codage de RGB surement pour indiquer le padding(il est possible que ça soit pour R.G.B.A, A étant alpha, les nuance de gris mais dans ce cas la puisqu'on est en little endian il aurait du être tout devant faisant A.B.G.R), ensuite le 50 et le A0, qui respectivement en décimale donne 80 et 160, sont les valeurs pour pouvoir calculer la taille de la ligne pour 4 octets. 80/160 donnant 1/2, ça fait que un pixel et mit une fois sur deux<br>
+<br><b>6. </b>Oui le codage des pixels on changer, car à l'offset 32 il y a le nombre de couleur importante utiliser, ici 2 pour rouge et blanc.<br>Le codage RGB des pixels reste le même, il y a un "00" à chaque codage de RGB surement pour indiquer le padding(il est possible que ça soit pour R.G.B.A, A étant alpha, les nuance de gris mais dans ce cas la puisqu'on est en little endian il aurait du être tout devant faisant A.B.G.R), ensuite le 50 et le A0, il faut convertir les valeurs en binaire, pour A0 par exemple ca nous fait 1010 0000 ce qui est exactement le patterne de notre damier, blanc, rouge, blanc, rouge(1 c'est blanc et 0 c'est rouge), Il faut couper 1 octet en deux pour pouvoir répartire les couleurs sur une ligne, 50 donne 1010 0000 en binaire ce qui est encore le patterne de notre damier <br>
 <b>7. </b>Pour modifier les pixels rouge en bleu il suffisait d'inverser les 2 octets de droite et de gauche(donc inverser le rouge et bleu)
 <img src="images/image copy 5.png"><br>
-<b>8. </b>Pour inverser le bleu et le blanc il faut faire de même dans le codage de pixel on remplace FF 00 00 avec FF FF FF pour obtenir le damier inverser.<img src="images/image copy 6.png"><br>
-<b>9. </b></p>
+<b>8. </b>Pour inverser le bleu et le blanc il faut faire de même dans le codage de pixel on remplace FF 00 00 avec FF FF FF pour obtenir le damier inverser. Ou encore remplacer F0 et 50 (si on fait les 2 en même temps on reviens sur le damier de départ)<img src="images/image copy 6.png"><br>
+<b>9. </b> Voici le resultat de <b>Image3</b><img src="images/image copy 7.png">Donc en prenant le même raisonnement expliquer dans la question 6, ici pour d'abord avoir une ranger de blanc il faut 1111 donc convertit en héxadécimal ça donne F0 ensuite 2 lignes de rouge donc on met 0 pour les 2 lignes suivantes, après on veut un cadriage de base donc on prend A0<br>
+<b>10. </b></p>
