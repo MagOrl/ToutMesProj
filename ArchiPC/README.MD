@@ -20,5 +20,11 @@ Aucune méthode de compression à été utiliser car dans les octets de l'offset
 Pour savoir la taille des données pixels il faut voir à l'offset 22, et ici on voit 30 donc 48 en décimale</p>
  
 <h3>A.4</h3>
-<p>txt</p>
-
+<p>après conversion on obtient : <img src="images/image copy 4.png"></p>
+<p><b>1. </b>À l'octet 1C on peut voir que le nombre de bits par pixel est de 1.
+<br><b>2. </b>La taille du fichier est de 16 en décimal on peut voir ça à l'offset 22.<br><b>3. </b>Aucune méthode de compression utiliser car les valeur de l'offset 1E sont à 0<br><b>4 et 5. </b>Les palettes sont codées de manière 2^n ou n est est le nombre de bits par pixels, dans notre cas 1, donc 2¹(ou 2) ce qui reste cohérent car on à que 2 couleur dans notre mosaique.
+<br><b>6. </b>Oui le codage des pixels on changer, car à l'offset 32 il y a le nombre de couleur importante utiliser, ici 2 pour rouge et blanc.<br>Le codage RGB des pixels reste le même, il y a un "00" à chaque codage de RGB surement pour indiquer le padding(il est possible que ça soit pour R.G.B.A, A étant alpha, les nuance de gris mais dans ce cas la puisqu'on est en little endian il aurait du être tout devant faisant A.B.G.R), ensuite le 50 et le A0, qui respectivement en décimale donne 80 et 160, sont les valeurs pour pouvoir calculer la taille de la ligne pour 4 octets. 80/160 donnant 1/2, ça fait que un pixel et mit une fois sur deux<br>
+<b>7. </b>Pour modifier les pixels rouge en bleu il suffisait d'inverser les 2 octets de droite et de gauche(donc inverser le rouge et bleu)
+<img src="images/image copy 5.png"><br>
+<b>8. </b>Pour inverser le bleu et le blanc il faut faire de même dans le codage de pixel on remplace FF 00 00 avec FF FF FF pour obtenir le damier inverser.<img src="images/image copy 6.png"><br>
+<b>9. </b></p>
