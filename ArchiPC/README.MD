@@ -34,5 +34,10 @@ Pour savoir la taille des données pixels il faut voir à l'offset 22, et ici on
 <b>10. </b>Voici une partie de l'image en indexe de couleur ouvert dans un héditeur héxadécimal<img src="images/image copy 8.png"><br>
 <b>11. </b>On peut voir le nombre de couleurs dans la palettes à l'adresse 2E, ici 10 converti en binaire 16 donc 2¹⁶ couleurs possible<br>
 <b>12. </b> Le Blanc est retrouver en couleur dominante à l'adresse 66 avec FE FE FD reconvertit en RGB et en big endian ca nous donne 253 254 254, donc pas du blanc pur mais du blanc quand même<br>
-<b>13. </b>le tableau de pixel commence à l'adresse 76,on peut le voir car c'est la ou s'arrete la définition des couleurs importantes qui se remarque car il 3 octets puis 1 autre octet avec 00, et aussi car visuellement je sais que l'image commence avec du blanc et le fait que CC soient répété met la puce à l'oreille.
-<b> </p>
+<b>13. </b>le tableau de pixel commence à l'adresse 76,on peut le voir car c'est la ou s'arrete la définition des couleurs importantes qui se remarque car il 3 octets puis 1 autre octet avec 00, et aussi car visuellement je sais que l'image commence avec du blanc et le fait que CC soient répété met la puce à l'oreille. Mais concrètement la couleur blanche que j'ai répéré auparavant est à la 12ème position (des couleurs importantes) et 12 en héxa se note C, et donc le fait qu'il y est que des ranger de CC fait que ca commence ici.<br>
+<b>14. </b>Pour commencer j'ai répéré qu'une des couleurs de bleu était à l'indice 0. Donc pour avoir cette ranger de bleu j'ai juste mit des 0 un peut comme je le sentais et donc voici le résultat<img src="images/image copy 9.png"> et voici ce que ça donne dans un éditeur héxadécimal <img src="images/image copy 10.png"><br>
+<b>15.<br> </b><img src="images/image copy 11.png">Visuellement la dimunition de couleur se voit, ici c'est surtout la couleur orange qui à été affecter et queleque nuance de bleu.
+<br><img src="images/image copy 12.png">D'un point de vue héxadécimal on voit que les couleurs des palettes on été remplacé par des 0 </p>
+<p><h3>A.5</h3><br>
+<b>1 et 2. </b>Pour passer de 4 à -4 en héxadécimal voici le calcule que j'ai fait: 4-2⁸ = -252,(4 est la valeur que je veux convertir et 2⁸ sont les bits)je prend la valeur absolue 252, et je converti en héxadécimal donc FC et je rempli le reste avec l'inverse de 0 donc F <br> voici ce que ca donne dans l'interpréteur héxadécimal <img src="images/image copy 13.png"> et voici le résultat :<br><img src="images/image copy 14.png"><br>l'image à donc bien été inverser.<br>
+</p>
