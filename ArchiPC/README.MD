@@ -31,4 +31,8 @@ Pour savoir la taille des données pixels il faut voir à l'offset 22, et ici on
 <img src="images/image copy 5.png"><br>
 <b>8. </b>Pour inverser le bleu et le blanc il faut faire de même dans le codage de pixel on remplace FF 00 00 avec FF FF FF pour obtenir le damier inverser. Ou encore remplacer F0 et 50 (si on fait les 2 en même temps on reviens sur le damier de départ)<img src="images/image copy 6.png"><br>
 <b>9. </b> Voici le resultat de <b>Image3</b><img src="images/image copy 7.png">Donc en prenant le même raisonnement expliquer dans la question 6, ici pour d'abord avoir une ranger de blanc il faut 1111 donc convertit en héxadécimal ça donne F0 ensuite 2 lignes de rouge donc on met 0 pour les 2 lignes suivantes, après on veut un cadriage de base donc on prend A0<br>
-<b>10. </b></p>
+<b>10. </b>Voici une partie de l'image en indexe de couleur ouvert dans un héditeur héxadécimal<img src="images/image copy 8.png"><br>
+<b>11. </b>On peut voir le nombre de couleurs dans la palettes à l'adresse 2E, ici 10 converti en binaire 16 donc 2¹⁶ couleurs possible<br>
+<b>12. </b> Le Blanc est retrouver en couleur dominante à l'adresse 66 avec FE FE FD reconvertit en RGB et en big endian ca nous donne 253 254 254, donc pas du blanc pur mais du blanc quand même<br>
+<b>13. </b>le tableau de pixel commence à l'adresse 76,on peut le voir car c'est la ou s'arrete la définition des couleurs importantes qui se remarque car il 3 octets puis 1 autre octet avec 00, et aussi car visuellement je sais que l'image commence avec du blanc et le fait que CC soient répété met la puce à l'oreille.
+<b> </p>
