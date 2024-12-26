@@ -41,4 +41,7 @@ Pour savoir la taille des données pixels il faut voir à l'offset 22, et ici on
 <p><h3>A.5</h3><br>
 <b>1 et 2. </b>Pour passer de 4 à -4 en héxadécimal voici le calcule que j'ai fait: 4-2⁸ = -252,(4 est la valeur que je veux convertir et 2⁸ sont les bits)je prend la valeur absolue 252, et je converti en héxadécimal donc FC et je rempli le reste avec l'inverse de 0 donc F <br> voici ce que ca donne dans l'interpréteur héxadécimal <img src="images/image copy 13.png"> et voici le résultat :<br><img src="images/image copy 14.png"><br>l'image à donc bien été inverser.<br>
 <b>3. </b>Pour cette image la hauter est de 425 car A9 01 en little endian donne 425, 425 - 2¹⁶ = -65 1111, 65 1111 donne FE 57 en héxadécimal, 57 FE en little endian, on remplace les 0 par des F et on est bon, voici la représentation dans un éditeur héxadécimal<img src="images/image copy 15.png"></p>
-<p><h3>A.6 </h3></p>
+<p><h3>A.6 </h3>
+Voici la représentation dans un éditeur héxadécimal : 
+<img src ="images/image copy 16.png"><br>
+<b>1. </b>Le poid du fichier est de 1120 octets, contre les 74 octets initial </p>
