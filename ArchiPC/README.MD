@@ -60,4 +60,16 @@ Donc on commence avec 04 01, ce qui veut dire qu'il y aura 4 pixel de couleur bl
 <p>voici la réprésentation héxadécimal du résultat attendu : <img src="images/image copy 20.png"><br>
 donc ici j'ai du d'abord enlever le 04 01 qui signifiat 4 pixel blanc, pour ensuite faire 02 01 pour dire que je veux 2 pixel blanc, 01 00 pour 1 pixel rouge et enfin 01 01 pour 1 pixel blanc(je touche pas au reste). Puisque les modifications ont rendu l'image plus lourde je n'ai pas oublier de mettre la bonne taille dans l'entête.</p>
 <h3>A.9</h3>
-<p>Pour arrive rau résultat attendu j'ai du d'ab</p>
+<p>Pour arrive rau résultat attendu j'ai du d'abord dû définir les couleur bleu et vert 
+voici la représentation : <img src ="images/image copy 21.png"><br> donc juste après le rouge et le blanc j'ai mit le bleu et le vert donc FF 00 00 et 00 FF 00, donc maintenant le blanc sera 00 le rouge 01 le bleu 02 le vert 03, correspondant à l'ordre de définition.<br>
+ensuite pour le codage des pixels en eux même :
+<img src="images/image copy 22.png"><br>
+Donc en changement notable, j'ai remplacer 01 00 par 01 02 pour remplacer le rouge en bleu, de même pour 04 00, j'ai changer par 04 03 pour mettre en vert.</p>
+<p><h3>A.10</h3>
+Voici le résultat attendu dans un éditeur héxadécimal :
+<img src ="images/image copy 23.png"><br>
+rien de plus à dire vu que tout à déjà été souligner précédamment.<br><br>
+Pour la réduction d'image j'ai fait ça: <img src="images/image copy 24.png"><br>
+j'utilise VScode pour visuliser les images dans ce cas l'image m'est afficher correctement, mais malheureusement sur imagemagick en utilisant "display", ca me renvoie <code>insufficient image data in file</code><br>je n'arrive pas à arranger le problème sans casser toute mon image.</p>
+<h3>B.1</h3>
+<p></p>
