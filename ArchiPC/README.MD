@@ -44,4 +44,13 @@ Pour savoir la taille des données pixels il faut voir à l'offset 22, et ici on
 <p><h3>A.6 </h3>
 Voici la représentation dans un éditeur héxadécimal : 
 <img src ="images/image copy 16.png"><br>
-<b>1. </b>Le poid du fichier est de 1120 octets, contre les 74 octets initial </p>
+<b>1. </b>6*16 + 4*16² = 1120, le poid du fichier est de 1120 octets, contre les 74 octets initial.<br>
+La raison de ce changement est que la méthode de compréssion RLE fait que quand un certain motif répété la simplifie en mettant un nombre signifiant le nombre de fois que le motif est répété,<b>a la suite</b>, donc dans notre cas ce n'est pas le plus pertinant car on à pas de motif répété à la suite, ca fera qu'on ajoutera plus d'octet que nécessaire.<br>
+<b>2. </b>c'est à l'adresse 0x0A ou l'on trouve l'entête de la ou démarre les pixels, ici 36 04, donc 0436, et c'est bien à l'adresse 0x436 qu'on voit apparaître des octets avec des 00 et des 01.
+<br><b>3. </b>voici une représentation de la ou les pixels sont représenter: 
+<img src="images/image copy 17.png"><br>
+Comme je l'ai dit il y'a un chiffre pour représenter le nombre de fois qu'un motif est répété, ici il faut savoir que 0 veut dire rouge et que 1 veux dire blanc car le rouge à été défini en premier et le blanc en deuxième. Ensuite pour lire un pixel il faut prendre 16 bits soit 2 octet, 1 octet pour dire le nombre de répétéition et le 2ème la couleur du pixel. En appliquant cette méthode on peut voir que ca reste cohérent, pour rouge blanc rouge blanc, ca nous fait 1 rouge, 1 blanc, 1 rouge, 1 blanc, 01 00 01 01 01 00 01 00(les 00 00 sont la pour représenter les fin de lignes et le 01 de fin est la pour représenter la fin du bitmap).</p>
+<p><h3>A.7</h3><br>
+voici une représentation de l'entête :<img src ="images/image copy 18.png"><br>
+<b>1. </b>le poid de l'image est de 1102 octets, donc ici c'est logique que ça soit moins lourd car la compression sera plus utile car on à plusieurs fois des pixels répété.<br>
+</p>
