@@ -1,9 +1,37 @@
 from PIL import Image
 #B.1
 i=Image.open("ArchiPC/taffe/Imagetest.bmp")
-sortie=i.copy()
+sortie=Image.new(i.mode, i.size)
 
-sortie.save("Imageout.bmp")
+donne= list(i.getdata())
+nouvlist = [[]]
+cpt = 0
+for i in range(0, len(donne)):
+    if len(nouvlist[cpt]) < sortie.size[0]:
+        nouvlist[cpt].append(donne[i])
+    else:
+        nouvlist.append([donne[i]])
+        cpt +=1 
+cptg = 0
+cptd = 0
+listgauche = [[]]
+listdroite = [[]]
+
+print(nouvlist)
+
+
+
+#print(listgauche)
+#print("")
+#print(listdroite)
+#
+maindata = []
+#sortie.putdata(nouvlist)
+#sortie.save("caca.bmp")
+
+
+
+
 """for y in range(3, i.size[1]):
     for x in range(i.size[0]):
         c = i.getpixel( (x,y))
