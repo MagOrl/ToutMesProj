@@ -1,6 +1,6 @@
 from PIL import Image
 #B.1
-i=Image.open("ArchiPC/taffe/Imagetest.bmp")
+i=Image.open("ArchiPC/taffe/hall-mod_0.bmp")
 sortie=Image.new(i.mode, i.size)
 
 donne= list(i.getdata())
@@ -17,17 +17,48 @@ cptd = 0
 listgauche = [[]]
 listdroite = [[]]
 
-print(nouvlist)
-
-
+for i in range(len(nouvlist)):
+    for y in range(len(nouvlist[i])//2):
+        listgauche[cptg].append(nouvlist[i][y])
+    cptg +=1
+    listgauche.append([])
+    for z in range(len(nouvlist[i])//2,len(nouvlist[i])):
+        listdroite[cptd].append(nouvlist[i][z])
+    listdroite.append([])
+    cptd +=1
+del listdroite[-1]
+del listgauche[-1]
 
 #print(listgauche)
 #print("")
 #print(listdroite)
-#
+
 maindata = []
-#sortie.putdata(nouvlist)
-#sortie.save("caca.bmp")
+for i in range(len(listdroite)):
+    for d in range(len(listdroite[0])-1,-1,-1):
+        maindata.append(listdroite[i][d])
+
+    for g in range(len(listgauche[0])-1,-1,-1):
+        maindata.append(listgauche[i][g])
+#print(listgauche)
+#print("")
+#print(listdroite)
+#print("")
+#print(maindata)
+
+sortie.putdata(maindata)
+sortie.save("caca.bmp")
+
+
+
+
+
+
+
+
+
+
+
 
 
 
