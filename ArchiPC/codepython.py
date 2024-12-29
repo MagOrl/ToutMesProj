@@ -72,6 +72,14 @@ def B3nivgris(img):
 
 
 
-
-
-
+def noirblanc(img):
+    i=Image.open(img)
+    sortie = i.copy()
+    donne= list(i.getdata())
+    for y in range(len(donne)):
+        if donne[y][0]**2 + donne[y][1]**2 + donne[y][2]**2 > (255*255*3)/2:
+            donne[y] = tuple(list((255,255,255)))
+        else:
+            donne[y] = tuple(list((0,0,0)))
+    sortie.putdata(donne)
+    sortie.save("imageout3.bmp")
