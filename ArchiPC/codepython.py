@@ -72,7 +72,7 @@ def B3nivgris(img):
 
 
 
-def noirblanc(img):
+def B4noirblanc(img):
     i=Image.open(img)
     sortie = i.copy()
     donne= list(i.getdata())
@@ -83,3 +83,5 @@ def noirblanc(img):
             donne[y] = tuple(list((0,0,0)))
     sortie.putdata(donne)
     sortie.save("imageout3.bmp")
+#appel de fonction ici
+#B3nivgris("ArchiPC/taffe/IUT-Orleans.bmp")

@@ -127,4 +127,28 @@ def B2mirror(img):
 Pour la fonction mirroir j'ai travailler avec des listes, pour résumer plus ou moins ce que fait dans cet algorithme, d'abord je met tout les pixels dans une liste avec <code>.getdata()</code>, ensuite avec la première boucle <code>for</code> je met les pixels dans des listes en fonction de la largeur de l'image, si la largeur est de 8 ca sera des listes de 8 éléments. Ensuite je sépare les éléments en 2 et je met les pixels de la première moitié dans une liste "listgauche" et la deuxième moitié dans une liste "listdroite" et ça dans une liste. Ensuite avec la dernière boucle je met les élément de droite d'abord dans le sens inverse des indices ensuite les élément de gauche aussi dans le sens inverse. 
 </p>
 <h3>B.3</h3>
-<p>txt</p>
+<p>Voici le script python :<pre><code>
+def B3nivgris(img):
+    i=Image.open(img)
+    sortie = i.copy()
+    donne= list(i.getdata())
+    for i in range(len(donne)):
+        donne[i] = tuple(list((sum(donne[i])//3,sum(donne[i])//3,sum(donne[i])//3)))
+    sortie.putdata(donne)
+    sortie.save("imageout2.bmp")</code></pre>
+Je prend tout les pixels de l'image et pour je remplace chacune des valeur RGB par 1 valeur à chacune qui est calculer avec cette formule <b>Gris = (R+G+B)/3</b> et je met le resultat dans chacune des valeur du tuple représentant le pixel en RGB, je le met dans une liste,liste qu'on doit transformer en tuple (pas possible autrement sur python) et après avoir modifier chaque pixel de ma liste je remplace les donner avec la méthode <code>putdata()</code></p>
+<h3>B.4</h3>
+<p>Voici le script python : 
+<pre><code>
+def B4noirblanc(img):
+    i=Image.open(img)
+    sortie = i.copy()
+    donne= list(i.getdata())
+    for y in range(len(donne)):
+        if donne[y][0]**2 + donne[y][1]**2 + donne[y][2]**2 > (255*255*3)/2:
+            donne[y] = tuple(list((255,255,255)))
+        else:
+            donne[y] = tuple(list((0,0,0)))
+    sortie.putdata(donne)
+    sortie.save("imageout3.bmp")</code></pre>
+Pour pouvoir transformer une image uniquement en noir et blanc, il faut d'abord pour chaque pixel identifié quelle couleur sera suffisament foncé et celle qui sera claire, pour cela on fait une comparaison composé de 2 formules <b>(R*R+V*V+B*B) > 255*255*3/2</b> si j'amais la somme des carré de chaque valeur de RGB est supérieur au carré du nombre de couleur possible sur 8 bits fois trois(car R G B) et divisé par 2, alors ce pixel est blanc sinon cette valeur est noir.</p>
