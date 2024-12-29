@@ -1,6 +1,4 @@
 from PIL import Image
-
-
 def B1changecouleur(img):
     i=Image.open(img)
     sortie = i.copy()
