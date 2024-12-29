@@ -1,26 +1,17 @@
 from PIL import Image
-#B.1
+
 
 def B1changecouleur(img):
-    """Fonction qui marche uniquement avec Imagetest.bmp """
     i=Image.open(img)
     sortie = i.copy()
-    for y in range(3, i.size[1]):
+    for y in range(i.size[1]):
         for x in range(i.size[0]):
             c = i.getpixel( (x,y))
             sortie.putpixel((y,x),c)
-
-
-    for z in range(i.size[1]):
-        for m in range(3,i.size[0]):
-            g = i.getpixel((m,z))
-            sortie.putpixel((z,m),g)
-    sortie.putpixel((1,0),(255,0,0))
-    sortie.putpixel((0,1),(0,255,0))
     sortie.save("Imageout.bmp")
 
 #appel de fonction ici
-#B1changecouleur("ArchiPC/taffe/Imagetest.bmp")
+#B1changecouleur("ArchiPC/taffe/hall-mod_0.bmp")
 
 
 def B2mirror(img):

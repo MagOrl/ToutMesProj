@@ -73,23 +73,18 @@ Pour la réduction d'image j'ai fait ça: <img src="images/image copy 24.png"><b
 j'utilise VScode pour visuliser les images dans ce cas l'image m'est afficher correctement, mais malheureusement sur imagemagick en utilisant "display", ca me renvoie <code>insufficient image data in file</code><br>je n'arrive pas à arranger le problème sans casser toute mon image.</p>
 <h3>B.1</h3>
 <p>voici mon script python : 
-<pre><code class="language-python">
+<pre><code>
 def B1changecouleur(img):
     i=Image.open(img)
     sortie = i.copy()
-    for y in range(3, i.size[1]):
+    for y in range(i.size[1]):
         for x in range(i.size[0]):
-            c = i.getpixel( (x,y))
+            c = i.getpixel((x,y))
             sortie.putpixel((y,x),c)
-    for z in range(i.size[1]):
-        for m in range(3,i.size[0]):
-            g = i.getpixel((m,z))
-            sortie.putpixel((z,m),g)
-    sortie.putpixel((1,0),(255,0,0))
-    sortie.putpixel((0,1),(0,255,0))
     sortie.save("Imageout.bmp")
 </code></pre><br>
-</p>
+Donc l'algorithme est en plusieurs étapes, d'abord je copie l'image dans une variable <code>sortie = i.copy()</code>pour pouvoir transposer la première image sur ma nouvelle.<br>
+Ensuite avec mes 2 boucles<code>for</code> je parcours tout les pixels de mon image pour pouvoir recuperer la position ainsi que le pixel avec la méthode <code>.getpixel()</code> qu'on stock dans une variable, pour ensuite placer ce pixel par dessus notre image en inversant les indices x et y avec la méthode<code>.putpixel()</code>pour avoir une image inverser.</p>
 
 <h3>B.2</h3>
 <p>voici mon script python : 
