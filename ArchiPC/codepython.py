@@ -11,7 +11,7 @@ def B1changecouleur(img):
     sortie.save("Imageout.bmp")
 
 #appel de fonction ici
-#B1changecouleur("ArchiPC/taffe/hall-mod_0.bmp")
+#B1changecouleur("ArchiPC/taffe/Imagetest.bmp")
 
 
 def B2mirror(img):
