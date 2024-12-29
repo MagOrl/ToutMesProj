@@ -72,4 +72,61 @@ rien de plus à dire vu que tout à déjà été souligner précédamment.<br><b
 Pour la réduction d'image j'ai fait ça: <img src="images/image copy 24.png"><br>
 j'utilise VScode pour visuliser les images dans ce cas l'image m'est afficher correctement, mais malheureusement sur imagemagick en utilisant "display", ca me renvoie <code>insufficient image data in file</code><br>je n'arrive pas à arranger le problème sans casser toute mon image.</p>
 <h3>B.1</h3>
-<p></p>
+<p>voici mon script python : 
+<pre><code class="language-python">
+def B1changecouleur(img):
+    i=Image.open(img)
+    sortie = i.copy()
+    for y in range(3, i.size[1]):
+        for x in range(i.size[0]):
+            c = i.getpixel( (x,y))
+            sortie.putpixel((y,x),c)
+    for z in range(i.size[1]):
+        for m in range(3,i.size[0]):
+            g = i.getpixel((m,z))
+            sortie.putpixel((z,m),g)
+    sortie.putpixel((1,0),(255,0,0))
+    sortie.putpixel((0,1),(0,255,0))
+    sortie.save("Imageout.bmp")
+</code></pre><br>
+</p>
+
+<h3>B.2</h3>
+<p>voici mon script python : 
+<pre><code>
+def B2mirror(img):
+    i=Image.open(img)
+    sortie=Image.new(i.mode, i.size)
+    donne= list(i.getdata())
+    nouvlist = [[]]
+    cpt = 0
+    for i in range(len(donne)):
+        if len(nouvlist[cpt]) < sortie.size[0]:
+            nouvlist[cpt].append(donne[i])
+        else:
+            nouvlist.append([donne[i]])
+            cpt +=1 
+    cptg = 0
+    cptd = 0
+    listgauche = [[]]
+    listdroite = [[]]
+    for i in range(len(nouvlist)):
+        for y in range(len(nouvlist[i])//2):
+            listgauche[cptg].append(nouvlist[i][y])
+        cptg +=1
+        listgauche.append([])
+        for z in range(len(nouvlist[i])//2,len(nouvlist[i])):
+            listdroite[cptd].append(nouvlist[i][z])
+        listdroite.append([])
+        cptd +=1
+    del listdroite[-1]
+    del listgauche[-1]
+    maindata = []
+    for i in range(len(listdroite)):
+        for d in range(len(listdroite[0])-1,-1,-1):
+            maindata.append(listdroite[i][d])
+        for g in range(len(listgauche[0])-1,-1,-1):
+            maindata.append(listgauche[i][g])
+    sortie.putdata(maindata)
+    sortie.save("Imageout1.bmp")</code></pre><br>
+</p>
