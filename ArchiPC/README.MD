@@ -124,7 +124,7 @@ def B2mirror(img):
             maindata.append(listgauche[i][g])
     sortie.putdata(maindata)
     sortie.save("Imageout1.bmp")</code></pre><br>
-Pour la fonction mirroir j'ai beaucoup travailler avec des listes, pour résumer plus ou moins ce que fait cette algorithme d'abord je met tout les pixels dans une liste avec <code>.getdata()</code>, ensuite avec la première boucle <code>for</code> je met les pixels dans des listes en fonction de la largeur de l'image, si la largeur est de 8 ca sera des listes de 8 éléments. Ensuite je sépare les éléments en 2 et je met les pixels de la première moitié dans une liste "listgauche" et la deuxième moitié dans une liste "listdroite" et ça dans une liste. Ensuite avec la dernière boucle je met les élément de droite d'abord dans le sens inverse des indices ensuite les élément de gauche aussi dans le sens inverse. 
+Pour la fonction mirroir j'ai travailler avec des listes, pour résumer plus ou moins ce que fait dans cet algorithme, d'abord je met tout les pixels dans une liste avec <code>.getdata()</code>, ensuite avec la première boucle <code>for</code> je met les pixels dans des listes en fonction de la largeur de l'image, si la largeur est de 8 ca sera des listes de 8 éléments. Ensuite je sépare les éléments en 2 et je met les pixels de la première moitié dans une liste "listgauche" et la deuxième moitié dans une liste "listdroite" et ça dans une liste. Ensuite avec la dernière boucle je met les élément de droite d'abord dans le sens inverse des indices ensuite les élément de gauche aussi dans le sens inverse. 
 </p>
 <h3>B.3</h3>
 <p>txt</p>

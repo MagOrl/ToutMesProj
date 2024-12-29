@@ -58,9 +58,16 @@ def B2mirror(img):
 #B2mirror("ArchiPC/taffe/hall-mod_0.bmp")
 
 
-
-
-
+def B3nivgris(img):
+    i=Image.open(img)
+    sortie = i.copy()
+    donne= list(i.getdata())
+    for i in range(len(donne)):
+        donne[i] = tuple(list((sum(donne[i])//3,sum(donne[i])//3,sum(donne[i])//3)))
+    sortie.putdata(donne)
+    sortie.save("imageout2.bmp")
+#appel de fonction ici
+#B3nivgris("ArchiPC/taffe/IUT-Orleans.bmp")
 
 
 
