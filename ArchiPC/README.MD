@@ -4,22 +4,22 @@
 
 <h3> A.0 </h3>
 <p>L'erreure afficher par display est que la longeur et la taille de l'image ne convienne pas.
-la raison est que le premier octet était a 99 au lieux que 9A, mais pour que display affiche correctement l'image il faut que que le première quarter soient initialiser à 0 donc il faut mettre 9A. </p>
+la raison est que le premier octet était a 99 au lieux que 9A, mais pour que display affiche correctement l'image il faut que que le première octet soient initialiser à 0 donc il faut mettre 9A. </p>
 
 <h3> A.1 </h3>
 <p> voici le resultat : </p>
 <img src="images/image0.png">
-<p>mais bon ce résultat ne prouve rien.<br>Pour pouvoir arriver à cela il à fallu modifier le fichier bmp en héxadécimal <img src="images/mosaique.png"> <br> Les premier octets répresente "BM" la signature de bmp, ensuite la taille de l'image ici 4A pour 74 octets ensuite les coordonée de la ou les pixels commence, ici les pixels commence à l'adresse 1A, après 0C réprente la taille de la seconde partie, le 04 04 représente la hauteur et la largeure ici c'est du 4x4, pour le 18 c'est la valeur héxadécimal de 24, car sur pour réprésenter les couleurs RVB chacune des couleurs sont codée sur 1 octet, donc 3, sachant qu'un octet c'est 8 bit il faut faire 3*8 donc 24 donc 18 en héxa <br> Ensuite le reste c'est les pixels qui sont mit en fonction de leurs couleur, puisqu'on on est en little endian on fait bleu vert rouge.
+<p>mais bon ce résultat ne prouve rien.<br>Pour pouvoir arriver à cela il à fallu ouvrir le fichier bmp en éditeur héxadécimal <img src="images/mosaique.png"> <br> Les premier octets répresente "BM" la signature de bmp, ensuite la taille de l'image ici 4A pour 74 octets ensuite les coordonée de la ou les pixels commence, ici les pixels commence à l'adresse 1A, après 0C réprente la taille de la seconde partie, le 04 04 représente la longeur et la largeure de pixels ici c'est du 4x4 , pour le 18 c'est la valeur héxadécimal de 24, car pour réprésenter les couleurs RVB chacune des couleurs sont codée sur 1 octet, donc 3 octets, sachant qu'un octet c'est 8 bit il faut faire 3*8 donc 24 donc 18 en héxa <br> Ensuite le reste c'est les pixels qui sont mit en fonction de leurs couleur, puisqu'on on est en little endian on fait bleu vert rouge.
 </p>
 <h3>A.2</h3>
-<p> Pour obtenir ce resultat : <img src="images/image copy.png"> <br> j'ai dû faire passer ce code : <img src="images/image copy 2.png"><br>Donc rien de plus à expliquer car tout à été dit dans la question précédente, j'ai du faire attention de bien tout inverser car je suis en little endian, le vert n'était jamais un problème car il est au milieu.</p>
+<p>Voici la représentation dans un éditeur héxadécimal de l'image : <img src="images/image copy 2.png"><br>Donc rien de plus à expliquer car tout à été dit dans la question précédente, j'ai du faire attention de bien tout inverser car je suis en little endian, le vert n'était jamais un problème car il est au milieu.</p>
 
 <h3>A.3</h3>
 <p>Après la conversion de mon damier avec imagemagick voici le résultat : <img src="images/image copy 3.png"> <br> 
 On peut déjà remarquer que la taille du fichier à naturellement changer, elle est passer à 66(en hexadecimal).<br> 
 Le codage des pixels reste le même, c'est à dire du codage RGB mit en little endian donc BGR.<br>
 Il y à toujours 24 bits par pixels.<br>
-Aucune méthode de compression à été utiliser car dans les octets de l'offset 1E les octets sont à 0 <br> <br>
+Aucune méthode de compression à été utiliser car dans les octets de l'offset 1E les octets sont à 0<br>
 Pour savoir la taille des données pixels il faut voir à l'offset 22, et ici on voit 30 donc 48 en décimale</p>
  
 <h3>A.4</h3>
@@ -30,7 +30,7 @@ Pour savoir la taille des données pixels il faut voir à l'offset 22, et ici on
 <b>7. </b>Pour modifier les pixels rouge en bleu il suffisait d'inverser les 2 octets de droite et de gauche(donc inverser le rouge et bleu)
 <img src="images/image copy 5.png"><br>
 <b>8. </b>Pour inverser le bleu et le blanc il faut faire de même dans le codage de pixel on remplace FF 00 00 avec FF FF FF pour obtenir le damier inverser. Ou encore remplacer F0 et 50 (si on fait les 2 en même temps on reviens sur le damier de départ)<img src="images/image copy 6.png"><br>
-<b>9. </b> Voici le resultat de <b>Image3</b><img src="images/image copy 7.png">Donc en prenant le même raisonnement expliquer dans la question 6, ici pour d'abord avoir une ranger de blanc il faut 1111 donc convertit en héxadécimal ça donne F0 ensuite 2 lignes de rouge donc on met 0 pour les 2 lignes suivantes, après on veut un cadriage de base donc on prend A0<br>
+<b>9. </b> Voici le resultat de <b>Image3</b><br><img src="images/image copy 7.png"><br>Donc en prenant le même raisonnement expliquer dans la question 6, ici pour d'abord avoir une ranger de blanc il faut 1111 donc convertit en héxadécimal ça donne F0 ensuite 2 lignes de rouge donc on met 0 pour les 2 lignes suivantes, après on veut un cadriage de base donc on prend A0<br>
 <b>10. </b>Voici une partie de l'image en indexe de couleur ouvert dans un héditeur héxadécimal<img src="images/image copy 8.png"><br>
 <b>11. </b>On peut voir le nombre de couleurs dans la palettes à l'adresse 2E, ici 10 converti en binaire 16 donc 2¹⁶ couleurs possible<br>
 <b>12. </b> Le Blanc est retrouver en couleur dominante à l'adresse 66 avec FE FE FD reconvertit en RGB et en big endian ca nous donne 253 254 254, donc pas du blanc pur mais du blanc quand même<br>
