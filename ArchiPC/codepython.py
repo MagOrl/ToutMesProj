@@ -9,7 +9,7 @@ def B1changecouleur(img):
     sortie.save("Imageout.bmp")
 
 #appel de fonction ici
-#B1changecouleur("ArchiPC/taffe/Imagetest.bmp")
+#B1changecouleur("ArchiPC/resultat/Imagetest.bmp")
 
 
 def B2mirror(img):
@@ -53,7 +53,7 @@ def B2mirror(img):
     sortie.putdata(maindata)
     sortie.save("Imageout1.bmp")
 #appel de fonction ici
-#B2mirror("ArchiPC/taffe/hall-mod_0.bmp")
+#B2mirror("ArchiPC/resultat/hall-mod_0.bmp")
 
 
 def B3nivgris(img):
@@ -65,7 +65,7 @@ def B3nivgris(img):
     sortie.putdata(donne)
     sortie.save("imageout2.bmp")
 #appel de fonction ici
-#B3nivgris("ArchiPC/taffe/IUT-Orleans.bmp")
+#B3nivgris("ArchiPC/resultat/IUT-Orleans.bmp")
 
 
 
@@ -82,4 +82,4 @@ def B4noirblanc(img):
     sortie.putdata(donne)
     sortie.save("imageout3.bmp")
 #appel de fonction ici
-#B3nivgris("ArchiPC/taffe/IUT-Orleans.bmp")
+#B3nivgris("ArchiPC/resultat/IUT-Orleans.bmp")
